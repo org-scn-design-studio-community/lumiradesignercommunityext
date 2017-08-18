@@ -1,0 +1,1851 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../../doc.css">
+<link rel="stylesheet" type="text/css" href="../../tables.css">
+<script id="sap-ui-bootstrap" type="text/javascript" 
+      /*src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"*/
+      src="https://sapui5.hana.ondemand.com/sdk/resources/sap-ui-core.js"
+      data-sap-ui-theme="sap_bluecrystal" data-sap-ui-libs="sap.m,sap.ui.commons,sap.suite.ui.commons,sap.ui.ux3"></script>
+
+<script type="text/javascript" src="../js/ComponentMain.js"></script>
+<script type="text/javascript" src="../js/PostResponseParser/PostResponseParser.js"></script>
+<script type="text/javascript" src="../js/TimeLine.js"></script>
+<script type="text/javascript" src="../js/ga.js"></script>
+
+<script> 
+	requestChangeLog("../../../../sdkhelp/web/components/basics/kpiview/changes/changelog.json");
+	requestContent("Blog", "../../../../sdkhelp/web/components/basics/kpiview/blogs.json");
+	requestContent("Example", "../../../../sdkhelp/web/components/basics/kpiview/examples.json");
+</script>
+
+<title>Kpi View 2.0 - SCN Design Studio Community</title>
+</head>
+<body class="comp-body" style="height:100%">
+<div class="comp-main" style="height:100%">
+
+ 	<div class="component-name">
+	KpiView [ScnCommunityBasics]
+	</div>
+	<div class="component-title">
+	Kpi View 2.0
+	</div>
+
+<div id="componentnav"></div>
+	<div id="intro">This page is giving short introduction to the component with summary of the change status (green/yellow/red)<div id="introStatus" height="120px"></div><br><p>
+Own Written KPI View (similar to KPI Tile) but with SAPUI5 rendering
+</p>
+<p>
+Link to blog: <a target="_blank" href="http://scn.sap.com/docs/DOC-58152">Design Studio SDK: Kpi View Component</a>
+</p>
+</div>
+	<div id="blogs" hidden="true" height="100%">This page is listing community blogs on this component, follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/08/introducing-blog-list-for-community-components" target="_blank">this link</a> to learn more.<div id="BlogsList" height="100%"></div></div>
+	<div id="changelog" hidden="true" height="100%">This page is listing all changes which have been done on this component with corresponding test status (green: ok, red: not ok, yellow: untested), follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/07/introducing-change-log-for-community-components" target="_blank">this link</a> to learn more.<div id="changelogList" height="100%"></div></div>
+	<div id="examples" hidden="true" height="100%">This page is listing all example applications with this component, follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/08/introducing-blog-list-for-community-components" target="_blank">this link</a> to learn more.<div id="ExamplesList" height="100%"></div></div>
+	<div id="about" hidden="true">This page will bring more "about" details (generated)</div>
+	<div id="technical" hidden="true">
+	<br/>
+	<div class="component-properties">VISIBLE PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>data<br/>[ResultCell]</B></td>
+<td width="*" class="property-title-tooltip"><B>Data Value</B><br/>Data Value
+
+</td>
+<td width="60px" class="property-group">DataBinding</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>footerCssClass<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Footer CSS Class</B><br/>Footer CSS Class
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>footerHAlign<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Footer Horizontal Alignment</B><br/>Footer Horizontal Alignment
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">Left</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>footerText<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Footer</B><br/>Footer
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">Footer</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>headerCssClass<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Header CSS Class</B><br/>Header CSS Class
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>headerHAlign<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Header Horizontal Alignment</B><br/>Header Horizontal Alignment
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">Left</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>headerText<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Header</B><br/>Header
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">Header</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>image<br/>[Url]</B></td>
+<td width="*" class="property-title-tooltip"><B>Url For The Image</B><br/>Url For The Image
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>imageSize<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Size Of The Image</B><br/>Size Of The Image
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">Size_16px</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>linkText<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Text For The Link</B><br/>Text For The Link
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>linkTooltip<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Tooltip For The Link</B><br/>Tooltip For The Link
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>titleCssClass<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Title CSS Class</B><br/>Title CSS Class
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>titleText<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Title</B><br/>Title
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">Title</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>valueCssClass<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Value CSS Class</B><br/>Value CSS Class
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>valueDecimalPlaces<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Value Decimal Places</B><br/>Value Decimal Places
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">D0</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>valueFloat<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Value As Float</B><br/>Value As Float
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>valueHAlign<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Value Horizontal Alignment</B><br/>Value Horizontal Alignment
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">Left</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>valuePrefixCssClass<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Value Prefix CSS Class</B><br/>Value Prefix CSS Class
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>valuePrefixText<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Value Prefix</B><br/>Value Prefix
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>valueSuffixCssClass<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Value Suffix CSS Class</B><br/>Value Suffix CSS Class
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>valueSuffixText<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Value Suffix</B><br/>Value Suffix
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default"> M$</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>valueText<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Value</B><br/>Value
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">Value</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">VISIBLE EVENTS</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>onClick<br/>[ScriptText]</B></td>
+<td width="*" class="property-title-tooltip"><B>On Click</B><br/>On Click
+
+</td>
+<td width="60px" class="property-group">Events</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>onLinkClick<br/>[ScriptText]</B></td>
+<td width="*" class="property-title-tooltip"><B>On Click</B><br/>On Click
+
+</td>
+<td width="60px" class="property-group">Events</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS LIST</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Parameters</th><th>Return</th></tr>
+	<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getFooterCssClass [<a href="#FUNCTION_getFooterCssClass">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getFooterHAlign [<a href="#FUNCTION_getFooterHAlign">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">org_scn_community_shared_HorizontalAlignEnumfield</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getFooterHAlignAsString [<a href="#FUNCTION_getFooterHAlignAsString">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getFooterText [<a href="#FUNCTION_getFooterText">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getHeaderCssClass [<a href="#FUNCTION_getHeaderCssClass">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getHeaderHAlign [<a href="#FUNCTION_getHeaderHAlign">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">org_scn_community_shared_HorizontalAlignEnumfield</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getHeaderHAlignAsString [<a href="#FUNCTION_getHeaderHAlignAsString">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getHeaderText [<a href="#FUNCTION_getHeaderText">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getImage [<a href="#FUNCTION_getImage">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getImageSize [<a href="#FUNCTION_getImageSize">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">org_scn_community_shared_ImageSizeEnumfield</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getImageSizeAsString [<a href="#FUNCTION_getImageSizeAsString">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getLinkText [<a href="#FUNCTION_getLinkText">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getLinkTooltip [<a href="#FUNCTION_getLinkTooltip">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getTitleCssClass [<a href="#FUNCTION_getTitleCssClass">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getTitleText [<a href="#FUNCTION_getTitleText">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getValueCssClass [<a href="#FUNCTION_getValueCssClass">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getValueDecimalPlaces [<a href="#FUNCTION_getValueDecimalPlaces">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">org_scn_community_shared_DecimalPlacesEnumfield</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getValueDecimalPlacesAsInt [<a href="#FUNCTION_getValueDecimalPlacesAsInt">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">int</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getValueFloat [<a href="#FUNCTION_getValueFloat">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getValueHAlign [<a href="#FUNCTION_getValueHAlign">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">org_scn_community_shared_HorizontalAlignEnumfield</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getValueHAlignAsString [<a href="#FUNCTION_getValueHAlignAsString">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getValuePrefixCssClass [<a href="#FUNCTION_getValuePrefixCssClass">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getValuePrefixText [<a href="#FUNCTION_getValuePrefixText">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getValueSuffixCssClass [<a href="#FUNCTION_getValueSuffixCssClass">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getValueSuffixText [<a href="#FUNCTION_getValueSuffixText">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getValueText [<a href="#FUNCTION_getValueText">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setFooterCssClass [<a href="#FUNCTION_setFooterCssClass">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">footerCssClass</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setFooterHAlign [<a href="#FUNCTION_setFooterHAlign">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">footerHAlign</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setFooterHAlignByString [<a href="#FUNCTION_setFooterHAlignByString">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">footerHAlign</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setFooterText [<a href="#FUNCTION_setFooterText">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">footerText</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setHeaderCssClass [<a href="#FUNCTION_setHeaderCssClass">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">headerCssClass</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setHeaderHAlign [<a href="#FUNCTION_setHeaderHAlign">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">headerHAlign</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setHeaderHAlignByString [<a href="#FUNCTION_setHeaderHAlignByString">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">headerHAlign</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setHeaderText [<a href="#FUNCTION_setHeaderText">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">headerText</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setImage [<a href="#FUNCTION_setImage">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">image</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setImageSize [<a href="#FUNCTION_setImageSize">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">imageSize</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setImageSizeByString [<a href="#FUNCTION_setImageSizeByString">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">imageSize</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setLinkText [<a href="#FUNCTION_setLinkText">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">linkText</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setLinkTooltip [<a href="#FUNCTION_setLinkTooltip">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">linkTooltip</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setTitleCssClass [<a href="#FUNCTION_setTitleCssClass">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">titleCssClass</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setTitleText [<a href="#FUNCTION_setTitleText">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">titleText</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setValueCssClass [<a href="#FUNCTION_setValueCssClass">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">valueCssClass</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setValueDecimalPlaces [<a href="#FUNCTION_setValueDecimalPlaces">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">valueDecimalPlaces</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setValueDecimalPlacesByInt [<a href="#FUNCTION_setValueDecimalPlacesByInt">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">valueDecimalPlaces</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setValueFloat [<a href="#FUNCTION_setValueFloat">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">valueFloat</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setValueHAlign [<a href="#FUNCTION_setValueHAlign">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">valueHAlign</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setValueHAlignByString [<a href="#FUNCTION_setValueHAlignByString">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">valueHAlign</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setValuePrefixCssClass [<a href="#FUNCTION_setValuePrefixCssClass">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">valuePrefixCssClass</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setValuePrefixText [<a href="#FUNCTION_setValuePrefixText">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">valuePrefixText</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setValueSuffixCssClass [<a href="#FUNCTION_setValueSuffixCssClass">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">valueSuffixCssClass</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setValueSuffixText [<a href="#FUNCTION_setValueSuffixText">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">valueSuffixText</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setValueText [<a href="#FUNCTION_setValueText">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">valueText</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">HIDDEN (TECHNICAL) PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS IN DETAIL</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="">
+	<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getFooterCssClass">String<br/>getFooterCssClass</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Footer&nbsp;CSS&nbsp;Class&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.footerCssClass;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getFooterHAlign">org_scn_community_shared_HorizontalAlignEnumfield<br/>getFooterHAlign</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Footer&nbsp;Horizontal&nbsp;Alignment&nbsp;Property&nbsp;as&nbsp;Choice&nbsp;Option<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.footerHAlign;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getFooterHAlignAsString">String<br/>getFooterHAlignAsString</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Footer&nbsp;Horizontal&nbsp;Alignment&nbsp;Property&nbsp;as&nbsp;String<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.footerHAlign;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getFooterText">String<br/>getFooterText</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Footer&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.footerText;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getHeaderCssClass">String<br/>getHeaderCssClass</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Header&nbsp;CSS&nbsp;Class&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.headerCssClass;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getHeaderHAlign">org_scn_community_shared_HorizontalAlignEnumfield<br/>getHeaderHAlign</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Header&nbsp;Horizontal&nbsp;Alignment&nbsp;Property&nbsp;as&nbsp;Choice&nbsp;Option<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.headerHAlign;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getHeaderHAlignAsString">String<br/>getHeaderHAlignAsString</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Header&nbsp;Horizontal&nbsp;Alignment&nbsp;Property&nbsp;as&nbsp;String<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.headerHAlign;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getHeaderText">String<br/>getHeaderText</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Header&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.headerText;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getImage">String<br/>getImage</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Url&nbsp;For&nbsp;The&nbsp;Image&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.image;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getImageSize">org_scn_community_shared_ImageSizeEnumfield<br/>getImageSize</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Size&nbsp;Of&nbsp;The&nbsp;Image&nbsp;Property&nbsp;as&nbsp;Choice&nbsp;Option<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.imageSize;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getImageSizeAsString">String<br/>getImageSizeAsString</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Size&nbsp;Of&nbsp;The&nbsp;Image&nbsp;Property&nbsp;as&nbsp;String<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.imageSize;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getLinkText">String<br/>getLinkText</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Text&nbsp;For&nbsp;The&nbsp;Link&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.linkText;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getLinkTooltip">String<br/>getLinkTooltip</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Tooltip&nbsp;For&nbsp;The&nbsp;Link&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.linkTooltip;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getTitleCssClass">String<br/>getTitleCssClass</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Title&nbsp;CSS&nbsp;Class&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.titleCssClass;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getTitleText">String<br/>getTitleText</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Title&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.titleText;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getValueCssClass">String<br/>getValueCssClass</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Value&nbsp;CSS&nbsp;Class&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.valueCssClass;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getValueDecimalPlaces">org_scn_community_shared_DecimalPlacesEnumfield<br/>getValueDecimalPlaces</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Value&nbsp;Decimal&nbsp;Places&nbsp;Property&nbsp;as&nbsp;Choice&nbsp;Option<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;&quot;D&quot;&nbsp;+&nbsp;this.valueDecimalPlaces;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getValueDecimalPlacesAsInt">int<br/>getValueDecimalPlacesAsInt</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Value&nbsp;Decimal&nbsp;Places&nbsp;Property&nbsp;as&nbsp;Int<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.valueDecimalPlaces;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getValueFloat">String<br/>getValueFloat</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Value&nbsp;As&nbsp;Float&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.valueFloat;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getValueHAlign">org_scn_community_shared_HorizontalAlignEnumfield<br/>getValueHAlign</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Value&nbsp;Horizontal&nbsp;Alignment&nbsp;Property&nbsp;as&nbsp;Choice&nbsp;Option<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.valueHAlign;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getValueHAlignAsString">String<br/>getValueHAlignAsString</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Value&nbsp;Horizontal&nbsp;Alignment&nbsp;Property&nbsp;as&nbsp;String<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.valueHAlign;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getValuePrefixCssClass">String<br/>getValuePrefixCssClass</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Value&nbsp;Prefix&nbsp;CSS&nbsp;Class&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.valuePrefixCssClass;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getValuePrefixText">String<br/>getValuePrefixText</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Value&nbsp;Prefix&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.valuePrefixText;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getValueSuffixCssClass">String<br/>getValueSuffixCssClass</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Value&nbsp;Suffix&nbsp;CSS&nbsp;Class&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.valueSuffixCssClass;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getValueSuffixText">String<br/>getValueSuffixText</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Value&nbsp;Suffix&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.valueSuffixText;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getValueText">String<br/>getValueText</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Value&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.valueText;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setFooterCssClass">void<br/>setFooterCssClass</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Footer&nbsp;CSS&nbsp;Class&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>footerCssClass</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Footer CSS Class</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.footerCssClass&nbsp;=&nbsp;footerCssClass;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setFooterHAlign">void<br/>setFooterHAlign</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Footer&nbsp;Horizontal&nbsp;Alignment&nbsp;Property&nbsp;by&nbsp;Choice&nbsp;Option<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>footerHAlign</B></td>
+<td width="120px" class="parameter-type"><B>org_scn_community_shared_HorizontalAlignEnumfield</B></td>
+<td width="*" class="parameter-help">Footer Horizontal Alignment</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.footerHAlign&nbsp;=&nbsp;footerHAlign;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setFooterHAlignByString">void<br/>setFooterHAlignByString</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Footer&nbsp;Horizontal&nbsp;Alignment&nbsp;Property&nbsp;by&nbsp;String<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>footerHAlign</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Footer Horizontal Alignment</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.footerHAlign&nbsp;=&nbsp;footerHAlign;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setFooterText">void<br/>setFooterText</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Footer&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>footerText</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Footer</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.footerText&nbsp;=&nbsp;footerText;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setHeaderCssClass">void<br/>setHeaderCssClass</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Header&nbsp;CSS&nbsp;Class&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>headerCssClass</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Header CSS Class</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.headerCssClass&nbsp;=&nbsp;headerCssClass;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setHeaderHAlign">void<br/>setHeaderHAlign</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Header&nbsp;Horizontal&nbsp;Alignment&nbsp;Property&nbsp;by&nbsp;Choice&nbsp;Option<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>headerHAlign</B></td>
+<td width="120px" class="parameter-type"><B>org_scn_community_shared_HorizontalAlignEnumfield</B></td>
+<td width="*" class="parameter-help">Header Horizontal Alignment</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.headerHAlign&nbsp;=&nbsp;headerHAlign;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setHeaderHAlignByString">void<br/>setHeaderHAlignByString</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Header&nbsp;Horizontal&nbsp;Alignment&nbsp;Property&nbsp;by&nbsp;String<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>headerHAlign</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Header Horizontal Alignment</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.headerHAlign&nbsp;=&nbsp;headerHAlign;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setHeaderText">void<br/>setHeaderText</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Header&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>headerText</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Header</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.headerText&nbsp;=&nbsp;headerText;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setImage">void<br/>setImage</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Url&nbsp;For&nbsp;The&nbsp;Image&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>image</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Url For The Image</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.image&nbsp;=&nbsp;image;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setImageSize">void<br/>setImageSize</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Size&nbsp;Of&nbsp;The&nbsp;Image&nbsp;Property&nbsp;by&nbsp;Choice&nbsp;Option<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>imageSize</B></td>
+<td width="120px" class="parameter-type"><B>org_scn_community_shared_ImageSizeEnumfield</B></td>
+<td width="*" class="parameter-help">Size Of The Image</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.imageSize&nbsp;=&nbsp;imageSize;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setImageSizeByString">void<br/>setImageSizeByString</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Size&nbsp;Of&nbsp;The&nbsp;Image&nbsp;Property&nbsp;by&nbsp;String<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>imageSize</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Size Of The Image</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.imageSize&nbsp;=&nbsp;imageSize;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setLinkText">void<br/>setLinkText</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Text&nbsp;For&nbsp;The&nbsp;Link&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>linkText</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Text For The Link</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.linkText&nbsp;=&nbsp;linkText;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setLinkTooltip">void<br/>setLinkTooltip</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Tooltip&nbsp;For&nbsp;The&nbsp;Link&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>linkTooltip</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Tooltip For The Link</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.linkTooltip&nbsp;=&nbsp;linkTooltip;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setTitleCssClass">void<br/>setTitleCssClass</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Title&nbsp;CSS&nbsp;Class&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>titleCssClass</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Title CSS Class</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.titleCssClass&nbsp;=&nbsp;titleCssClass;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setTitleText">void<br/>setTitleText</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Title&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>titleText</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Title</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.titleText&nbsp;=&nbsp;titleText;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setValueCssClass">void<br/>setValueCssClass</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Value&nbsp;CSS&nbsp;Class&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>valueCssClass</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Value CSS Class</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.valueCssClass&nbsp;=&nbsp;valueCssClass;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setValueDecimalPlaces">void<br/>setValueDecimalPlaces</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Value&nbsp;Decimal&nbsp;Places&nbsp;Property&nbsp;by&nbsp;Choice&nbsp;Option<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>valueDecimalPlaces</B></td>
+<td width="120px" class="parameter-type"><B>org_scn_community_shared_DecimalPlacesEnumfield</B></td>
+<td width="*" class="parameter-help">Value Decimal Places</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.valueDecimalPlaces&nbsp;=&nbsp;parseInt(valueDecimalPlaces.replace(&quot;D&quot;,&nbsp;&quot;&quot;));
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setValueDecimalPlacesByInt">void<br/>setValueDecimalPlacesByInt</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Value&nbsp;Decimal&nbsp;Places&nbsp;Property&nbsp;by&nbsp;Int<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>valueDecimalPlaces</B></td>
+<td width="120px" class="parameter-type"><B>int</B></td>
+<td width="*" class="parameter-help">Value Decimal Places</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.valueDecimalPlaces&nbsp;=&nbsp;valueDecimalPlaces;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setValueFloat">void<br/>setValueFloat</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Value&nbsp;As&nbsp;Float&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>valueFloat</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Value As Float</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.valueFloat&nbsp;=&nbsp;valueFloat;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setValueHAlign">void<br/>setValueHAlign</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Value&nbsp;Horizontal&nbsp;Alignment&nbsp;Property&nbsp;by&nbsp;Choice&nbsp;Option<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>valueHAlign</B></td>
+<td width="120px" class="parameter-type"><B>org_scn_community_shared_HorizontalAlignEnumfield</B></td>
+<td width="*" class="parameter-help">Value Horizontal Alignment</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.valueHAlign&nbsp;=&nbsp;valueHAlign;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setValueHAlignByString">void<br/>setValueHAlignByString</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Value&nbsp;Horizontal&nbsp;Alignment&nbsp;Property&nbsp;by&nbsp;String<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>valueHAlign</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Value Horizontal Alignment</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.valueHAlign&nbsp;=&nbsp;valueHAlign;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setValuePrefixCssClass">void<br/>setValuePrefixCssClass</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Value&nbsp;Prefix&nbsp;CSS&nbsp;Class&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>valuePrefixCssClass</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Value Prefix CSS Class</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.valuePrefixCssClass&nbsp;=&nbsp;valuePrefixCssClass;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setValuePrefixText">void<br/>setValuePrefixText</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Value&nbsp;Prefix&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>valuePrefixText</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Value Prefix</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.valuePrefixText&nbsp;=&nbsp;valuePrefixText;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setValueSuffixCssClass">void<br/>setValueSuffixCssClass</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Value&nbsp;Suffix&nbsp;CSS&nbsp;Class&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>valueSuffixCssClass</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Value Suffix CSS Class</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.valueSuffixCssClass&nbsp;=&nbsp;valueSuffixCssClass;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setValueSuffixText">void<br/>setValueSuffixText</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Value&nbsp;Suffix&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>valueSuffixText</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Value Suffix</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.valueSuffixText&nbsp;=&nbsp;valueSuffixText;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setValueText">void<br/>setValueText</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Value&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>valueText</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Value</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.valueText&nbsp;=&nbsp;valueText;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+
+	</TABLE>
+	<div style="height:20px!important"> THE END </div>
+	</div>
+	
+	<div style="height:60px!important"></div>
+	
+</div>
+</body>
+</html>

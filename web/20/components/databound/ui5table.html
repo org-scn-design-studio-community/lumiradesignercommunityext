@@ -1,0 +1,2806 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../../doc.css">
+<link rel="stylesheet" type="text/css" href="../../tables.css">
+<script id="sap-ui-bootstrap" type="text/javascript" 
+      /*src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"*/
+      src="https://sapui5.hana.ondemand.com/sdk/resources/sap-ui-core.js"
+      data-sap-ui-theme="sap_bluecrystal" data-sap-ui-libs="sap.m,sap.ui.commons,sap.suite.ui.commons,sap.ui.ux3"></script>
+
+<script type="text/javascript" src="../js/ComponentMain.js"></script>
+<script type="text/javascript" src="../js/PostResponseParser/PostResponseParser.js"></script>
+<script type="text/javascript" src="../js/TimeLine.js"></script>
+<script type="text/javascript" src="../js/ga.js"></script>
+
+<script> 
+	requestChangeLog("../../../../sdkhelp/web/components/databound/ui5table/changes/changelog.json");
+	requestContent("Blog", "../../../../sdkhelp/web/components/databound/ui5table/blogs.json");
+	requestContent("Example", "../../../../sdkhelp/web/components/databound/ui5table/examples.json");
+</script>
+
+<title>UI5 Table 2.0 - SCN Design Studio Community</title>
+</head>
+<body class="comp-body" style="height:100%">
+<div class="comp-main" style="height:100%">
+
+ 	<div class="component-name">
+	UI5Table [ScnCommunityDataBound]
+	</div>
+	<div class="component-title">
+	UI5 Table 2.0
+	</div>
+
+<div id="componentnav"></div>
+	<div id="intro">This page is giving short introduction to the component with summary of the change status (green/yellow/red)<div id="introStatus" height="120px"></div><br><p>
+Wrapper for SAP UI5 Table component
+</p>
+<p>
+Link to blog: <a target="_blank" href="http://scn.sap.com/docs/DOC-62270">Design Studio SDK: UI5 Table Component</a>
+</p>
+</div>
+	<div id="blogs" hidden="true" height="100%">This page is listing community blogs on this component, follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/08/introducing-blog-list-for-community-components" target="_blank">this link</a> to learn more.<div id="BlogsList" height="100%"></div></div>
+	<div id="changelog" hidden="true" height="100%">This page is listing all changes which have been done on this component with corresponding test status (green: ok, red: not ok, yellow: untested), follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/07/introducing-change-log-for-community-components" target="_blank">this link</a> to learn more.<div id="changelogList" height="100%"></div></div>
+	<div id="examples" hidden="true" height="100%">This page is listing all example applications with this component, follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/08/introducing-blog-list-for-community-components" target="_blank">this link</a> to learn more.<div id="ExamplesList" height="100%"></div></div>
+	<div id="about" hidden="true">This page will bring more "about" details (generated)</div>
+	<div id="technical" hidden="true">
+	<br/>
+	<div class="component-properties">VISIBLE PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>DAllowColumnReorder<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Allow Reorder of Columns</B><br/>Allow Reorder of Columns
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DAllowFilter<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Allow Filter in Columns</B><br/>Allow Filter in Columns
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DAllowSelection<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Allow Selection in the Table</B><br/>Allow Selection in the Table
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">false</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DAllowSort<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Allow Sort in Columns</B><br/>Allow Sort in Columns
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DDataColWidths<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Data Column Widths</B><br/>Data Column Widths
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">[]</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DDataProvisioner<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Central Result Set with Data</B><br/>Central Result Set with Data
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DEmptyDataValue<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Empty Value For Data Cell</B><br/>Empty Value For Data Cell
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DEmptyHeaderValue<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Empty Value For Header Cell</B><br/>Empty Value For Header Cell
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DFixedHeader<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Fix Header Rows</B><br/>Fix Header Rows
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DFormattingContentCondition<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Rules for String Content</B><br/>Rules for String Content
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">[]</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DFormattingOperator<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Formatting Operator</B><br/>Formatting Operator
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">UseFirst</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DFormattingValueCondition<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Rules for Number Values</B><br/>Rules for Number Values
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">[]</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DHeaderColWidth<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>Header Column Width in px</B><br/>Header Column Width in px
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">200</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DHeaderColumnFixed<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>Fixed Column Index (-1 means Row Dimensions)</B><br/>Fixed Column Index (-1 means Row Dimensions)
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">-1</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DIgnoreResults<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Ignore Results</B><br/>Ignore Results
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DNavigationMode<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Navigation Mode</B><br/>Navigation Mode
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">Paginator</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DOnlyHeaderColumns<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Show Only Header Columns</B><br/>Show Only Header Columns
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">false</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DRowHeight<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>Row Height in px</B><br/>Row Height in px
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">20</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DVisibleRowCount<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>Visible Row Count</B><br/>Visible Row Count
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">12</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">VISIBLE EVENTS</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>onCellSelected<br/>[ScriptText]</B></td>
+<td width="*" class="property-title-tooltip"><B>On Cell Selected</B><br/>On Cell Selected
+
+</td>
+<td width="60px" class="property-group">Events</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>onRowSelected<br/>[ScriptText]</B></td>
+<td width="*" class="property-title-tooltip"><B>On Row Selected</B><br/>On Row Selected
+
+</td>
+<td width="60px" class="property-group">Events</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS LIST</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Parameters</th><th>Return</th></tr>
+	<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">addColumnWidthEntry [<a href="#FUNCTION_addColumnWidthEntry">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">key, width</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">addMembers [<a href="#FUNCTION_addMembers">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">parentKey, key</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">addRule [<a href="#FUNCTION_addRule">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">key, description, condition, columnHeaderId, exclude, simpleFormat</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">cleanAllRuleExcludes [<a href="#FUNCTION_cleanAllRuleExcludes">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getColumnWidthEntryAtIndex [<a href="#FUNCTION_getColumnWidthEntryAtIndex">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">index0based</td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getColumnWidthEntryWidth [<a href="#FUNCTION_getColumnWidthEntryWidth">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">key</td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getColumnWidthEntrysAsJSON [<a href="#FUNCTION_getColumnWidthEntrysAsJSON">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getDataProvisioner [<a href="#FUNCTION_getDataProvisioner">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getEmptyDataValue [<a href="#FUNCTION_getEmptyDataValue">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getEmptyHeaderValue [<a href="#FUNCTION_getEmptyHeaderValue">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getFormattingOperator [<a href="#FUNCTION_getFormattingOperator">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">org_scn_community_shared_FormattingOperatorEnumfield</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getFormattingOperatorAsString [<a href="#FUNCTION_getFormattingOperatorAsString">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getFormattingValueCondition [<a href="#FUNCTION_getFormattingValueCondition">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getHeaderColWidth [<a href="#FUNCTION_getHeaderColWidth">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">int</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getHeaderColumnFixed [<a href="#FUNCTION_getHeaderColumnFixed">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">int</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getNavigationMode [<a href="#FUNCTION_getNavigationMode">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">org_scn_community_shared_NavigationModeEnumfield</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getNavigationModeAsString [<a href="#FUNCTION_getNavigationModeAsString">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getRowHeight [<a href="#FUNCTION_getRowHeight">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">int</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getRuleColumnHeaderId [<a href="#FUNCTION_getRuleColumnHeaderId">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">key</td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getRuleCondition [<a href="#FUNCTION_getRuleCondition">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">key</td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getRuleDescription [<a href="#FUNCTION_getRuleDescription">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">key</td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getRuleExclude [<a href="#FUNCTION_getRuleExclude">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">key</td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getRuleExcludeKeysArray [<a href="#FUNCTION_getRuleExcludeKeysArray">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">org.scn.pack.KeyArray</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getRuleSimpleFormat [<a href="#FUNCTION_getRuleSimpleFormat">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">key</td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getRulesAsJSON [<a href="#FUNCTION_getRulesAsJSON">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getSelectedColumn [<a href="#FUNCTION_getSelectedColumn">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">int</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getSelectedRow [<a href="#FUNCTION_getSelectedRow">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">int</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getSelectedValue [<a href="#FUNCTION_getSelectedValue">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">int</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getSelectedVisualColumn [<a href="#FUNCTION_getSelectedVisualColumn">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">int</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getSelectedVisualRow [<a href="#FUNCTION_getSelectedVisualRow">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">int</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getSelectionAsJSON [<a href="#FUNCTION_getSelectionAsJSON">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getSelectionAsJSONObject [<a href="#FUNCTION_getSelectionAsJSONObject">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">JSON</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getSelectionDimensionMembers [<a href="#FUNCTION_getSelectionDimensionMembers">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">org.scn.community.shared.DimensionMemberArray</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getSelectionRowValues [<a href="#FUNCTION_getSelectionRowValues">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">StringArray</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getSelectionSpace [<a href="#FUNCTION_getSelectionSpace">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getVisibleRowCount [<a href="#FUNCTION_getVisibleRowCount">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">int</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">insertColumnWidthEntry [<a href="#FUNCTION_insertColumnWidthEntry">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">insertionIndex0based, key, width</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">isAllowColumnReorder [<a href="#FUNCTION_isAllowColumnReorder">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">boolean</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">isAllowFilter [<a href="#FUNCTION_isAllowFilter">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">boolean</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">isAllowSelection [<a href="#FUNCTION_isAllowSelection">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">boolean</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">isAllowSort [<a href="#FUNCTION_isAllowSort">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">boolean</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">isFixedHeader [<a href="#FUNCTION_isFixedHeader">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">boolean</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">isIgnoreResults [<a href="#FUNCTION_isIgnoreResults">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">boolean</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">isOnlyHeaderColumns [<a href="#FUNCTION_isOnlyHeaderColumns">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">boolean</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">removeColumnWidthEntry [<a href="#FUNCTION_removeColumnWidthEntry">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">key</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">removeMembers [<a href="#FUNCTION_removeMembers">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">key</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">removeRule [<a href="#FUNCTION_removeRule">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">key</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setAllowColumnReorder [<a href="#FUNCTION_setAllowColumnReorder">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">allowColumnReorder</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setAllowFilter [<a href="#FUNCTION_setAllowFilter">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">allowFilter</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setAllowSelection [<a href="#FUNCTION_setAllowSelection">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">allowSelection</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setAllowSort [<a href="#FUNCTION_setAllowSort">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">allowSort</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setColumnWidthEntryWidth [<a href="#FUNCTION_setColumnWidthEntryWidth">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">key, width</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setColumnWidthEntryWidths [<a href="#FUNCTION_setColumnWidthEntryWidths">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">keys, separator, width</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setDataProvisioner [<a href="#FUNCTION_setDataProvisioner">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">dataProvisioner</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setEmptyDataValue [<a href="#FUNCTION_setEmptyDataValue">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">emptyDataValue</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setEmptyHeaderValue [<a href="#FUNCTION_setEmptyHeaderValue">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">emptyHeaderValue</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setFixedHeader [<a href="#FUNCTION_setFixedHeader">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">fixedHeader</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setFormattingOperator [<a href="#FUNCTION_setFormattingOperator">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">formattingOperator</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setFormattingOperatorByString [<a href="#FUNCTION_setFormattingOperatorByString">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">formattingOperator</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setFormattingValueCondition [<a href="#FUNCTION_setFormattingValueCondition">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">formattingValueCondition</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setHeaderColWidth [<a href="#FUNCTION_setHeaderColWidth">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">headerColWidth</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setHeaderColumnFixed [<a href="#FUNCTION_setHeaderColumnFixed">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">headerColumnFixed</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setIgnoreResults [<a href="#FUNCTION_setIgnoreResults">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">ignoreResults</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setNavigationMode [<a href="#FUNCTION_setNavigationMode">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">navigationMode</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setNavigationModeByString [<a href="#FUNCTION_setNavigationModeByString">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">navigationMode</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setOnlyHeaderColumns [<a href="#FUNCTION_setOnlyHeaderColumns">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">onlyHeaderColumns</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setRowHeight [<a href="#FUNCTION_setRowHeight">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">rowHeight</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setRuleColumnHeaderId [<a href="#FUNCTION_setRuleColumnHeaderId">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">key, columnHeaderId</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setRuleColumnHeaderIds [<a href="#FUNCTION_setRuleColumnHeaderIds">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">keys, separator, columnHeaderId</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setRuleCondition [<a href="#FUNCTION_setRuleCondition">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">key, condition</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setRuleConditions [<a href="#FUNCTION_setRuleConditions">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">keys, separator, condition</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setRuleDescription [<a href="#FUNCTION_setRuleDescription">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">key, description</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setRuleDescriptions [<a href="#FUNCTION_setRuleDescriptions">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">keys, separator, description</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setRuleExclude [<a href="#FUNCTION_setRuleExclude">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">key, exclude</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setRuleExcludes [<a href="#FUNCTION_setRuleExcludes">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">keys, separator</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setRuleSimpleFormat [<a href="#FUNCTION_setRuleSimpleFormat">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">key, simpleFormat</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setRuleSimpleFormats [<a href="#FUNCTION_setRuleSimpleFormats">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">keys, separator, simpleFormat</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setVisibleRowCount [<a href="#FUNCTION_setVisibleRowCount">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">visibleRowCount</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">updateColumnWidthEntry [<a href="#FUNCTION_updateColumnWidthEntry">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">key, width</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">HIDDEN (TECHNICAL) PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>DSelection<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Selection Content for Cell</B><br/>Selection Content for Cell
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>data<br/>[ResultSet]</B></td>
+<td width="*" class="property-title-tooltip"><B>Data</B><br/>Data
+
+</td>
+<td width="60px" class="property-group">DataBinding</td>
+<td width="100px" class="property-default">null</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS IN DETAIL</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="">
+	<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_addColumnWidthEntry">void<br/>addColumnWidthEntry</td>
+<td valign="top" width="*" class="function-help">Adds&nbsp;a&nbsp;root&nbsp;element&nbsp;containing&nbsp;key&nbsp;[String],&nbsp;width&nbsp;[String].<br/><div class='html-example'">You&nbsp;want&nbsp;to&nbsp;add&nbsp;2&nbsp;root&nbsp;elements<br/><div class='html-code'>UI5TABLE.addColumnWidthEntry(key&nbsp;[String],&nbsp;width&nbsp;[String]);<br>UI5TABLE.addColumnWidthEntry(key&nbsp;[String],&nbsp;width&nbsp;[String]);<br></div></div><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>key</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Column index (0-based)</td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>width</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Width with unit (e.g. 200px | 30%)</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;itemDef&nbsp;=&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;leaf:true,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key:key,&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width:width<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(this.DDataColWidths&nbsp;===&nbsp;undefined&nbsp;||&nbsp;this.DDataColWidths&nbsp;===&nbsp;&quot;&quot;&nbsp;||&nbsp;this.DDataColWidths&nbsp;===&nbsp;&quot;&lt;delete&gt;&quot;){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.DDataColWidths&nbsp;=&nbsp;&quot;[]&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;elementsJson&nbsp;=&nbsp;JSON.parse(this.DDataColWidths);<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;alreadyFound&nbsp;=&nbsp;false;<br/>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;elementsJson.length&nbsp;;&nbsp;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(elementsJson[i].key&nbsp;==&nbsp;key)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alreadyFound&nbsp;=&nbsp;true;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;if(!alreadyFound)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elementsJson.push(itemDef);<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;this.DDataColWidths&nbsp;=&nbsp;JSON.stringify(elementsJson);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_addMembers">void<br/>addMembers</td>
+<td valign="top" width="*" class="function-help">Adds&nbsp;an&nbsp;element&nbsp;containing&nbsp;parentKey&nbsp;[String],&nbsp;key&nbsp;[String]&nbsp;properties.<br/>You&nbsp;need&nbsp;to&nbsp;specify&nbsp;a&nbsp;unique&nbsp;and&nbsp;existing&nbsp;parent&nbsp;element.<br/><div class='html-example'">You&nbsp;want&nbsp;to&nbsp;add&nbsp;2&nbsp;elements<br/><div class='html-code'>UI5TABLE.addMembers(parentKey&nbsp;[String],&nbsp;key&nbsp;[String]);<br>UI5TABLE.addMembers(parentKey&nbsp;[String],&nbsp;key&nbsp;[String]);<br/></div></div><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>parentKey</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Parent Key</td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>key</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Content</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;leaf&nbsp;=&nbsp;(parentKey&nbsp;!=&nbsp;&quot;ROOT&quot;);<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;itemDef&nbsp;=&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;leaf:leaf,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parentKey:parentKey,&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key:key&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br/>&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(this.DFormattingContentCondition&nbsp;===&nbsp;undefined&nbsp;||&nbsp;this.DFormattingContentCondition&nbsp;===&nbsp;&quot;&quot;&nbsp;||&nbsp;this.DFormattingContentCondition&nbsp;===&nbsp;&quot;&lt;delete&gt;&quot;){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.DFormattingContentCondition&nbsp;=&nbsp;&quot;[]&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;elementsJson&nbsp;=&nbsp;JSON.parse(this.DFormattingContentCondition);<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;alreadyFound&nbsp;=&nbsp;false;<br/>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;elementsJson.length&nbsp;;&nbsp;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(elementsJson[i].key&nbsp;==&nbsp;key)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alreadyFound&nbsp;=&nbsp;true;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(!alreadyFound)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elementsJson.push(itemDef);<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.DFormattingContentCondition&nbsp;=&nbsp;JSON.stringify(elementsJson);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_addRule">void<br/>addRule</td>
+<td valign="top" width="*" class="function-help">Adds&nbsp;a&nbsp;root&nbsp;element&nbsp;containing&nbsp;key&nbsp;[String],&nbsp;description&nbsp;[String],&nbsp;condition&nbsp;[String],&nbsp;columnHeaderId&nbsp;[String],&nbsp;exclude&nbsp;[boolean],&nbsp;simpleFormat&nbsp;[String].<br/><div class='html-example'">You&nbsp;want&nbsp;to&nbsp;add&nbsp;2&nbsp;root&nbsp;elements<br/><div class='html-code'>UI5TABLE.addRule(key&nbsp;[String],&nbsp;description&nbsp;[String],&nbsp;condition&nbsp;[String],&nbsp;columnHeaderId&nbsp;[String],&nbsp;exclude&nbsp;[boolean],&nbsp;simpleFormat&nbsp;[String]);<br>UI5TABLE.addRule(key&nbsp;[String],&nbsp;description&nbsp;[String],&nbsp;condition&nbsp;[String],&nbsp;columnHeaderId&nbsp;[String],&nbsp;exclude&nbsp;[boolean],&nbsp;simpleFormat&nbsp;[String]);<br></div></div><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>key</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Unique Rule Key</td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>description</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Optional Description</td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>condition</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Condition</td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>columnHeaderId</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Column Header Id</td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>exclude</B></td>
+<td width="120px" class="parameter-type"><B>boolean</B></td>
+<td width="*" class="parameter-help">Exclude</td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>simpleFormat</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Simple Format Name</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;itemDef&nbsp;=&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;leaf:false,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parentKey:&quot;ROOT&quot;,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key:key,&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;description:description,&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;condition:condition,&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;columnHeaderId:columnHeaderId,&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exclude:exclude,&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;simpleFormat:simpleFormat&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br/>&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(this.DFormattingContentCondition&nbsp;===&nbsp;undefined&nbsp;||&nbsp;this.DFormattingContentCondition&nbsp;===&nbsp;&quot;&quot;&nbsp;||&nbsp;this.DFormattingContentCondition&nbsp;===&nbsp;&quot;&lt;delete&gt;&quot;){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.DFormattingContentCondition&nbsp;=&nbsp;&quot;[]&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;elementsJson&nbsp;=&nbsp;JSON.parse(this.DFormattingContentCondition);<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;alreadyFound&nbsp;=&nbsp;false;<br/>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;elementsJson.length&nbsp;;&nbsp;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(elementsJson[i].key&nbsp;==&nbsp;key)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alreadyFound&nbsp;=&nbsp;true;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(!alreadyFound)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elementsJson.push(itemDef);<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.DFormattingContentCondition&nbsp;=&nbsp;JSON.stringify(elementsJson);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_cleanAllRuleExcludes">void<br/>cleanAllRuleExcludes</td>
+<td valign="top" width="*" class="function-help">Clean&nbsp;all&nbsp;Exclude&nbsp;of&nbsp;Rule&nbsp;keys<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+if&nbsp;(this.DFormattingContentCondition&nbsp;===&nbsp;undefined&nbsp;||&nbsp;this.DFormattingContentCondition&nbsp;===&nbsp;&quot;&quot;&nbsp;||&nbsp;this.DFormattingContentCondition&nbsp;===&nbsp;&quot;&lt;delete&gt;&quot;){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;loop&nbsp;and&nbsp;find&nbsp;and&nbsp;change<br/>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;elementsJson.length&nbsp;;&nbsp;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;clean&nbsp;all<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elementsJson[i].exclude&nbsp;=&nbsp;false;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.DFormattingContentCondition&nbsp;=&nbsp;JSON.stringify(elementsJson);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getColumnWidthEntryAtIndex">String<br/>getColumnWidthEntryAtIndex</td>
+<td valign="top" width="*" class="function-help">Returns&nbsp;Key&nbsp;at&nbsp;given&nbsp;Index<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>index0based</B></td>
+<td width="120px" class="parameter-type"><B>int</B></td>
+<td width="*" class="parameter-help">Index to pick the key</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+if&nbsp;(this.DDataColWidths&nbsp;===&nbsp;undefined&nbsp;||&nbsp;this.DDataColWidths&nbsp;===&nbsp;&quot;&quot;&nbsp;||&nbsp;this.DDataColWidths&nbsp;===&nbsp;&quot;&lt;delete&gt;&quot;){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.DDataColWidths&nbsp;=&nbsp;&quot;[]&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;elementsJson&nbsp;=&nbsp;JSON.parse(this.DDataColWidths);<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;elementsJson.length&nbsp;;&nbsp;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(index0based&nbsp;==&nbsp;i)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;elementsJson[i].key;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;&quot;&quot;;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getColumnWidthEntryWidth">String<br/>getColumnWidthEntryWidth</td>
+<td valign="top" width="*" class="function-help">Returns&nbsp;value&nbsp;of&nbsp;Width&nbsp;for&nbsp;ColumnWidthEntry&nbsp;Key<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>key</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+if&nbsp;(this.DDataColWidths&nbsp;===&nbsp;undefined&nbsp;||&nbsp;this.DDataColWidths&nbsp;===&nbsp;&quot;&quot;&nbsp;||&nbsp;this.DDataColWidths&nbsp;===&nbsp;&quot;&lt;delete&gt;&quot;){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;elementsJson&nbsp;=&nbsp;JSON.parse(this.DDataColWidths);<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;value&nbsp;=&nbsp;&quot;&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;loop&nbsp;and&nbsp;find&nbsp;and&nbsp;update<br/>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;elementsJson.length&nbsp;;&nbsp;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(elementsJson[i].key&nbsp;==&nbsp;key)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;=&nbsp;elementsJson[i].width;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;value;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getColumnWidthEntrysAsJSON">String<br/>getColumnWidthEntrysAsJSON</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;ColumnWidthEntrys&nbsp;As&nbsp;JSON&nbsp;String<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;jsonObject&nbsp;=&nbsp;JSON.parse(this.DDataColWidths);<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;JSON.stringify(jsonObject,&nbsp;null,&nbsp;4);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getDataProvisioner">String<br/>getDataProvisioner</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Central&nbsp;Result&nbsp;Set&nbsp;with&nbsp;Data&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DDataProvisioner;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getEmptyDataValue">String<br/>getEmptyDataValue</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Empty&nbsp;Value&nbsp;For&nbsp;Data&nbsp;Cell&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DEmptyDataValue;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getEmptyHeaderValue">String<br/>getEmptyHeaderValue</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Empty&nbsp;Value&nbsp;For&nbsp;Header&nbsp;Cell&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DEmptyHeaderValue;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getFormattingOperator">org_scn_community_shared_FormattingOperatorEnumfield<br/>getFormattingOperator</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Formatting&nbsp;Operator&nbsp;Property&nbsp;as&nbsp;Choice&nbsp;Option<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DFormattingOperator;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getFormattingOperatorAsString">String<br/>getFormattingOperatorAsString</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Formatting&nbsp;Operator&nbsp;Property&nbsp;as&nbsp;String<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DFormattingOperator;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getFormattingValueCondition">String<br/>getFormattingValueCondition</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Rules&nbsp;for&nbsp;Number&nbsp;Values&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DFormattingValueCondition;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getHeaderColWidth">int<br/>getHeaderColWidth</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Header&nbsp;Column&nbsp;Width&nbsp;in&nbsp;px&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DHeaderColWidth;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getHeaderColumnFixed">int<br/>getHeaderColumnFixed</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Fixed&nbsp;Column&nbsp;Index&nbsp;(-1&nbsp;means&nbsp;Row&nbsp;Dimensions)&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DHeaderColumnFixed;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getNavigationMode">org_scn_community_shared_NavigationModeEnumfield<br/>getNavigationMode</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Navigation&nbsp;Mode&nbsp;Property&nbsp;as&nbsp;Choice&nbsp;Option<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DNavigationMode;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getNavigationModeAsString">String<br/>getNavigationModeAsString</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Navigation&nbsp;Mode&nbsp;Property&nbsp;as&nbsp;String<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DNavigationMode;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getRowHeight">int<br/>getRowHeight</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Row&nbsp;Height&nbsp;in&nbsp;px&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DRowHeight;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getRuleColumnHeaderId">String<br/>getRuleColumnHeaderId</td>
+<td valign="top" width="*" class="function-help">Returns&nbsp;value&nbsp;of&nbsp;ColumnHeaderId&nbsp;for&nbsp;Rule&nbsp;Key<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>key</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+if&nbsp;(this.DFormattingContentCondition&nbsp;===&nbsp;undefined&nbsp;||&nbsp;this.DFormattingContentCondition&nbsp;===&nbsp;&quot;&quot;&nbsp;||&nbsp;this.DFormattingContentCondition&nbsp;===&nbsp;&quot;&lt;delete&gt;&quot;){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;elementsJson&nbsp;=&nbsp;JSON.parse(this.DFormattingContentCondition);<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;value&nbsp;=&nbsp;&quot;&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;loop&nbsp;and&nbsp;find&nbsp;and&nbsp;update<br/>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;elementsJson.length&nbsp;;&nbsp;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(elementsJson[i].key&nbsp;==&nbsp;key)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;=&nbsp;elementsJson[i].columnHeaderId;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;value;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getRuleCondition">String<br/>getRuleCondition</td>
+<td valign="top" width="*" class="function-help">Returns&nbsp;value&nbsp;of&nbsp;Condition&nbsp;for&nbsp;Rule&nbsp;Key<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>key</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+if&nbsp;(this.DFormattingContentCondition&nbsp;===&nbsp;undefined&nbsp;||&nbsp;this.DFormattingContentCondition&nbsp;===&nbsp;&quot;&quot;&nbsp;||&nbsp;this.DFormattingContentCondition&nbsp;===&nbsp;&quot;&lt;delete&gt;&quot;){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;elementsJson&nbsp;=&nbsp;JSON.parse(this.DFormattingContentCondition);<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;value&nbsp;=&nbsp;&quot;&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;loop&nbsp;and&nbsp;find&nbsp;and&nbsp;update<br/>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;elementsJson.length&nbsp;;&nbsp;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(elementsJson[i].key&nbsp;==&nbsp;key)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;=&nbsp;elementsJson[i].condition;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;value;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getRuleDescription">String<br/>getRuleDescription</td>
+<td valign="top" width="*" class="function-help">Returns&nbsp;value&nbsp;of&nbsp;Description&nbsp;for&nbsp;Rule&nbsp;Key<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>key</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+if&nbsp;(this.DFormattingContentCondition&nbsp;===&nbsp;undefined&nbsp;||&nbsp;this.DFormattingContentCondition&nbsp;===&nbsp;&quot;&quot;&nbsp;||&nbsp;this.DFormattingContentCondition&nbsp;===&nbsp;&quot;&lt;delete&gt;&quot;){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;elementsJson&nbsp;=&nbsp;JSON.parse(this.DFormattingContentCondition);<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;value&nbsp;=&nbsp;&quot;&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;loop&nbsp;and&nbsp;find&nbsp;and&nbsp;update<br/>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;elementsJson.length&nbsp;;&nbsp;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(elementsJson[i].key&nbsp;==&nbsp;key)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;=&nbsp;elementsJson[i].description;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;value;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getRuleExclude">String<br/>getRuleExclude</td>
+<td valign="top" width="*" class="function-help">Returns&nbsp;value&nbsp;of&nbsp;Exclude&nbsp;for&nbsp;Rule&nbsp;Key<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>key</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+if&nbsp;(this.DFormattingContentCondition&nbsp;===&nbsp;undefined&nbsp;||&nbsp;this.DFormattingContentCondition&nbsp;===&nbsp;&quot;&quot;&nbsp;||&nbsp;this.DFormattingContentCondition&nbsp;===&nbsp;&quot;&lt;delete&gt;&quot;){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;elementsJson&nbsp;=&nbsp;JSON.parse(this.DFormattingContentCondition);<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;value&nbsp;=&nbsp;undefined;<br/>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;loop&nbsp;and&nbsp;find&nbsp;and&nbsp;update<br/>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;elementsJson.length&nbsp;;&nbsp;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(elementsJson[i].key&nbsp;==&nbsp;key)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;=&nbsp;elementsJson[i].exclude;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;value;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getRuleExcludeKeysArray">org.scn.pack.KeyArray<br/>getRuleExcludeKeysArray</td>
+<td valign="top" width="*" class="function-help">Returns&nbsp;the&nbsp;Exclude&nbsp;keys<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+if&nbsp;(this.DFormattingContentCondition&nbsp;===&nbsp;undefined&nbsp;||&nbsp;this.DFormattingContentCondition&nbsp;===&nbsp;&quot;&quot;&nbsp;||&nbsp;this.DFormattingContentCondition&nbsp;===&nbsp;&quot;&lt;delete&gt;&quot;){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;[];<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;elementsJson&nbsp;=&nbsp;JSON.parse(this.DFormattingContentCondition);<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;newElementsJson&nbsp;=&nbsp;[];<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;loop&nbsp;and&nbsp;find&nbsp;and&nbsp;update<br/>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;elementsJson.length&nbsp;;&nbsp;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(elementsJson[i].exclude&nbsp;==&nbsp;true)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newElementsJson.push(elementsJson[i]);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;newElementsJson;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getRuleSimpleFormat">String<br/>getRuleSimpleFormat</td>
+<td valign="top" width="*" class="function-help">Returns&nbsp;value&nbsp;of&nbsp;SimpleFormat&nbsp;for&nbsp;Rule&nbsp;Key<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>key</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+if&nbsp;(this.DFormattingContentCondition&nbsp;===&nbsp;undefined&nbsp;||&nbsp;this.DFormattingContentCondition&nbsp;===&nbsp;&quot;&quot;&nbsp;||&nbsp;this.DFormattingContentCondition&nbsp;===&nbsp;&quot;&lt;delete&gt;&quot;){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;elementsJson&nbsp;=&nbsp;JSON.parse(this.DFormattingContentCondition);<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;value&nbsp;=&nbsp;&quot;&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;loop&nbsp;and&nbsp;find&nbsp;and&nbsp;update<br/>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;elementsJson.length&nbsp;;&nbsp;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(elementsJson[i].key&nbsp;==&nbsp;key)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;=&nbsp;elementsJson[i].simpleFormat;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;value;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getRulesAsJSON">String<br/>getRulesAsJSON</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Rules&nbsp;As&nbsp;JSON&nbsp;String<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;jsonObject&nbsp;=&nbsp;JSON.parse(this.DFormattingContentCondition);<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;JSON.stringify(jsonObject,&nbsp;null,&nbsp;4);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getSelectedColumn">int<br/>getSelectedColumn</td>
+<td valign="top" width="*" class="function-help">Selected&nbsp;Column&nbsp;Index&nbsp;(0&nbsp;-&nbsp;based)<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;jsonObject&nbsp;=&nbsp;JSON.parse(this.DSelection);<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;jsonObject.column;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getSelectedRow">int<br/>getSelectedRow</td>
+<td valign="top" width="*" class="function-help">Selected&nbsp;Row&nbsp;Index&nbsp;(0&nbsp;-&nbsp;based)<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;jsonObject&nbsp;=&nbsp;JSON.parse(this.DSelection);<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;jsonObject.row;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getSelectedValue">int<br/>getSelectedValue</td>
+<td valign="top" width="*" class="function-help">Selected&nbsp;Value&nbsp;Content<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;jsonObject&nbsp;=&nbsp;JSON.parse(this.DSelection);<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;jsonObject.value;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getSelectedVisualColumn">int<br/>getSelectedVisualColumn</td>
+<td valign="top" width="*" class="function-help">Selected&nbsp;Visual&nbsp;Column&nbsp;Index&nbsp;(0&nbsp;-&nbsp;based)<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;jsonObject&nbsp;=&nbsp;JSON.parse(this.DSelection);<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;jsonObject.visualColumn;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getSelectedVisualRow">int<br/>getSelectedVisualRow</td>
+<td valign="top" width="*" class="function-help">Selected&nbsp;Visual&nbsp;Row&nbsp;Index&nbsp;(0&nbsp;-&nbsp;based)<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;jsonObject&nbsp;=&nbsp;JSON.parse(this.DSelection);<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;jsonObject.visualRow;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getSelectionAsJSON">String<br/>getSelectionAsJSON</td>
+<td valign="top" width="*" class="function-help">/START&nbsp;HERE&nbsp;PLACE&nbsp;FOR&nbsp;CUSTOM&nbsp;ZTL&nbsp;FUNCTIONS<br/>Gets&nbsp;Selection&nbsp;As&nbsp;JSON&nbsp;String<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;jsonObject&nbsp;=&nbsp;JSON.parse(this.DSelection);<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;JSON.stringify(jsonObject,&nbsp;null,&nbsp;4);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getSelectionAsJSONObject">JSON<br/>getSelectionAsJSONObject</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Selection&nbsp;As&nbsp;JSON&nbsp;String<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;jsonObject&nbsp;=&nbsp;JSON.parse(this.DSelection);<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;JSON.stringify(jsonObject,&nbsp;null,&nbsp;4);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getSelectionDimensionMembers">org.scn.community.shared.DimensionMemberArray<br/>getSelectionDimensionMembers</td>
+<td valign="top" width="*" class="function-help">Return&nbsp;dimensions&nbsp;and&nbsp;corresponding&nbsp;members&nbsp;for&nbsp;the&nbsp;selection&nbsp;as&nbsp;array<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;jsonObject&nbsp;=&nbsp;JSON.parse(this.DSelection);<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;tempA&nbsp;=&nbsp;[];<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;for(var&nbsp;i=0;i&lt;jsonObject.rowDimensions.length;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;itemDef&nbsp;=&nbsp;{&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;dimension&quot;:&nbsp;jsonObject.rowDimensions[i].key,&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;member&quot;:&nbsp;jsonObject.rowKeys[i]<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tempA.push(itemDef);<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(jsonObject.columnDimensions)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(var&nbsp;i=0;i&lt;jsonObject.columnDimensions.length;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;itemDef&nbsp;=&nbsp;{&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;dimension&quot;:&nbsp;jsonObject.columnDimensions[i].key,&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;member&quot;:&nbsp;jsonObject.columnKeys[i]<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tempA.push(itemDef);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;tempA;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getSelectionRowValues">StringArray<br/>getSelectionRowValues</td>
+<td valign="top" width="*" class="function-help">Values&nbsp;of&nbsp;the&nbsp;Row<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;jsonObject&nbsp;=&nbsp;JSON.parse(this.DSelection);<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;tempA&nbsp;=&nbsp;[];<br/>&nbsp;&nbsp;&nbsp;&nbsp;for(var&nbsp;i=0;i&lt;jsonObject.rowValues.length;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;itemDef&nbsp;=&nbsp;jsonObject.rowValues[i];<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tempA.push(itemDef);<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;tempA;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getSelectionSpace">String<br/>getSelectionSpace</td>
+<td valign="top" width="*" class="function-help">Selection&nbsp;Space&nbsp;(Header,&nbsp;Data)<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;jsonObject&nbsp;=&nbsp;JSON.parse(this.DSelection);<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;jsonObject.value;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getVisibleRowCount">int<br/>getVisibleRowCount</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Visible&nbsp;Row&nbsp;Count&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DVisibleRowCount;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_insertColumnWidthEntry">void<br/>insertColumnWidthEntry</td>
+<td valign="top" width="*" class="function-help">Insert&nbsp;a&nbsp;root&nbsp;element&nbsp;by&nbsp;index.<br/><div class='html-example'">You&nbsp;want&nbsp;to&nbsp;insert&nbsp;a&nbsp;root&nbsp;element<br/><div class='html-code'>UI5TABLE.insertColumnWidthEntry(index&nbsp;[int],&nbsp;key&nbsp;[String],&nbsp;width&nbsp;[String]);<br></div></div><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>insertionIndex0based</B></td>
+<td width="120px" class="parameter-type"><B>int</B></td>
+<td width="*" class="parameter-help">Index to Insert (0-based)</td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>key</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Column index (0-based)</td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>width</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Width with unit (e.g. 200px | 30%)</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+if&nbsp;(this.DDataColWidths&nbsp;===&nbsp;undefined&nbsp;||&nbsp;this.DDataColWidths&nbsp;===&nbsp;&quot;&quot;&nbsp;||&nbsp;this.DDataColWidths&nbsp;===&nbsp;&quot;&lt;delete&gt;&quot;){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.DDataColWidths&nbsp;=&nbsp;&quot;[]&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;elementsJson&nbsp;=&nbsp;JSON.parse(this.DDataColWidths);<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;newElementsJson&nbsp;=&nbsp;[];<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;itemDef&nbsp;=&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;leaf:true,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key:key,&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width:width<br/>&nbsp;&nbsp;&nbsp;&nbsp;};<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;elementsJson.length&nbsp;;&nbsp;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(i&nbsp;==&nbsp;insertionIndex0based)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newElementsJson.push(itemDef);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newElementsJson.push(elementsJson[i]);<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;this.DDataColWidths&nbsp;=&nbsp;JSON.stringify(newElementsJson);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_isAllowColumnReorder">boolean<br/>isAllowColumnReorder</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Allow&nbsp;Reorder&nbsp;of&nbsp;Columns&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DAllowColumnReorder;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_isAllowFilter">boolean<br/>isAllowFilter</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Allow&nbsp;Filter&nbsp;in&nbsp;Columns&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DAllowFilter;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_isAllowSelection">boolean<br/>isAllowSelection</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Allow&nbsp;Selection&nbsp;in&nbsp;the&nbsp;Table&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DAllowSelection;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_isAllowSort">boolean<br/>isAllowSort</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Allow&nbsp;Sort&nbsp;in&nbsp;Columns&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DAllowSort;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_isFixedHeader">boolean<br/>isFixedHeader</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Fix&nbsp;Header&nbsp;Rows&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DFixedHeader;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_isIgnoreResults">boolean<br/>isIgnoreResults</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Ignore&nbsp;Results&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DIgnoreResults;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_isOnlyHeaderColumns">boolean<br/>isOnlyHeaderColumns</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Show&nbsp;Only&nbsp;Header&nbsp;Columns&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DOnlyHeaderColumns;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_removeColumnWidthEntry">void<br/>removeColumnWidthEntry</td>
+<td valign="top" width="*" class="function-help">Removes&nbsp;a&nbsp;root&nbsp;element&nbsp;by&nbsp;key.<br/><div class='html-example'">You&nbsp;want&nbsp;to&nbsp;remove&nbsp;root&nbsp;element<br/><div class='html-code'>UI5TABLE.removeColumnWidthEntry(String&nbsp;key);<br></div></div><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>key</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+if&nbsp;(this.DDataColWidths&nbsp;===&nbsp;undefined&nbsp;||&nbsp;this.DDataColWidths&nbsp;===&nbsp;&quot;&quot;&nbsp;||&nbsp;this.DDataColWidths&nbsp;===&nbsp;&quot;&lt;delete&gt;&quot;){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.DDataColWidths&nbsp;=&nbsp;&quot;[]&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;elementsJson&nbsp;=&nbsp;JSON.parse(this.DDataColWidths);<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;alreadyFound&nbsp;=&nbsp;false;<br/>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;elementsJson.length&nbsp;;&nbsp;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(elementsJson[i].key&nbsp;==&nbsp;key)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elementsJson.splice(i,1);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;remove&nbsp;all&nbsp;items&nbsp;with&nbsp;this&nbsp;parent<br/>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;i&nbsp;=&nbsp;elementsJson.length&nbsp;-&nbsp;1;&nbsp;i&nbsp;&gt;=&nbsp;0;&nbsp;i--){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(elementsJson[i].parentKey&nbsp;==&nbsp;key)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elementsJson.splice(i,1);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;this.DDataColWidths&nbsp;=&nbsp;JSON.stringify(elementsJson);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_removeMembers">void<br/>removeMembers</td>
+<td valign="top" width="*" class="function-help">removes&nbsp;an&nbsp;element&nbsp;by&nbsp;String&nbsp;key&nbsp;properties.<br/>You&nbsp;need&nbsp;to&nbsp;specify&nbsp;a&nbsp;unique&nbsp;and&nbsp;existing&nbsp;key.<br/><div class='html-example'">You&nbsp;want&nbsp;to&nbsp;remove&nbsp;element<br/><div class='html-code'>UI5TABLE.removeMembers(String&nbsp;key);<br></div></div><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>key</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+if&nbsp;(this.DFormattingContentCondition&nbsp;===&nbsp;undefined&nbsp;||&nbsp;this.DFormattingContentCondition&nbsp;===&nbsp;&quot;&quot;&nbsp;||&nbsp;this.DFormattingContentCondition&nbsp;===&nbsp;&quot;&lt;delete&gt;&quot;){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.DFormattingContentCondition&nbsp;=&nbsp;&quot;[]&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;elementsJson&nbsp;=&nbsp;JSON.parse(this.DFormattingContentCondition);<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;alreadyFound&nbsp;=&nbsp;false;<br/>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;elementsJson.length&nbsp;;&nbsp;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(elementsJson[i].key&nbsp;==&nbsp;key)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elementsJson.splice(i,1);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;remove&nbsp;all&nbsp;items&nbsp;with&nbsp;this&nbsp;parent<br/>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;i&nbsp;=&nbsp;elementsJson.length&nbsp;-&nbsp;1;&nbsp;i&nbsp;&gt;=&nbsp;0;&nbsp;i--){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(elementsJson[i].parentKey&nbsp;==&nbsp;key)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elementsJson.splice(i,1);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;this.DFormattingContentCondition&nbsp;=&nbsp;JSON.stringify(elementsJson);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_removeRule">void<br/>removeRule</td>
+<td valign="top" width="*" class="function-help">Removes&nbsp;a&nbsp;root&nbsp;element&nbsp;by&nbsp;key.<br/><div class='html-example'">You&nbsp;want&nbsp;to&nbsp;remove&nbsp;root&nbsp;element<br/><div class='html-code'>UI5TABLE.removeRule(String&nbsp;key);<br></div></div><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>key</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.removeMembers(key);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setAllowColumnReorder">void<br/>setAllowColumnReorder</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Allow&nbsp;Reorder&nbsp;of&nbsp;Columns&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>allowColumnReorder</B></td>
+<td width="120px" class="parameter-type"><B>boolean</B></td>
+<td width="*" class="parameter-help">Allow Reorder of Columns</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DAllowColumnReorder&nbsp;=&nbsp;allowColumnReorder;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setAllowFilter">void<br/>setAllowFilter</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Allow&nbsp;Filter&nbsp;in&nbsp;Columns&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>allowFilter</B></td>
+<td width="120px" class="parameter-type"><B>boolean</B></td>
+<td width="*" class="parameter-help">Allow Filter in Columns</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DAllowFilter&nbsp;=&nbsp;allowFilter;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setAllowSelection">void<br/>setAllowSelection</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Allow&nbsp;Selection&nbsp;in&nbsp;the&nbsp;Table&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>allowSelection</B></td>
+<td width="120px" class="parameter-type"><B>boolean</B></td>
+<td width="*" class="parameter-help">Allow Selection in the Table</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DAllowSelection&nbsp;=&nbsp;allowSelection;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setAllowSort">void<br/>setAllowSort</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Allow&nbsp;Sort&nbsp;in&nbsp;Columns&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>allowSort</B></td>
+<td width="120px" class="parameter-type"><B>boolean</B></td>
+<td width="*" class="parameter-help">Allow Sort in Columns</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DAllowSort&nbsp;=&nbsp;allowSort;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setColumnWidthEntryWidth">void<br/>setColumnWidthEntryWidth</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;the&nbsp;Width&nbsp;for&nbsp;ColumnWidthEntry&nbsp;Key<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>key</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>width</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+if&nbsp;(this.DDataColWidths&nbsp;===&nbsp;undefined&nbsp;||&nbsp;this.DDataColWidths&nbsp;===&nbsp;&quot;&quot;&nbsp;||&nbsp;this.DDataColWidths&nbsp;===&nbsp;&quot;&lt;delete&gt;&quot;){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;elementsJson&nbsp;=&nbsp;JSON.parse(this.DDataColWidths);<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;loop&nbsp;and&nbsp;find&nbsp;and&nbsp;update<br/>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;elementsJson.length&nbsp;;&nbsp;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(elementsJson[i].key&nbsp;==&nbsp;key)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elementsJson[i].width&nbsp;=&nbsp;width;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;this.DDataColWidths&nbsp;=&nbsp;JSON.stringify(elementsJson);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setColumnWidthEntryWidths">void<br/>setColumnWidthEntryWidths</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;the&nbsp;Width&nbsp;for&nbsp;ColumnWidthEntry&nbsp;keys<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>keys</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>separator</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>width</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"> Width </td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+if&nbsp;(this.DDataColWidths&nbsp;===&nbsp;undefined&nbsp;||&nbsp;this.DDataColWidths&nbsp;===&nbsp;&quot;&quot;&nbsp;||&nbsp;this.DDataColWidths&nbsp;===&nbsp;&quot;&lt;delete&gt;&quot;){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;changeKeys&nbsp;=&nbsp;keys.split(separator);&nbsp;&nbsp;<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;elementsJson&nbsp;=&nbsp;JSON.parse(this.DDataColWidths);<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;loop&nbsp;and&nbsp;find&nbsp;and&nbsp;change<br/>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;elementsJson.length&nbsp;;&nbsp;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;j&nbsp;=&nbsp;0;&nbsp;j&nbsp;&lt;&nbsp;changeKeys.length&nbsp;;&nbsp;j++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(elementsJson[i].key&nbsp;==&nbsp;changeKeys[j])&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elementsJson[i].width&nbsp;=&nbsp;width;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.DDataColWidths&nbsp;=&nbsp;JSON.stringify(elementsJson);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setDataProvisioner">void<br/>setDataProvisioner</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Central&nbsp;Result&nbsp;Set&nbsp;with&nbsp;Data&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>dataProvisioner</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Central Result Set with Data</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DDataProvisioner&nbsp;=&nbsp;dataProvisioner;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setEmptyDataValue">void<br/>setEmptyDataValue</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Empty&nbsp;Value&nbsp;For&nbsp;Data&nbsp;Cell&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>emptyDataValue</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Empty Value For Data Cell</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DEmptyDataValue&nbsp;=&nbsp;emptyDataValue;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setEmptyHeaderValue">void<br/>setEmptyHeaderValue</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Empty&nbsp;Value&nbsp;For&nbsp;Header&nbsp;Cell&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>emptyHeaderValue</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Empty Value For Header Cell</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DEmptyHeaderValue&nbsp;=&nbsp;emptyHeaderValue;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setFixedHeader">void<br/>setFixedHeader</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Fix&nbsp;Header&nbsp;Rows&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>fixedHeader</B></td>
+<td width="120px" class="parameter-type"><B>boolean</B></td>
+<td width="*" class="parameter-help">Fix Header Rows</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DFixedHeader&nbsp;=&nbsp;fixedHeader;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setFormattingOperator">void<br/>setFormattingOperator</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Formatting&nbsp;Operator&nbsp;Property&nbsp;by&nbsp;Choice&nbsp;Option<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>formattingOperator</B></td>
+<td width="120px" class="parameter-type"><B>org_scn_community_shared_FormattingOperatorEnumfield</B></td>
+<td width="*" class="parameter-help">Formatting Operator</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DFormattingOperator&nbsp;=&nbsp;formattingOperator;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setFormattingOperatorByString">void<br/>setFormattingOperatorByString</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Formatting&nbsp;Operator&nbsp;Property&nbsp;by&nbsp;String<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>formattingOperator</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Formatting Operator</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DFormattingOperator&nbsp;=&nbsp;formattingOperator;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setFormattingValueCondition">void<br/>setFormattingValueCondition</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Rules&nbsp;for&nbsp;Number&nbsp;Values&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>formattingValueCondition</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Rules for Number Values</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DFormattingValueCondition&nbsp;=&nbsp;formattingValueCondition;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setHeaderColWidth">void<br/>setHeaderColWidth</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Header&nbsp;Column&nbsp;Width&nbsp;in&nbsp;px&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>headerColWidth</B></td>
+<td width="120px" class="parameter-type"><B>int</B></td>
+<td width="*" class="parameter-help">Header Column Width in px</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DHeaderColWidth&nbsp;=&nbsp;headerColWidth;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setHeaderColumnFixed">void<br/>setHeaderColumnFixed</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Fixed&nbsp;Column&nbsp;Index&nbsp;(-1&nbsp;means&nbsp;Row&nbsp;Dimensions)&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>headerColumnFixed</B></td>
+<td width="120px" class="parameter-type"><B>int</B></td>
+<td width="*" class="parameter-help">Fixed Column Index (-1 means Row Dimensions)</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DHeaderColumnFixed&nbsp;=&nbsp;headerColumnFixed;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setIgnoreResults">void<br/>setIgnoreResults</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Ignore&nbsp;Results&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>ignoreResults</B></td>
+<td width="120px" class="parameter-type"><B>boolean</B></td>
+<td width="*" class="parameter-help">Ignore Results</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DIgnoreResults&nbsp;=&nbsp;ignoreResults;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setNavigationMode">void<br/>setNavigationMode</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Navigation&nbsp;Mode&nbsp;Property&nbsp;by&nbsp;Choice&nbsp;Option<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>navigationMode</B></td>
+<td width="120px" class="parameter-type"><B>org_scn_community_shared_NavigationModeEnumfield</B></td>
+<td width="*" class="parameter-help">Navigation Mode</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DNavigationMode&nbsp;=&nbsp;navigationMode;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setNavigationModeByString">void<br/>setNavigationModeByString</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Navigation&nbsp;Mode&nbsp;Property&nbsp;by&nbsp;String<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>navigationMode</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Navigation Mode</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DNavigationMode&nbsp;=&nbsp;navigationMode;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setOnlyHeaderColumns">void<br/>setOnlyHeaderColumns</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Show&nbsp;Only&nbsp;Header&nbsp;Columns&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>onlyHeaderColumns</B></td>
+<td width="120px" class="parameter-type"><B>boolean</B></td>
+<td width="*" class="parameter-help">Show Only Header Columns</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DOnlyHeaderColumns&nbsp;=&nbsp;onlyHeaderColumns;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setRowHeight">void<br/>setRowHeight</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Row&nbsp;Height&nbsp;in&nbsp;px&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>rowHeight</B></td>
+<td width="120px" class="parameter-type"><B>int</B></td>
+<td width="*" class="parameter-help">Row Height in px</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DRowHeight&nbsp;=&nbsp;rowHeight;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setRuleColumnHeaderId">void<br/>setRuleColumnHeaderId</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;the&nbsp;ColumnHeaderId&nbsp;for&nbsp;Rule&nbsp;Key<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>key</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>columnHeaderId</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+if&nbsp;(this.DFormattingContentCondition&nbsp;===&nbsp;undefined&nbsp;||&nbsp;this.DFormattingContentCondition&nbsp;===&nbsp;&quot;&quot;&nbsp;||&nbsp;this.DFormattingContentCondition&nbsp;===&nbsp;&quot;&lt;delete&gt;&quot;){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;elementsJson&nbsp;=&nbsp;JSON.parse(this.DFormattingContentCondition);<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;loop&nbsp;and&nbsp;find&nbsp;and&nbsp;update<br/>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;elementsJson.length&nbsp;;&nbsp;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(elementsJson[i].key&nbsp;==&nbsp;key)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elementsJson[i].columnHeaderId&nbsp;=&nbsp;columnHeaderId;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;this.DFormattingContentCondition&nbsp;=&nbsp;JSON.stringify(elementsJson);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setRuleColumnHeaderIds">void<br/>setRuleColumnHeaderIds</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;the&nbsp;ColumnHeaderId&nbsp;for&nbsp;Rule&nbsp;keys<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>keys</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>separator</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>columnHeaderId</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"> ColumnHeaderId </td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+if&nbsp;(this.DFormattingContentCondition&nbsp;===&nbsp;undefined&nbsp;||&nbsp;this.DFormattingContentCondition&nbsp;===&nbsp;&quot;&quot;&nbsp;||&nbsp;this.DFormattingContentCondition&nbsp;===&nbsp;&quot;&lt;delete&gt;&quot;){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;changeKeys&nbsp;=&nbsp;keys.split(separator);&nbsp;&nbsp;<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;elementsJson&nbsp;=&nbsp;JSON.parse(this.DFormattingContentCondition);<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;loop&nbsp;and&nbsp;find&nbsp;and&nbsp;change<br/>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;elementsJson.length&nbsp;;&nbsp;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;j&nbsp;=&nbsp;0;&nbsp;j&nbsp;&lt;&nbsp;changeKeys.length&nbsp;;&nbsp;j++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(elementsJson[i].key&nbsp;==&nbsp;changeKeys[j])&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elementsJson[i].columnHeaderId&nbsp;=&nbsp;columnHeaderId;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.DFormattingContentCondition&nbsp;=&nbsp;JSON.stringify(elementsJson);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setRuleCondition">void<br/>setRuleCondition</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;the&nbsp;Condition&nbsp;for&nbsp;Rule&nbsp;Key<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>key</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>condition</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+if&nbsp;(this.DFormattingContentCondition&nbsp;===&nbsp;undefined&nbsp;||&nbsp;this.DFormattingContentCondition&nbsp;===&nbsp;&quot;&quot;&nbsp;||&nbsp;this.DFormattingContentCondition&nbsp;===&nbsp;&quot;&lt;delete&gt;&quot;){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;elementsJson&nbsp;=&nbsp;JSON.parse(this.DFormattingContentCondition);<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;loop&nbsp;and&nbsp;find&nbsp;and&nbsp;update<br/>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;elementsJson.length&nbsp;;&nbsp;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(elementsJson[i].key&nbsp;==&nbsp;key)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elementsJson[i].condition&nbsp;=&nbsp;condition;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;this.DFormattingContentCondition&nbsp;=&nbsp;JSON.stringify(elementsJson);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setRuleConditions">void<br/>setRuleConditions</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;the&nbsp;Condition&nbsp;for&nbsp;Rule&nbsp;keys<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>keys</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>separator</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>condition</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"> Condition </td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+if&nbsp;(this.DFormattingContentCondition&nbsp;===&nbsp;undefined&nbsp;||&nbsp;this.DFormattingContentCondition&nbsp;===&nbsp;&quot;&quot;&nbsp;||&nbsp;this.DFormattingContentCondition&nbsp;===&nbsp;&quot;&lt;delete&gt;&quot;){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;changeKeys&nbsp;=&nbsp;keys.split(separator);&nbsp;&nbsp;<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;elementsJson&nbsp;=&nbsp;JSON.parse(this.DFormattingContentCondition);<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;loop&nbsp;and&nbsp;find&nbsp;and&nbsp;change<br/>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;elementsJson.length&nbsp;;&nbsp;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;j&nbsp;=&nbsp;0;&nbsp;j&nbsp;&lt;&nbsp;changeKeys.length&nbsp;;&nbsp;j++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(elementsJson[i].key&nbsp;==&nbsp;changeKeys[j])&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elementsJson[i].condition&nbsp;=&nbsp;condition;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.DFormattingContentCondition&nbsp;=&nbsp;JSON.stringify(elementsJson);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setRuleDescription">void<br/>setRuleDescription</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;the&nbsp;Description&nbsp;for&nbsp;Rule&nbsp;Key<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>key</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>description</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+if&nbsp;(this.DFormattingContentCondition&nbsp;===&nbsp;undefined&nbsp;||&nbsp;this.DFormattingContentCondition&nbsp;===&nbsp;&quot;&quot;&nbsp;||&nbsp;this.DFormattingContentCondition&nbsp;===&nbsp;&quot;&lt;delete&gt;&quot;){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;elementsJson&nbsp;=&nbsp;JSON.parse(this.DFormattingContentCondition);<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;loop&nbsp;and&nbsp;find&nbsp;and&nbsp;update<br/>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;elementsJson.length&nbsp;;&nbsp;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(elementsJson[i].key&nbsp;==&nbsp;key)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elementsJson[i].description&nbsp;=&nbsp;description;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;this.DFormattingContentCondition&nbsp;=&nbsp;JSON.stringify(elementsJson);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setRuleDescriptions">void<br/>setRuleDescriptions</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;the&nbsp;Description&nbsp;for&nbsp;Rule&nbsp;keys<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>keys</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>separator</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>description</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"> Description </td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+if&nbsp;(this.DFormattingContentCondition&nbsp;===&nbsp;undefined&nbsp;||&nbsp;this.DFormattingContentCondition&nbsp;===&nbsp;&quot;&quot;&nbsp;||&nbsp;this.DFormattingContentCondition&nbsp;===&nbsp;&quot;&lt;delete&gt;&quot;){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;changeKeys&nbsp;=&nbsp;keys.split(separator);&nbsp;&nbsp;<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;elementsJson&nbsp;=&nbsp;JSON.parse(this.DFormattingContentCondition);<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;loop&nbsp;and&nbsp;find&nbsp;and&nbsp;change<br/>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;elementsJson.length&nbsp;;&nbsp;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;j&nbsp;=&nbsp;0;&nbsp;j&nbsp;&lt;&nbsp;changeKeys.length&nbsp;;&nbsp;j++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(elementsJson[i].key&nbsp;==&nbsp;changeKeys[j])&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elementsJson[i].description&nbsp;=&nbsp;description;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.DFormattingContentCondition&nbsp;=&nbsp;JSON.stringify(elementsJson);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setRuleExclude">void<br/>setRuleExclude</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;the&nbsp;Exclude&nbsp;for&nbsp;Rule&nbsp;Key<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>key</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>exclude</B></td>
+<td width="120px" class="parameter-type"><B>boolean</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+if&nbsp;(this.DFormattingContentCondition&nbsp;===&nbsp;undefined&nbsp;||&nbsp;this.DFormattingContentCondition&nbsp;===&nbsp;&quot;&quot;&nbsp;||&nbsp;this.DFormattingContentCondition&nbsp;===&nbsp;&quot;&lt;delete&gt;&quot;){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;elementsJson&nbsp;=&nbsp;JSON.parse(this.DFormattingContentCondition);<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;loop&nbsp;and&nbsp;find&nbsp;and&nbsp;update<br/>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;elementsJson.length&nbsp;;&nbsp;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(elementsJson[i].key&nbsp;==&nbsp;key)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elementsJson[i].exclude&nbsp;=&nbsp;exclude;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;this.DFormattingContentCondition&nbsp;=&nbsp;JSON.stringify(elementsJson);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setRuleExcludes">void<br/>setRuleExcludes</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;the&nbsp;Exclude&nbsp;for&nbsp;Rule&nbsp;keys<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>keys</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>separator</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+if&nbsp;(this.DFormattingContentCondition&nbsp;===&nbsp;undefined&nbsp;||&nbsp;this.DFormattingContentCondition&nbsp;===&nbsp;&quot;&quot;&nbsp;||&nbsp;this.DFormattingContentCondition&nbsp;===&nbsp;&quot;&lt;delete&gt;&quot;){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;changeKeys&nbsp;=&nbsp;keys.split(separator);&nbsp;&nbsp;<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;elementsJson&nbsp;=&nbsp;JSON.parse(this.DFormattingContentCondition);<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;loop&nbsp;and&nbsp;find&nbsp;and&nbsp;change<br/>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;elementsJson.length&nbsp;;&nbsp;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;clean&nbsp;all<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elementsJson[i].exclude&nbsp;=&nbsp;false;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;j&nbsp;=&nbsp;0;&nbsp;j&nbsp;&lt;&nbsp;changeKeys.length&nbsp;;&nbsp;j++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(elementsJson[i].key&nbsp;==&nbsp;changeKeys[j])&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elementsJson[i].exclude&nbsp;=&nbsp;true;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.DFormattingContentCondition&nbsp;=&nbsp;JSON.stringify(elementsJson);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setRuleSimpleFormat">void<br/>setRuleSimpleFormat</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;the&nbsp;SimpleFormat&nbsp;for&nbsp;Rule&nbsp;Key<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>key</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>simpleFormat</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+if&nbsp;(this.DFormattingContentCondition&nbsp;===&nbsp;undefined&nbsp;||&nbsp;this.DFormattingContentCondition&nbsp;===&nbsp;&quot;&quot;&nbsp;||&nbsp;this.DFormattingContentCondition&nbsp;===&nbsp;&quot;&lt;delete&gt;&quot;){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;elementsJson&nbsp;=&nbsp;JSON.parse(this.DFormattingContentCondition);<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;loop&nbsp;and&nbsp;find&nbsp;and&nbsp;update<br/>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;elementsJson.length&nbsp;;&nbsp;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(elementsJson[i].key&nbsp;==&nbsp;key)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elementsJson[i].simpleFormat&nbsp;=&nbsp;simpleFormat;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;this.DFormattingContentCondition&nbsp;=&nbsp;JSON.stringify(elementsJson);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setRuleSimpleFormats">void<br/>setRuleSimpleFormats</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;the&nbsp;SimpleFormat&nbsp;for&nbsp;Rule&nbsp;keys<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>keys</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>separator</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>simpleFormat</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"> SimpleFormat </td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+if&nbsp;(this.DFormattingContentCondition&nbsp;===&nbsp;undefined&nbsp;||&nbsp;this.DFormattingContentCondition&nbsp;===&nbsp;&quot;&quot;&nbsp;||&nbsp;this.DFormattingContentCondition&nbsp;===&nbsp;&quot;&lt;delete&gt;&quot;){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;changeKeys&nbsp;=&nbsp;keys.split(separator);&nbsp;&nbsp;<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;elementsJson&nbsp;=&nbsp;JSON.parse(this.DFormattingContentCondition);<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;loop&nbsp;and&nbsp;find&nbsp;and&nbsp;change<br/>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;elementsJson.length&nbsp;;&nbsp;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;j&nbsp;=&nbsp;0;&nbsp;j&nbsp;&lt;&nbsp;changeKeys.length&nbsp;;&nbsp;j++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(elementsJson[i].key&nbsp;==&nbsp;changeKeys[j])&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elementsJson[i].simpleFormat&nbsp;=&nbsp;simpleFormat;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.DFormattingContentCondition&nbsp;=&nbsp;JSON.stringify(elementsJson);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setVisibleRowCount">void<br/>setVisibleRowCount</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Visible&nbsp;Row&nbsp;Count&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>visibleRowCount</B></td>
+<td width="120px" class="parameter-type"><B>int</B></td>
+<td width="*" class="parameter-help">Visible Row Count</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DVisibleRowCount&nbsp;=&nbsp;visibleRowCount;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_updateColumnWidthEntry">void<br/>updateColumnWidthEntry</td>
+<td valign="top" width="*" class="function-help">Updates&nbsp;given&nbsp;ColumnWidthEntry<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>key</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Column index (0-based)</td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>width</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Width with unit (e.g. 200px | 30%)</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+if&nbsp;(this.DDataColWidths&nbsp;===&nbsp;undefined&nbsp;||&nbsp;this.DDataColWidths&nbsp;===&nbsp;&quot;&quot;&nbsp;||&nbsp;this.DDataColWidths&nbsp;===&nbsp;&quot;&lt;delete&gt;&quot;){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.DDataColWidths&nbsp;=&nbsp;&quot;[]&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;itemDef&nbsp;=&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;leaf:true,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key:key,&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width:width<br/>&nbsp;&nbsp;&nbsp;&nbsp;};<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;elementsJson&nbsp;=&nbsp;JSON.parse(this.DDataColWidths);<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;loop&nbsp;and&nbsp;find&nbsp;and&nbsp;update<br/>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;elementsJson.length&nbsp;;&nbsp;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(elementsJson[i].key&nbsp;==&nbsp;elementKey)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elementsJson[i]&nbsp;=&nbsp;itemDef;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;this.DDataColWidths&nbsp;=&nbsp;JSON.stringify(elementsJson);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+
+	</TABLE>
+	<div style="height:20px!important"> THE END </div>
+	</div>
+	
+	<div style="height:60px!important"></div>
+	
+</div>
+</body>
+</html>

@@ -1,0 +1,1017 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../../doc.css">
+<link rel="stylesheet" type="text/css" href="../../tables.css">
+<script id="sap-ui-bootstrap" type="text/javascript" 
+      /*src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"*/
+      src="https://sapui5.hana.ondemand.com/sdk/resources/sap-ui-core.js"
+      data-sap-ui-theme="sap_bluecrystal" data-sap-ui-libs="sap.m,sap.ui.commons,sap.suite.ui.commons,sap.ui.ux3"></script>
+
+<script type="text/javascript" src="../js/ComponentMain.js"></script>
+<script type="text/javascript" src="../js/PostResponseParser/PostResponseParser.js"></script>
+<script type="text/javascript" src="../js/TimeLine.js"></script>
+<script type="text/javascript" src="../js/ga.js"></script>
+
+<script> 
+	requestChangeLog("../../../../sdkhelp/web/components/databound/multileveldropdown/changes/changelog.json");
+	requestContent("Blog", "../../../../sdkhelp/web/components/databound/multileveldropdown/blogs.json");
+	requestContent("Example", "../../../../sdkhelp/web/components/databound/multileveldropdown/examples.json");
+</script>
+
+<title>Hierarchical Menu 1.0 - SCN Design Studio Community</title>
+</head>
+<body class="comp-body" style="height:100%">
+<div class="comp-main" style="height:100%">
+
+ 	<div class="component-name">
+	MultiLevelDropDown [ScnCommunityBasics]
+	</div>
+	<div class="component-title">
+	Hierarchical Menu 1.0
+	</div>
+
+<div id="componentnav"></div>
+	<div id="intro">This page is giving short introduction to the component with summary of the change status (green/yellow/red)<div id="introStatus" height="120px"></div><br></div>
+	<div id="blogs" hidden="true" height="100%">This page is listing community blogs on this component, follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/08/introducing-blog-list-for-community-components" target="_blank">this link</a> to learn more.<div id="BlogsList" height="100%"></div></div>
+	<div id="changelog" hidden="true" height="100%">This page is listing all changes which have been done on this component with corresponding test status (green: ok, red: not ok, yellow: untested), follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/07/introducing-change-log-for-community-components" target="_blank">this link</a> to learn more.<div id="changelogList" height="100%"></div></div>
+	<div id="examples" hidden="true" height="100%">This page is listing all example applications with this component, follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/08/introducing-blog-list-for-community-components" target="_blank">this link</a> to learn more.<div id="ExamplesList" height="100%"></div></div>
+	<div id="about" hidden="true">This page will bring more "about" details (generated)</div>
+	<div id="technical" hidden="true">
+	<br/>
+	<div class="component-properties">VISIBLE PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>addMesure<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Display a Measure</B><br/>Display a Measure
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">false</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>addSingleRootNode<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Add a single root node</B><br/>Add a single root node
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>hideMenu<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Hide Menu (Utility Mode)</B><br/>Hide Menu (Utility Mode)
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">false</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>labelDisplay<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Label Display</B><br/>Label Display
+<table style="width: 100%; border-top: 1px solid #000;" class="table1">
+<tr class="values-table-th"><th>Posible Value</th><th>Default</th></tr>
+<tr class="list-tr">
+<td class="value-td">NodeKey</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Left</td>
+<td class="value-td">X</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Right</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+
+</table>
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">Left</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>resetButton<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Display Reset Button</B><br/>Display Reset Button
+<table style="width: 100%; border-top: 1px solid #000;" class="table1">
+<tr class="values-table-th"><th>Posible Value</th><th>Default</th></tr>
+<tr class="list-tr">
+<td class="value-td">None</td>
+<td class="value-td">X</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Left</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Right</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+
+</table>
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">None</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>singleRootNodeName<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Single Root Node Name</B><br/>Single Root Node Name
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">Root</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">VISIBLE EVENTS</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>onClick<br/>[ScriptText]</B></td>
+<td width="*" class="property-title-tooltip"><B>On Click</B><br/>On Click
+
+</td>
+<td width="60px" class="property-group">Events</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>onLoadFinished<br/>[ScriptText]</B></td>
+<td width="*" class="property-title-tooltip"><B>On Load Finished</B><br/>On Load Finished
+
+</td>
+<td width="60px" class="property-group">Events</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>onReset<br/>[ScriptText]</B></td>
+<td width="*" class="property-title-tooltip"><B>On Reset</B><br/>On Reset
+
+</td>
+<td width="60px" class="property-group">Events</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS LIST</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Parameters</th><th>Return</th></tr>
+	<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">activateDisplayMeasure [<a href="#FUNCTION_activateDisplayMeasure">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">value</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getColorClass [<a href="#FUNCTION_getColorClass">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getDimension [<a href="#FUNCTION_getDimension">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getHierarchyMembers [<a href="#FUNCTION_getHierarchyMembers">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">org.scn.community.shared.HierarchyMemberArray</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getHierarchyMembersAsJsonString [<a href="#FUNCTION_getHierarchyMembersAsJsonString">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getHierarchyMembersSource [<a href="#FUNCTION_getHierarchyMembersSource">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getLabelDisplay [<a href="#FUNCTION_getLabelDisplay">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getNotAssignedText [<a href="#FUNCTION_getNotAssignedText">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getResetButton [<a href="#FUNCTION_getResetButton">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getSelMeasure [<a href="#FUNCTION_getSelMeasure">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getSelectedElemKey [<a href="#FUNCTION_getSelectedElemKey">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getSelectedElemText [<a href="#FUNCTION_getSelectedElemText">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getSingleRootNodeName [<a href="#FUNCTION_getSingleRootNodeName">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">hideMenu [<a href="#FUNCTION_hideMenu">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">value</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">isMeasureDisplayActivated [<a href="#FUNCTION_isMeasureDisplayActivated">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">boolean</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">isSingleNodeActivated [<a href="#FUNCTION_isSingleNodeActivated">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">boolean</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setAddSingleRootNode [<a href="#FUNCTION_setAddSingleRootNode">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">value</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setColorClass [<a href="#FUNCTION_setColorClass">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">value</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setDimension [<a href="#FUNCTION_setDimension">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">value</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setLabelDisplay [<a href="#FUNCTION_setLabelDisplay">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">value</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setNotAssignedText [<a href="#FUNCTION_setNotAssignedText">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">value</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setResetButton [<a href="#FUNCTION_setResetButton">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">value</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setSelMeasure [<a href="#FUNCTION_setSelMeasure">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">value</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setSelectedElemKey [<a href="#FUNCTION_setSelectedElemKey">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">selectedKey</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setSingleRootNodeName [<a href="#FUNCTION_setSingleRootNodeName">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">newName</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">HIDDEN (TECHNICAL) PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>colorClass<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>colorClass</B><br/>colorClass
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>colorClassMesure<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Color Coding Measure</B><br/>Color Coding Measure
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>data<br/>[ResultSet]</B></td>
+<td width="*" class="property-title-tooltip"><B>Data</B><br/>Data
+
+</td>
+<td width="60px" class="property-group">DataBinding</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>jsonDimensionHierMembers<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Hierarchy members from DS dimension table in JSON Format</B><br/>Hierarchy members from DS dimension table in JSON Format
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>notAssignedText<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>replace the text for Not Assigned node</B><br/>replace the text for Not Assigned node
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>selChar<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>selChar</B><br/>selChar
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>selMesure<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Displayed Measure</B><br/>Displayed Measure
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>selectedElemKey<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>selected Element Key</B><br/>selected Element Key
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>selectedElemText<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Selected Element Text</B><br/>Selected Element Text
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS IN DETAIL</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="">
+	<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_activateDisplayMeasure">void<br/>activateDisplayMeasure</td>
+<td valign="top" width="*" class="function-help">Activate&nbsp;the&nbsp;display&nbsp;of&nbsp;the&nbsp;measure&nbsp;in&nbsp;the&nbsp;menu.<br>If&nbsp;no&nbsp;measure&nbsp;has&nbsp;been&nbsp;selected,&nbsp;it&nbsp;has&nbsp;no&nbsp;effect.<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>value</B></td>
+<td width="120px" class="parameter-type"><B>Boolean</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.addMesure&nbsp;=&nbsp;value;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getColorClass">String<br/>getColorClass</td>
+<td valign="top" width="*" class="function-help">return&nbsp;the&nbsp;JSON&nbsp;corresponding&nbsp;to&nbsp;the&nbsp;color&nbsp;classes<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.colorClass;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getDimension">String<br/>getDimension</td>
+<td valign="top" width="*" class="function-help">Get&nbsp;the&nbsp;technical&nbsp;name&nbsp;of&nbsp;the&nbsp;dimension&nbsp;with&nbsp;the&nbsp;hierarchy<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.selChar;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getHierarchyMembers">org.scn.community.shared.HierarchyMemberArray<br/>getHierarchyMembers</td>
+<td valign="top" width="*" class="function-help">Return&nbsp;an&nbsp;array&nbsp;with&nbsp;all&nbsp;the&nbsp;hierarchy&nbsp;members.&nbsp;Array&nbsp;support&nbsp;forEach()<br/>Elements&nbsp;are&nbsp;typed&nbsp;and&nbsp;you&nbsp;can&nbsp;access&nbsp;attributes&nbsp;like:<br/>-&nbsp;ID:&nbsp;integer,&nbsp;internal&nbsp;ID<br>-&nbsp;<strong>key</strong>:&nbsp;hierarchy&nbsp;node&nbsp;key.&nbsp;Can&nbsp;be&nbsp;used&nbsp;in&nbsp;a&nbsp;setFilter&nbsp;or&nbsp;setVariable&nbsp;method&nbsp;call<br>-&nbsp;<strong>text</strong>:&nbsp;text&nbsp;of&nbsp;the&nbsp;node.&nbsp;Format&nbsp;depends&nbsp;on&nbsp;the&nbsp;hierarchy&nbsp;display.<br>If&nbsp;text+key,&nbsp;text&nbsp;will&nbsp;contains&nbsp;"text|key".&nbsp;If&nbsp;just&nbsp;text,&nbsp;you'll&nbsp;get&nbsp;only&nbsp;the&nbsp;text.<br>-&nbsp;<strong>Level</strong>:&nbsp;Depth&nbsp;of&nbsp;the&nbsp;node/leaf,&nbsp;starts&nbsp;at&nbsp;0<br>-&nbsp;<strong>Type</strong>:&nbsp;infoobject&nbsp;type:&nbsp;HIERARCHY_NODE&nbsp;or&nbsp;technical&nbsp;name&nbsp;of&nbsp;the&nbsp;infoobject<br>-&nbsp;<strong>parentID</strong>:&nbsp;parent&nbsp;internal&nbsp;ID<br>-&nbsp;<strong>parentKey</strong>:&nbsp;Hierarchy&nbsp;node&nbsp;key,&nbsp;BW&nbsp;value.&nbsp;Can&nbsp;be&nbsp;used&nbsp;by&nbsp;setFilter&nbsp;etc.<br>-&nbsp;<strong>isLeaf</strong>:&nbsp;true&nbsp;or&nbsp;false<br>-&nbsp;<strong>nodeState</strong>:&nbsp;COLLAPSED&nbsp;/&nbsp;EXPANDED&nbsp;for&nbsp;nodes&nbsp;or&nbsp;leaf&nbsp;for&nbsp;leafs.<br><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;content&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;[];<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;lifoParents&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;[];<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;previousMember&nbsp;&nbsp;=&nbsp;{};<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;//nothing&nbsp;in&nbsp;the&nbsp;jsonString.<br/>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(this.jsonDimensionHierMembers&nbsp;==&nbsp;&quot;&quot;)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;content;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;//Parse&nbsp;the&nbsp;Json&nbsp;Array<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;dimension&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;JSON.parse(this.jsonDimensionHierMembers);<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;lastLevel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;0;<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;for(var&nbsp;i=0;i&lt;dimension.members.length;&nbsp;i++&nbsp;){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;hierMember&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;{};<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;member&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;dimension.members[i];<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hierMember.key&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;0;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(member.hasOwnProperty('level'))<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hierMember.level&nbsp;=&nbsp;member.level;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hierMember.level&nbsp;=&nbsp;0;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hierMember.key&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;member.key;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hierMember.text&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;member.text;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hierMember.ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;i;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(member.hasOwnProperty('parent')&nbsp;&amp;&amp;&nbsp;i&nbsp;&gt;&nbsp;0)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hierMember.parentKey&nbsp;&nbsp;&nbsp;=&nbsp;member.parent;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hierMember.parentID&nbsp;&nbsp;&nbsp;=&nbsp;content&nbsp;[i-1].ID;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hierMember.parentKey&nbsp;&nbsp;&nbsp;=&nbsp;&quot;&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hierMember.parentID&nbsp;&nbsp;&nbsp;=&nbsp;-1;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(member.hasOwnProperty('type'))<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hierMember.type&nbsp;&nbsp;&nbsp;=&nbsp;member.type;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;&nbsp;&nbsp;hierMember.type&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;dimension.key;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(member.hasOwnProperty('nodeState'))<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hierMember.nodeState&nbsp;=&nbsp;member.nodeState;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;&nbsp;&nbsp;hierMember.nodeState&nbsp;=&nbsp;&quot;leaf&quot;;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hierMember.isLeaf&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;!member.hasOwnProperty('nodeState');<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content.push(hierMember);<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;content;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getHierarchyMembersAsJsonString">String<br/>getHierarchyMembersAsJsonString</td>
+<td valign="top" width="*" class="function-help">Return&nbsp;all&nbsp;the&nbsp;hierarchy&nbsp;members&nbsp;as&nbsp;a&nbsp;JSON&nbsp;object.<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;JSON.stringify(this.getHierarchyMembers());
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getHierarchyMembersSource">String<br/>getHierarchyMembersSource</td>
+<td valign="top" width="*" class="function-help">/Return&nbsp;the&nbsp;hierarchy&nbsp;members&nbsp;in&nbsp;the&nbsp;native&nbsp;DS&nbsp;format&nbsp;(JSON)<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.jsonDimensionHierMembers;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getLabelDisplay">String<br/>getLabelDisplay</td>
+<td valign="top" width="*" class="function-help">Returns&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;property&nbsp;LabelDisplay<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.labelDisplay;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getNotAssignedText">String<br/>getNotAssignedText</td>
+<td valign="top" width="*" class="function-help">Get&nbsp;the&nbsp;replacement&nbsp;text&nbsp;set&nbsp;instead&nbsp;of&nbsp;the&nbsp;not&nbsp;assigned&nbsp;node.&nbsp;Empty&nbsp;means&nbsp;not&nbsp;replaced<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.notAssignedText;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getResetButton">String<br/>getResetButton</td>
+<td valign="top" width="*" class="function-help">get&nbsp;the&nbsp;state&nbsp;of&nbsp;the&nbsp;reset&nbsp;button&nbsp;(Left,&nbsp;Right,&nbsp;No)<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.resetButton;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getSelMeasure">String<br/>getSelMeasure</td>
+<td valign="top" width="*" class="function-help">return&nbsp;the&nbsp;technical&nbsp;name&nbsp;of&nbsp;the&nbsp;selected&nbsp;measure<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.selMesure;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getSelectedElemKey">String<br/>getSelectedElemKey</td>
+<td valign="top" width="*" class="function-help">Returns&nbsp;the&nbsp;selected&nbsp;hierarchy&nbsp;key&nbsp;in&nbsp;the&nbsp;menu.<br/>You&nbsp;can&nbsp;directly&nbsp;use&nbsp;this&nbsp;value&nbsp;in&nbsp;a&nbsp;setFilter&nbsp;on&nbsp;the&nbsp;dimension&nbsp;displayed&nbsp;as&nbsp;hierarchy.<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.SelectedElemKey;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getSelectedElemText">String<br/>getSelectedElemText</td>
+<td valign="top" width="*" class="function-help">-------&nbsp;Getter&nbsp;/&nbsp;Setter&nbsp;for&nbsp;selectedElemKey&nbsp;------<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.SelectedElemText;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getSingleRootNodeName">String<br/>getSingleRootNodeName</td>
+<td valign="top" width="*" class="function-help">Returns&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;generated&nbsp;root&nbsp;node<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.singleRootNodeName;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_hideMenu">void<br/>hideMenu</td>
+<td valign="top" width="*" class="function-help">Hide&nbsp;the&nbsp;menu.&nbsp;Kinda&nbsp;a&nbsp;Utility&nbsp;mode&nbsp;for&nbsp;the&nbsp;hierarchy&nbsp;members&nbsp;accessor<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>value</B></td>
+<td width="120px" class="parameter-type"><B>Boolean</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.hideMenu&nbsp;=&nbsp;value;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_isMeasureDisplayActivated">boolean<br/>isMeasureDisplayActivated</td>
+<td valign="top" width="*" class="function-help">Return&nbsp;true/false&nbsp;if&nbsp;a&nbsp;measure&nbsp;should&nbsp;be&nbsp;displayed&nbsp;in&nbsp;the&nbsp;menu.<br>If&nbsp;no&nbsp;measure&nbsp;has&nbsp;been&nbsp;selected,&nbsp;it&nbsp;has&nbsp;no&nbsp;effect.<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.addMesure;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_isSingleNodeActivated">boolean<br/>isSingleNodeActivated</td>
+<td valign="top" width="*" class="function-help">Returns&nbsp;the&nbsp;value&nbsp;of&nbsp;addSingleNode&nbsp;(boolean).<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.addSingleRootNode;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setAddSingleRootNode">void<br/>setAddSingleRootNode</td>
+<td valign="top" width="*" class="function-help">Changes&nbsp;the&nbsp;addSingleNode&nbsp;(boolean).<br>Instead&nbsp;of&nbsp;having&nbsp;all&nbsp;of&nbsp;the&nbsp;first&nbsp;nodes&nbsp;displayed&nbsp;directly&nbsp;in&nbsp;the&nbsp;menu,&nbsp;a&nbsp;new&nbsp;root&nbsp;node&nbsp;will&nbsp;be&nbsp;added<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>value</B></td>
+<td width="120px" class="parameter-type"><B>Boolean</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.addSingleRootNode&nbsp;=&nbsp;value;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setColorClass">void<br/>setColorClass</td>
+<td valign="top" width="*" class="function-help">Pass&nbsp;rules&nbsp;that&nbsp;will&nbsp;apply&nbsp;cssClass&nbsp;to&nbsp;the&nbsp;elements.<br/>Format:&nbsp;[&nbsp;&nbsp;{"cssClass":"Name&nbsp;of&nbsp;the&nbsp;CSS&nbsp;class&nbsp;to&nbsp;apply",&nbsp;"low":"from&nbsp;value,&nbsp;numeric",&nbsp;"high":"to&nbsp;value,&nbsp;numeric"}&nbsp;]<br>High&nbsp;value&nbsp;is&nbsp;excluded.<br/><div class='html-example'"><div class='html-code'>[<br>{"cssClass":"DD_RED",&nbsp;"low":"0",&nbsp;"high":"10"},<br>{"cssClass":"DD_YEL",&nbsp;"low":"10",&nbsp;"high":"40"},<br>{"cssClass":"DD_GREEN","low":"40",&nbsp;"high":"100"}<br>]</div></div><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>value</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.colorClass&nbsp;=&nbsp;value;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setDimension">void<br/>setDimension</td>
+<td valign="top" width="*" class="function-help">Change&nbsp;the&nbsp;dimension&nbsp;with&nbsp;the&nbsp;hierarchy.&nbsp;OnLoadReady&nbsp;will&nbsp;be&nbsp;called.<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>value</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.selChar&nbsp;=&nbsp;value;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setLabelDisplay">void<br/>setLabelDisplay</td>
+<td valign="top" width="*" class="function-help">Set&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;property&nbsp;LabelDisplay&nbsp;(Case-sensitive).&nbsp;It&nbsp;is&nbsp;all&nbsp;depending&nbsp;on&nbsp;how&nbsp;your&nbsp;hierarchy&nbsp;is&nbsp;displayed:&nbsp;Key,&nbsp;Text,&nbsp;Text+Key&nbsp;...<br/><br>Available&nbsp;values:<div class='html-example'"><div class='html-code'>"key":"HIERARCHY_NODE/0HIER_NODE/EUROPE","level":0,"text":"Europe|EUROPE"<br/></div>The&nbsp;previous&nbsp;hierarchy&nbsp;node&nbsp;is&nbsp;displayed&nbsp;as&nbsp;Text+Key.<br>You&nbsp;can&nbsp;use&nbsp;values&nbsp;from:&nbsp;<br>-&nbsp;NodeKey:&nbsp;HIERARCHY_NODE/0HIER_NODE/EUROPE&nbsp;(internal&nbsp;hierarchy&nbsp;node&nbsp;key,&nbsp;can&nbsp;be&nbsp;using&nbsp;in&nbsp;setFilter&nbsp;and&nbsp;setVariables&nbsp;calls)<br>-&nbsp;Left:&nbsp;Europe<br>-&nbsp;Right:&nbsp;EUROPE&nbsp;(External&nbsp;Key)<br></div><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>value</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.labelDisplay&nbsp;=&nbsp;value;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setNotAssignedText">void<br/>setNotAssignedText</td>
+<td valign="top" width="*" class="function-help">Set&nbsp;the&nbsp;replacement&nbsp;text&nbsp;set&nbsp;instead&nbsp;of&nbsp;the&nbsp;not&nbsp;assigned&nbsp;node.&nbsp;Empty&nbsp;means&nbsp;not&nbsp;replaced<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>value</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.notAssignedText&nbsp;=&nbsp;value;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setResetButton">void<br/>setResetButton</td>
+<td valign="top" width="*" class="function-help">Set&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;property&nbsp;LabelDisplay&nbsp;(Case-sensitive).&nbsp;It&nbsp;is&nbsp;all&nbsp;depending&nbsp;on&nbsp;how&nbsp;your&nbsp;hierarchy&nbsp;is&nbsp;displayed:&nbsp;Key,&nbsp;Text,&nbsp;Text+Key&nbsp;...<br/>Available&nbsp;values:<br>-&nbsp;Left<br>-&nbsp;Right<br>-&nbsp;None<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>value</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.resetButton&nbsp;=&nbsp;value;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setSelMeasure">void<br/>setSelMeasure</td>
+<td valign="top" width="*" class="function-help">Set&nbsp;the&nbsp;measure&nbsp;that&nbsp;should&nbsp;be&nbsp;displayed&nbsp;in&nbsp;the&nbsp;menu.<br>The&nbsp;measure&nbsp;display&nbsp;should&nbsp;be&nbsp;active&nbsp;before&nbsp;(you&nbsp;can&nbsp;use&nbsp;method&nbsp;activateDisplayMeasure())<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>value</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.selMesure&nbsp;=&nbsp;value;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setSelectedElemKey">void<br/>setSelectedElemKey</td>
+<td valign="top" width="*" class="function-help">Simulates&nbsp;a&nbsp;click&nbsp;on&nbsp;a&nbsp;node&nbsp;by&nbsp;the&nbsp;user.<br>The&nbsp;node&nbsp;will&nbsp;be&nbsp;selected&nbsp;and&nbsp;the&nbsp;event&nbsp;"onClick"&nbsp;will&nbsp;be&nbsp;triggered.<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>selectedKey</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.SelectedElemKey&nbsp;=&nbsp;selectedKey;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setSingleRootNodeName">void<br/>setSingleRootNodeName</td>
+<td valign="top" width="*" class="function-help">Set&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;generated&nbsp;root&nbsp;node<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>newName</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.singleRootNodeName&nbsp;=&nbsp;newName;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+
+	</TABLE>
+	<div style="height:20px!important"> THE END </div>
+	</div>
+	
+	<div style="height:60px!important"></div>
+	
+</div>
+</body>
+</html>

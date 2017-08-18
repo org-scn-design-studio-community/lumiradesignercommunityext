@@ -1,0 +1,230 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../../doc.css">
+<link rel="stylesheet" type="text/css" href="../../tables.css">
+<script id="sap-ui-bootstrap" type="text/javascript" 
+      /*src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"*/
+      src="https://sapui5.hana.ondemand.com/sdk/resources/sap-ui-core.js"
+      data-sap-ui-theme="sap_bluecrystal" data-sap-ui-libs="sap.m,sap.ui.commons,sap.suite.ui.commons,sap.ui.ux3"></script>
+
+<script type="text/javascript" src="../js/ComponentMain.js"></script>
+<script type="text/javascript" src="../js/PostResponseParser/PostResponseParser.js"></script>
+<script type="text/javascript" src="../js/TimeLine.js"></script>
+<script type="text/javascript" src="../js/ga.js"></script>
+
+<script> 
+	requestChangeLog("../../../../sdkhelp/web/components/unified/processflow/changes/changelog.json");
+	requestContent("Blog", "../../../../sdkhelp/web/components/unified/processflow/blogs.json");
+	requestContent("Example", "../../../../sdkhelp/web/components/unified/processflow/examples.json");
+</script>
+
+<title>Process Flow 2.0 - SCN Design Studio Community</title>
+</head>
+<body class="comp-body" style="height:100%">
+<div class="comp-main" style="height:100%">
+
+ 	<div class="component-name">
+	ProcessFlow [ScnCommunityUnified]
+	</div>
+	<div class="component-title">
+	Process Flow 2.0
+	</div>
+
+<div id="componentnav"></div>
+	<div id="intro">This page is giving short introduction to the component with summary of the change status (green/yellow/red)<div id="introStatus" height="120px"></div><br></div>
+	<div id="blogs" hidden="true" height="100%">This page is listing community blogs on this component, follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/08/introducing-blog-list-for-community-components" target="_blank">this link</a> to learn more.<div id="BlogsList" height="100%"></div></div>
+	<div id="changelog" hidden="true" height="100%">This page is listing all changes which have been done on this component with corresponding test status (green: ok, red: not ok, yellow: untested), follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/07/introducing-change-log-for-community-components" target="_blank">this link</a> to learn more.<div id="changelogList" height="100%"></div></div>
+	<div id="examples" hidden="true" height="100%">This page is listing all example applications with this component, follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/08/introducing-blog-list-for-community-components" target="_blank">this link</a> to learn more.<div id="ExamplesList" height="100%"></div></div>
+	<div id="about" hidden="true">This page will bring more "about" details (generated)</div>
+	<div id="technical" hidden="true">
+	<br/>
+	<div class="component-properties">VISIBLE PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>connections<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Connections</B><br/>Connections
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">[]</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>foldedCorners<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Folded Corners</B><br/>Folded Corners
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">false</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>lanes<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Lanes</B><br/>Lanes
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">[{"parentKey":"ROOT","key":"ELEMENT","leaf":false,"laneId":"id0","iconSrc":"sap-icon://order-status" ... truncated</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>nodes<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Nodes</B><br/>Nodes
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">[{"parentKey":"ROOT","key":"ELEMENT","leaf":false,"children":"[2,3]","nodeId":"1","state":"Neutral", ... truncated</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>scrollable<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Scrollable</B><br/>Scrollable
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>useConnections<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Use Manual 'Connections'</B><br/>Use Manual 'Connections'
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>useLanes<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Use Manual 'Lanes'</B><br/>Use Manual 'Lanes'
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>useNodes<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Use Manual 'Nodes'</B><br/>Use Manual 'Nodes'
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>wheelZoomable<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Wheel Zoomable</B><br/>Wheel Zoomable
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">VISIBLE EVENTS</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>onErrored<br/>[ScriptText]</B></td>
+<td width="*" class="property-title-tooltip"><B>On  Errored</B><br/>On  Errored
+
+</td>
+<td width="60px" class="property-group">Events</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>onHeaderPressed<br/>[ScriptText]</B></td>
+<td width="*" class="property-title-tooltip"><B>On Header Pressed</B><br/>On Header Pressed
+
+</td>
+<td width="60px" class="property-group">Events</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>onNodePressed<br/>[ScriptText]</B></td>
+<td width="*" class="property-title-tooltip"><B>On Node Pressed</B><br/>On Node Pressed
+
+</td>
+<td width="60px" class="property-group">Events</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS LIST</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Parameters</th><th>Return</th></tr>
+	
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">HIDDEN (TECHNICAL) PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>headerPressedKey<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Header Pressed Key</B><br/>Header Pressed Key
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>nodePressedKey<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Node Pressed Key</B><br/>Node Pressed Key
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>onErroredKey<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B> Errored Key</B><br/> Errored Key
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS IN DETAIL</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="">
+	
+	</TABLE>
+	<div style="height:20px!important"> THE END </div>
+	</div>
+	
+	<div style="height:60px!important"></div>
+	
+</div>
+</body>
+</html>

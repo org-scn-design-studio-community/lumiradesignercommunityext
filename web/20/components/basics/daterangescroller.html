@@ -1,0 +1,880 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../../doc.css">
+<link rel="stylesheet" type="text/css" href="../../tables.css">
+<script id="sap-ui-bootstrap" type="text/javascript" 
+      /*src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"*/
+      src="https://sapui5.hana.ondemand.com/sdk/resources/sap-ui-core.js"
+      data-sap-ui-theme="sap_bluecrystal" data-sap-ui-libs="sap.m,sap.ui.commons,sap.suite.ui.commons,sap.ui.ux3"></script>
+
+<script type="text/javascript" src="../js/ComponentMain.js"></script>
+<script type="text/javascript" src="../js/PostResponseParser/PostResponseParser.js"></script>
+<script type="text/javascript" src="../js/TimeLine.js"></script>
+<script type="text/javascript" src="../js/ga.js"></script>
+
+<script> 
+	requestChangeLog("../../../../sdkhelp/web/components/basics/daterangescroller/changes/changelog.json");
+	requestContent("Blog", "../../../../sdkhelp/web/components/basics/daterangescroller/blogs.json");
+	requestContent("Example", "../../../../sdkhelp/web/components/basics/daterangescroller/examples.json");
+</script>
+
+<title>Date Range Scroller 2.0 - SCN Design Studio Community</title>
+</head>
+<body class="comp-body" style="height:100%">
+<div class="comp-main" style="height:100%">
+
+ 	<div class="component-name">
+	DateRangeScroller [ScnCommunityBasics]
+	</div>
+	<div class="component-title">
+	Date Range Scroller 2.0
+	</div>
+
+<div id="componentnav"></div>
+	<div id="intro">This page is giving short introduction to the component with summary of the change status (green/yellow/red)<div id="introStatus" height="120px"></div><br><p>
+Basic wrapper on SAP UI5 Date Range Scroller
+</p>
+<p>
+Link to blog: <a target="_blank" href="http://scn.sap.com/docs/DOC-61863">Design Studio SDK: Date Range Scroller Component</a>
+</p>
+</div>
+	<div id="blogs" hidden="true" height="100%">This page is listing community blogs on this component, follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/08/introducing-blog-list-for-community-components" target="_blank">this link</a> to learn more.<div id="BlogsList" height="100%"></div></div>
+	<div id="changelog" hidden="true" height="100%">This page is listing all changes which have been done on this component with corresponding test status (green: ok, red: not ok, yellow: untested), follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/07/introducing-change-log-for-community-components" target="_blank">this link</a> to learn more.<div id="changelogList" height="100%"></div></div>
+	<div id="examples" hidden="true" height="100%">This page is listing all example applications with this component, follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/08/introducing-blog-list-for-community-components" target="_blank">this link</a> to learn more.<div id="ExamplesList" height="100%"></div></div>
+	<div id="about" hidden="true">This page will bring more "about" details (generated)</div>
+	<div id="technical" hidden="true">
+	<br/>
+	<div class="component-properties">VISIBLE PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>DDate<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Date</B><br/>Date
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DLangFormat<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Language Dependent Format</B><br/>Language Dependent Format
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">false</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DLangPattern<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Custom Pattern</B><br/>Custom Pattern
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DLangRelative<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Custom Relative</B><br/>Custom Relative
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">false</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DLangStyle<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Custom Style</B><br/>Custom Style
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">Short</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DSpecialDay<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>Day Of Week To Start</B><br/>Day Of Week To Start
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">0</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DSpecialDuration<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>Duration Of Custom Range</B><br/>Duration Of Custom Range
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">14</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DViewType<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Range View Type</B><br/>Range View Type
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">Week</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">VISIBLE EVENTS</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>onChange<br/>[ScriptText]</B></td>
+<td width="*" class="property-title-tooltip"><B>On Change</B><br/>On Change
+
+</td>
+<td width="60px" class="property-group">Events</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS LIST</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Parameters</th><th>Return</th></tr>
+	<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getDate [<a href="#FUNCTION_getDate">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getEndDate [<a href="#FUNCTION_getEndDate">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getLangPattern [<a href="#FUNCTION_getLangPattern">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getLangStyle [<a href="#FUNCTION_getLangStyle">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">org_scn_community_shared_FormatStyleEnumfield</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getLangStyleAsString [<a href="#FUNCTION_getLangStyleAsString">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getSpecialDay [<a href="#FUNCTION_getSpecialDay">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">int</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getSpecialDuration [<a href="#FUNCTION_getSpecialDuration">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">int</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getStartDate [<a href="#FUNCTION_getStartDate">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getViewType [<a href="#FUNCTION_getViewType">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">org_scn_community_shared_DateViewTypeEnumfield</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getViewTypeAsString [<a href="#FUNCTION_getViewTypeAsString">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">isEditable [<a href="#FUNCTION_isEditable">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">boolean</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">isLangFormat [<a href="#FUNCTION_isLangFormat">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">boolean</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">isLangRelative [<a href="#FUNCTION_isLangRelative">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">boolean</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setDate [<a href="#FUNCTION_setDate">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">date</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setLangFormat [<a href="#FUNCTION_setLangFormat">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">langFormat</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setLangPattern [<a href="#FUNCTION_setLangPattern">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">langPattern</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setLangRelative [<a href="#FUNCTION_setLangRelative">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">langRelative</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setLangStyle [<a href="#FUNCTION_setLangStyle">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">langStyle</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setLangStyleByString [<a href="#FUNCTION_setLangStyleByString">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">langStyle</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setSpecialDay [<a href="#FUNCTION_setSpecialDay">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">specialDay</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setSpecialDuration [<a href="#FUNCTION_setSpecialDuration">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">specialDuration</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setViewType [<a href="#FUNCTION_setViewType">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">viewType</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setViewTypeByString [<a href="#FUNCTION_setViewTypeByString">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">viewType</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">HIDDEN (TECHNICAL) PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>DEndDate<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>End Date</B><br/>End Date
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DStartDate<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Start Date</B><br/>Start Date
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>editable<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Editable</B><br/>Editable
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS IN DETAIL</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="">
+	<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getDate">String<br/>getDate</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Date&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DDate;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getEndDate">String<br/>getEndDate</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;End&nbsp;Date&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DEndDate;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getLangPattern">String<br/>getLangPattern</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Custom&nbsp;Pattern&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DLangPattern;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getLangStyle">org_scn_community_shared_FormatStyleEnumfield<br/>getLangStyle</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Custom&nbsp;Style&nbsp;Property&nbsp;as&nbsp;Choice&nbsp;Option<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DLangStyle;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getLangStyleAsString">String<br/>getLangStyleAsString</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Custom&nbsp;Style&nbsp;Property&nbsp;as&nbsp;String<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DLangStyle;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getSpecialDay">int<br/>getSpecialDay</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Day&nbsp;Of&nbsp;Week&nbsp;To&nbsp;Start&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DSpecialDay;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getSpecialDuration">int<br/>getSpecialDuration</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Duration&nbsp;Of&nbsp;Custom&nbsp;Range&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DSpecialDuration;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getStartDate">String<br/>getStartDate</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Start&nbsp;Date&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DStartDate;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getViewType">org_scn_community_shared_DateViewTypeEnumfield<br/>getViewType</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Range&nbsp;View&nbsp;Type&nbsp;Property&nbsp;as&nbsp;Choice&nbsp;Option<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DViewType;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getViewTypeAsString">String<br/>getViewTypeAsString</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Range&nbsp;View&nbsp;Type&nbsp;Property&nbsp;as&nbsp;String<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DViewType;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_isEditable">boolean<br/>isEditable</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Editable&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.editable;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_isLangFormat">boolean<br/>isLangFormat</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Language&nbsp;Dependent&nbsp;Format&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DLangFormat;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_isLangRelative">boolean<br/>isLangRelative</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Custom&nbsp;Relative&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DLangRelative;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setDate">void<br/>setDate</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Date&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>date</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Date</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DDate&nbsp;=&nbsp;date;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setLangFormat">void<br/>setLangFormat</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Language&nbsp;Dependent&nbsp;Format&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>langFormat</B></td>
+<td width="120px" class="parameter-type"><B>boolean</B></td>
+<td width="*" class="parameter-help">Language Dependent Format</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DLangFormat&nbsp;=&nbsp;langFormat;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setLangPattern">void<br/>setLangPattern</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Custom&nbsp;Pattern&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>langPattern</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Custom Pattern</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DLangPattern&nbsp;=&nbsp;langPattern;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setLangRelative">void<br/>setLangRelative</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Custom&nbsp;Relative&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>langRelative</B></td>
+<td width="120px" class="parameter-type"><B>boolean</B></td>
+<td width="*" class="parameter-help">Custom Relative</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DLangRelative&nbsp;=&nbsp;langRelative;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setLangStyle">void<br/>setLangStyle</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Custom&nbsp;Style&nbsp;Property&nbsp;by&nbsp;Choice&nbsp;Option<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>langStyle</B></td>
+<td width="120px" class="parameter-type"><B>org_scn_community_shared_FormatStyleEnumfield</B></td>
+<td width="*" class="parameter-help">Custom Style</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DLangStyle&nbsp;=&nbsp;langStyle;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setLangStyleByString">void<br/>setLangStyleByString</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Custom&nbsp;Style&nbsp;Property&nbsp;by&nbsp;String<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>langStyle</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Custom Style</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DLangStyle&nbsp;=&nbsp;langStyle;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setSpecialDay">void<br/>setSpecialDay</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Day&nbsp;Of&nbsp;Week&nbsp;To&nbsp;Start&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>specialDay</B></td>
+<td width="120px" class="parameter-type"><B>int</B></td>
+<td width="*" class="parameter-help">Day Of Week To Start</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DSpecialDay&nbsp;=&nbsp;specialDay;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setSpecialDuration">void<br/>setSpecialDuration</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Duration&nbsp;Of&nbsp;Custom&nbsp;Range&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>specialDuration</B></td>
+<td width="120px" class="parameter-type"><B>int</B></td>
+<td width="*" class="parameter-help">Duration Of Custom Range</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DSpecialDuration&nbsp;=&nbsp;specialDuration;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setViewType">void<br/>setViewType</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Range&nbsp;View&nbsp;Type&nbsp;Property&nbsp;by&nbsp;Choice&nbsp;Option<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>viewType</B></td>
+<td width="120px" class="parameter-type"><B>org_scn_community_shared_DateViewTypeEnumfield</B></td>
+<td width="*" class="parameter-help">Range View Type</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DViewType&nbsp;=&nbsp;viewType;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setViewTypeByString">void<br/>setViewTypeByString</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Range&nbsp;View&nbsp;Type&nbsp;Property&nbsp;by&nbsp;String<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>viewType</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Range View Type</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DViewType&nbsp;=&nbsp;viewType;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+
+	</TABLE>
+	<div style="height:20px!important"> THE END </div>
+	</div>
+	
+	<div style="height:60px!important"></div>
+	
+</div>
+</body>
+</html>

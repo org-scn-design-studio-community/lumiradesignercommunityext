@@ -1,0 +1,1031 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../../doc.css">
+<link rel="stylesheet" type="text/css" href="../../tables.css">
+<script id="sap-ui-bootstrap" type="text/javascript" 
+      /*src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"*/
+      src="https://sapui5.hana.ondemand.com/sdk/resources/sap-ui-core.js"
+      data-sap-ui-theme="sap_bluecrystal" data-sap-ui-libs="sap.m,sap.ui.commons,sap.suite.ui.commons,sap.ui.ux3"></script>
+
+<script type="text/javascript" src="../js/ComponentMain.js"></script>
+<script type="text/javascript" src="../js/PostResponseParser/PostResponseParser.js"></script>
+<script type="text/javascript" src="../js/TimeLine.js"></script>
+<script type="text/javascript" src="../js/ga.js"></script>
+
+<script> 
+	requestChangeLog("../../../../sdkhelp/web/components/utils/collection/changes/changelog.json");
+	requestContent("Blog", "../../../../sdkhelp/web/components/utils/collection/blogs.json");
+	requestContent("Example", "../../../../sdkhelp/web/components/utils/collection/examples.json");
+</script>
+
+<title>Collection Utility - SCN Design Studio Community</title>
+</head>
+<body class="comp-body" style="height:100%">
+<div class="comp-main" style="height:100%">
+
+ 	<div class="component-name">
+	Collection [ScnCommunityUtils]
+	</div>
+	<div class="component-title">
+	Collection Utility
+	</div>
+
+<div id="componentnav"></div>
+	<div id="intro">This page is giving short introduction to the component with summary of the change status (green/yellow/red)<div id="introStatus" height="120px"></div><br><p>
+For beter work with Collections (key, label, value) - supports sorting
+</p>
+<p>
+Link to blog: <a target="_blank" href="http://scn.sap.com/docs/DOC-58081">Design Studio SDK: Collection Util Component</a>
+</p>
+</div>
+	<div id="blogs" hidden="true" height="100%">This page is listing community blogs on this component, follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/08/introducing-blog-list-for-community-components" target="_blank">this link</a> to learn more.<div id="BlogsList" height="100%"></div></div>
+	<div id="changelog" hidden="true" height="100%">This page is listing all changes which have been done on this component with corresponding test status (green: ok, red: not ok, yellow: untested), follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/07/introducing-change-log-for-community-components" target="_blank">this link</a> to learn more.<div id="changelogList" height="100%"></div></div>
+	<div id="examples" hidden="true" height="100%">This page is listing all example applications with this component, follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/08/introducing-blog-list-for-community-components" target="_blank">this link</a> to learn more.<div id="ExamplesList" height="100%"></div></div>
+	<div id="about" hidden="true">This page will bring more "about" details (generated)</div>
+	<div id="technical" hidden="true">
+	<br/>
+	<div class="component-properties">VISIBLE PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">VISIBLE EVENTS</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS LIST</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Parameters</th><th>Return</th></tr>
+	<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">addItem [<a href="#FUNCTION_addItem">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">key, label, value, (prop1), (prop2), (prop3)</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">fillIntoSelectionComponent [<a href="#FUNCTION_fillIntoSelectionComponent">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">selectionComponent, (maxMembers)</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getAsKeyLabelValueArray [<a href="#FUNCTION_getAsKeyLabelValueArray">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">(maxMembers)</td>
+<td valign="top" width="160px" class="function-short-return">org.scn.community.shared.KeyLabelValueArray</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getAsKeyLabelValuePropertyArray [<a href="#FUNCTION_getAsKeyLabelValuePropertyArray">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">(maxMembers)</td>
+<td valign="top" width="160px" class="function-short-return">org.scn.community.shared.KeyLabelValuePropertyArray</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getCollectionAsJSON [<a href="#FUNCTION_getCollectionAsJSON">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getEntryByKey [<a href="#FUNCTION_getEntryByKey">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">key</td>
+<td valign="top" width="160px" class="function-short-return">org.scn.community.shared.KeyLabelValueProperty</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getIndexByKey [<a href="#FUNCTION_getIndexByKey">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">key</td>
+<td valign="top" width="160px" class="function-short-return">int</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getKeyByIndex [<a href="#FUNCTION_getKeyByIndex">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">index</td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getKeys [<a href="#FUNCTION_getKeys">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">(separator)</td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getLabelByIndex [<a href="#FUNCTION_getLabelByIndex">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">index</td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getLabelByKey [<a href="#FUNCTION_getLabelByKey">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">key</td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getLabels [<a href="#FUNCTION_getLabels">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">(separator)</td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getLength [<a href="#FUNCTION_getLength">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">int</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getValueByIndex [<a href="#FUNCTION_getValueByIndex">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">index</td>
+<td valign="top" width="160px" class="function-short-return">float</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getValueByIndexAsString [<a href="#FUNCTION_getValueByIndexAsString">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">index</td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getValueByKey [<a href="#FUNCTION_getValueByKey">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">key</td>
+<td valign="top" width="160px" class="function-short-return">float</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getValueByKeyAsString [<a href="#FUNCTION_getValueByKeyAsString">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">key</td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getValues [<a href="#FUNCTION_getValues">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">(separator)</td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">removeAllItems [<a href="#FUNCTION_removeAllItems">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">removeItem [<a href="#FUNCTION_removeItem">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">key</td>
+<td valign="top" width="160px" class="function-short-return">int</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setItems [<a href="#FUNCTION_setItems">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">keys, labels, values, (separator), (prop1s), (prop2s), (prop3s)</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">size [<a href="#FUNCTION_size">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">int</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">sortByKey [<a href="#FUNCTION_sortByKey">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">(direction)</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">sortByKeyDescending [<a href="#FUNCTION_sortByKeyDescending">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">sortByLabel [<a href="#FUNCTION_sortByLabel">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">(direction)</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">sortByLabelDescending [<a href="#FUNCTION_sortByLabelDescending">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">sortByValue [<a href="#FUNCTION_sortByValue">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">(direction)</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">sortByValueDescending [<a href="#FUNCTION_sortByValueDescending">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">HIDDEN (TECHNICAL) PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>items<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Technical proprty for list of items</B><br/>Technical proprty for list of items
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS IN DETAIL</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="">
+	<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_addItem">void<br/>addItem</td>
+<td valign="top" width="*" class="function-help">Adds&nbsp;a&nbsp;value&nbsp;to&nbsp;new&nbsp;or&nbsp;existing&nbsp;array.&nbsp;This&nbsp;implementation&nbsp;of&nbsp;collection&nbsp;allows&nbsp;duplicate&nbsp;keys.<br/><div class='html-example'">You&nbsp;want&nbsp;to&nbsp;create&nbsp;an&nbsp;"k1,k2,k3"&nbsp;array:<br/><div class='html-code'>COLLECTION_1.addItem("k1",&nbsp;"l1",&nbsp;45.75);<br>COLLECTION_1.addItem("k2",&nbsp;"l2",&nbsp;11.21);<br>COLLECTION_1.addItem("k3",&nbsp;"l3",&nbsp;85.439);<br></div>This&nbsp;array&nbsp;has&nbsp;now&nbsp;following&nbsp;elements&nbsp;with&nbsp;keys:&nbsp;k1,k2,k3<br/></div><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>key</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">key</td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>label</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">label</td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>value</B></td>
+<td width="120px" class="parameter-type"><B>float</B></td>
+<td width="*" class="parameter-help">value</td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>prop1</B></td>
+<td width="120px" class="parameter-type"><B>String [ optional ]</B></td>
+<td width="*" class="parameter-help">optional prop 1</td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>prop2</B></td>
+<td width="120px" class="parameter-type"><B>String [ optional ]</B></td>
+<td width="*" class="parameter-help">optional prop 2</td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>prop3</B></td>
+<td width="120px" class="parameter-type"><B>String [ optional ]</B></td>
+<td width="*" class="parameter-help">optional prop 3</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;s&nbsp;=&nbsp;this.items;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;a&nbsp;=&nbsp;[];&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(s!=&quot;&quot;)&nbsp;a&nbsp;=&nbsp;JSON.parse(s);<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(prop1&nbsp;==&nbsp;undefined)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prop1&nbsp;=&nbsp;&quot;&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(prop2&nbsp;==&nbsp;undefined)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prop2&nbsp;=&nbsp;&quot;&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(prop3&nbsp;==&nbsp;undefined)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prop3&nbsp;=&nbsp;&quot;&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;itemDef&nbsp;=&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;key&quot;&nbsp;:&nbsp;key,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;label&quot;&nbsp;:&nbsp;label,&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;value&quot;&nbsp;:&nbsp;value,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;prop1&quot;&nbsp;:&nbsp;prop1,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;prop2&quot;&nbsp;:&nbsp;prop2,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;prop3&quot;&nbsp;:&nbsp;prop3<br/>&nbsp;&nbsp;&nbsp;&nbsp;};<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;a.push(itemDef);<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.items&nbsp;=&nbsp;JSON.stringify(a);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_fillIntoSelectionComponent">void<br/>fillIntoSelectionComponent</td>
+<td valign="top" width="*" class="function-help">Fills&nbsp;the&nbsp;content&nbsp;of&nbsp;this&nbsp;array&nbsp;into&nbsp;given&nbsp;selection&nbsp;component<br/><div class='html-example'">You&nbsp;want&nbsp;to&nbsp;fill&nbsp;the&nbsp;dropdown&nbsp;with&nbsp;the&nbsp;content<br/><div class='html-code'>COLLECTION.fillIntoSelectionComponent(DROPDOWN,&nbsp;30);<br/></div>Now&nbsp;the&nbsp;dropdown&nbsp;is&nbsp;filled&nbsp;in&nbsp;with&nbsp;given&nbsp;values<br/></div><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>selectionComponent</B></td>
+<td width="120px" class="parameter-type"><B>SelectionComponent</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>maxMembers</B></td>
+<td width="120px" class="parameter-type"><B>int [ optional ]</B></td>
+<td width="*" class="parameter-help">max members</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+selectionComponent.removeAllItems();<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;that&nbsp;=&nbsp;this;<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;l&nbsp;=&nbsp;{};<br/>&nbsp;&nbsp;&nbsp;&nbsp;l.list&nbsp;=&nbsp;this.getAsKeyLabelValueArray(maxMembers);<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(this.isDebug())&nbsp;{&nbsp;DEBUG.inspectZtl(that,&nbsp;l)};<br/>&nbsp;&nbsp;&nbsp;&nbsp;for(var&nbsp;i=0;i&lt;l.list.length;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//erase&nbsp;'\&quot;'&nbsp;to&nbsp;prettify&nbsp;titles/keys&nbsp;since&nbsp;json&nbsp;strings&nbsp;usually&nbsp;come&nbsp;with&nbsp;'&quot;'<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;replacer&nbsp;=&nbsp;new&nbsp;RegExp('&quot;','g');<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;label&nbsp;=&nbsp;l.list[i].label;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;key&nbsp;=&nbsp;l.list[i].key;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label&nbsp;=&nbsp;label.replace(replacer,'');<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key&nbsp;=&nbsp;key.replace(replacer,'');<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;selectionComponent.addItem(key,&nbsp;label);<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(this.isDebug())&nbsp;{&nbsp;DEBUG.inspectZtl(that,&nbsp;l)};
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getAsKeyLabelValueArray">org.scn.community.shared.KeyLabelValueArray<br/>getAsKeyLabelValueArray</td>
+<td valign="top" width="*" class="function-help">Returns&nbsp;the&nbsp;collection&nbsp;content&nbsp;as&nbsp;loopable&nbsp;array.<br/><div class='html-example'">You&nbsp;want&nbsp;to&nbsp;loop&nbsp;at&nbsp;the&nbsp;"k1;k2;k3",&nbsp;"l1;l2;l3",&nbsp;"12.4;25.1;94.2"&nbsp;collection:<br/><div class='html-code'>var&nbsp;content&nbsp;=&nbsp;COLLECTION_1.getAsKeyLabelValueArray();<br>//&nbsp;a&nbsp;loop&nbsp;for&nbsp;all&nbsp;entries<br>content.forEach(function(element,&nbsp;index)&nbsp;{<br>LISTBOX_1.addItem(element.key,&nbsp;element.label&nbsp;+&nbsp;"(&nbsp;"&nbsp;+&nbsp;element.value&nbsp;+&nbsp;"&nbsp;)");<br>});<br/></div>This&nbsp;LISTBOX_1&nbsp;has&nbsp;now&nbsp;following&nbsp;values&nbsp;entries:<br><ul><li>key:&nbsp;k1;&nbsp;value:&nbsp;l1&nbsp;(&nbsp;12.4&nbsp;)</li><li>key:&nbsp;k2;&nbsp;value:&nbsp;l2&nbsp;(&nbsp;25.1&nbsp;)</li><li>key:&nbsp;k3;&nbsp;value:&nbsp;l3&nbsp;(&nbsp;94.2&nbsp;)</li></ul></div><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>maxMembers</B></td>
+<td width="120px" class="parameter-type"><B>int [ optional ]</B></td>
+<td width="*" class="parameter-help">max members</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;s&nbsp;=&nbsp;this.items;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;a&nbsp;=&nbsp;[];&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(s!=&quot;&quot;)&nbsp;a&nbsp;=&nbsp;JSON.parse(s);<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;tempA&nbsp;=&nbsp;[];<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;APPLICATION.createInfoMessage(&quot;Max:&nbsp;&quot;&nbsp;+&nbsp;maxMembers);&nbsp;//&nbsp;debug<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(maxMembers&nbsp;==&nbsp;undefined&nbsp;||&nbsp;maxMembers&nbsp;&lt;=&nbsp;0&nbsp;||&nbsp;maxMembers&nbsp;&gt;&nbsp;a.length)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;maxMembers&nbsp;=&nbsp;a.length;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;for(var&nbsp;i=0;i&lt;maxMembers;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;itemDef&nbsp;=&nbsp;{&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;key&quot;:&nbsp;a[i].key,&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;label&quot;:&nbsp;a[i].label,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;value&quot;:&nbsp;a[i].value<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tempA.push(itemDef);<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;tempA;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getAsKeyLabelValuePropertyArray">org.scn.community.shared.KeyLabelValuePropertyArray<br/>getAsKeyLabelValuePropertyArray</td>
+<td valign="top" width="*" class="function-help">Returns&nbsp;the&nbsp;collection&nbsp;content&nbsp;as&nbsp;loopable&nbsp;array.<br/><div class='html-example'">You&nbsp;want&nbsp;to&nbsp;loop&nbsp;at&nbsp;the&nbsp;"k1;k2;k3",&nbsp;"l1;l2;l3",&nbsp;"12.4;25.1;94.2"&nbsp;collection:<br/><div class='html-code'>var&nbsp;content&nbsp;=&nbsp;COLLECTION_1.getAsKeyLabelValueArray();<br>//&nbsp;a&nbsp;loop&nbsp;for&nbsp;all&nbsp;entries<br>content.forEach(function(element,&nbsp;index)&nbsp;{<br>LISTBOX_1.addItem(element.key,&nbsp;element.label&nbsp;+&nbsp;"(&nbsp;"&nbsp;+&nbsp;element.value&nbsp;+&nbsp;"&nbsp;)");<br>});<br/></div>This&nbsp;LISTBOX_1&nbsp;has&nbsp;now&nbsp;following&nbsp;values&nbsp;entries:<br><ul><li>key:&nbsp;k1;&nbsp;value:&nbsp;l1&nbsp;(&nbsp;12.4&nbsp;)</li><li>key:&nbsp;k2;&nbsp;value:&nbsp;l2&nbsp;(&nbsp;25.1&nbsp;)</li><li>key:&nbsp;k3;&nbsp;value:&nbsp;l3&nbsp;(&nbsp;94.2&nbsp;)</li></ul></div><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>maxMembers</B></td>
+<td width="120px" class="parameter-type"><B>int [ optional ]</B></td>
+<td width="*" class="parameter-help">max members</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;s&nbsp;=&nbsp;this.items;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;a&nbsp;=&nbsp;[];&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(s!=&quot;&quot;)&nbsp;a&nbsp;=&nbsp;JSON.parse(s);<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;tempA&nbsp;=&nbsp;[];<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;APPLICATION.createInfoMessage(&quot;Max:&nbsp;&quot;&nbsp;+&nbsp;maxMembers);&nbsp;//&nbsp;debug<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(maxMembers&nbsp;==&nbsp;undefined&nbsp;||&nbsp;maxMembers&nbsp;&lt;=&nbsp;0&nbsp;||&nbsp;maxMembers&nbsp;&gt;&nbsp;a.length)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;maxMembers&nbsp;=&nbsp;a.length;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;for(var&nbsp;i=0;i&lt;maxMembers;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;itemDef&nbsp;=&nbsp;{&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;key&quot;:&nbsp;a[i].key,&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;label&quot;:&nbsp;a[i].label,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;value&quot;:&nbsp;a[i].value,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;prop1&quot;:&nbsp;a[i].prop1,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;prop2&quot;:&nbsp;a[i].prop2,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;prop3&quot;:&nbsp;a[i].prop3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tempA.push(itemDef);<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;tempA;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getCollectionAsJSON">String<br/>getCollectionAsJSON</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Collection&nbsp;As&nbsp;JSON&nbsp;String<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+//erase&nbsp;'\&quot;'&nbsp;to&nbsp;prettify&nbsp;titles/keys&nbsp;since&nbsp;json&nbsp;strings&nbsp;usually&nbsp;come&nbsp;with&nbsp;'&quot;'<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;result&nbsp;=&nbsp;this.items.replace(/\\&quot;/g,'');<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;jsonObject&nbsp;=&nbsp;JSON.parse(result);<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;JSON.stringify(jsonObject,&nbsp;null,&nbsp;4);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getEntryByKey">org.scn.community.shared.KeyLabelValueProperty<br/>getEntryByKey</td>
+<td valign="top" width="*" class="function-help">Returns&nbsp;the&nbsp;entry&nbsp;by&nbsp;given&nbsp;key.&nbsp;In&nbsp;case&nbsp;the&nbsp;key&nbsp;does&nbsp;not&nbsp;exist,&nbsp;key&nbsp;"N/A"&nbsp;is&nbsp;given&nbsp;back.<br/><div class='html-example'">You&nbsp;have&nbsp;a&nbsp;"k1,k2,k3"&nbsp;collection&nbsp;with&nbsp;value&nbsp;"Value&nbsp;for&nbsp;Key&nbsp;2"&nbsp;at&nbsp;index&nbsp;1&nbsp;(key&nbsp;==&nbsp;"k2")&nbsp;and&nbsp;want&nbsp;to&nbsp;get&nbsp;the&nbsp;entry&nbsp;at&nbsp;key&nbsp;"k2":<br/><div class='html-code'>var&nbsp;entry&nbsp;=&nbsp;COLLECTION_1.getEntryByKey("k2");<br>var&nbsp;key&nbsp;=&nbsp;entry.key;<br/>var&nbsp;label&nbsp;=&nbsp;entry.key;<br/>var&nbsp;label&nbsp;=&nbsp;entry.label;<br/>var&nbsp;value&nbsp;=&nbsp;entry.value;<br/>var&nbsp;prop1&nbsp;=&nbsp;entry.prop2;<br/>var&nbsp;prop2&nbsp;=&nbsp;entry.prop2;<br/>var&nbsp;prop3&nbsp;=&nbsp;entry.prop3;<br/></div>Now&nbsp;"entry"&nbsp;is&nbsp;set&nbsp;to&nbsp;the&nbsp;entry&nbsp;"k2".<br/></div><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>key</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"> key </td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;s&nbsp;=&nbsp;this.items;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;a&nbsp;=&nbsp;[];<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(s!=&quot;&quot;)&nbsp;a&nbsp;=&nbsp;JSON.parse(s);&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;r&nbsp;=&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;key&quot;&nbsp;:&nbsp;&quot;N/A&quot;,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;label&quot;&nbsp;:&nbsp;&quot;&quot;,&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;value&quot;&nbsp;:&nbsp;&quot;&quot;,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;prop1&quot;&nbsp;:&nbsp;&quot;&quot;,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;prop2&quot;&nbsp;:&nbsp;&quot;&quot;,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;prop3&quot;&nbsp;:&nbsp;&quot;&quot;<br/>&nbsp;&nbsp;&nbsp;&nbsp;};<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;for(var&nbsp;i=0;i&lt;a.length;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(a[i].key&nbsp;==&nbsp;key)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r&nbsp;=&nbsp;a[i];<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;r;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getIndexByKey">int<br/>getIndexByKey</td>
+<td valign="top" width="*" class="function-help">Returns&nbsp;index&nbsp;by&nbsp;given&nbsp;key.&nbsp;In&nbsp;case&nbsp;the&nbsp;key&nbsp;does&nbsp;not&nbsp;exist,&nbsp;"N/A"&nbsp;is&nbsp;given&nbsp;back.<br/><div class='html-example'">You&nbsp;have&nbsp;a&nbsp;"k1,k2,k3"&nbsp;collection&nbsp;with&nbsp;value&nbsp;"Value&nbsp;for&nbsp;Key&nbsp;2"&nbsp;at&nbsp;index&nbsp;1&nbsp;(key&nbsp;==&nbsp;"k2")&nbsp;and&nbsp;want&nbsp;to&nbsp;get&nbsp;index&nbsp;at&nbsp;key&nbsp;"k2":<br/><div class='html-code'>var&nbsp;index1&nbsp;=&nbsp;COLLECTION_1.getIndexByKey("k2");<br></div>Now&nbsp;"index1"&nbsp;is&nbsp;set&nbsp;to&nbsp;float&nbsp;"1".<br/></div><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>key</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"> index </td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;s&nbsp;=&nbsp;this.items;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;a&nbsp;=&nbsp;[];<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(s!=&quot;&quot;)&nbsp;a&nbsp;=&nbsp;JSON.parse(s);&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;r&nbsp;=&nbsp;&quot;N/A&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;for(var&nbsp;i=0;i&lt;a.length;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(a[i].key&nbsp;==&nbsp;key)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r&nbsp;=&nbsp;i;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;r;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getKeyByIndex">String<br/>getKeyByIndex</td>
+<td valign="top" width="*" class="function-help">Returns&nbsp;key&nbsp;by&nbsp;given&nbsp;index.&nbsp;Indices&nbsp;are&nbsp;0-based.&nbsp;In&nbsp;case&nbsp;the&nbsp;index&nbsp;does&nbsp;not&nbsp;exist,&nbsp;"N/A"&nbsp;is&nbsp;given&nbsp;back.<br/><div class='html-example'">You&nbsp;have&nbsp;a&nbsp;"k1,k2,k3"&nbsp;collection&nbsp;with&nbsp;label&nbsp;"Value&nbsp;for&nbsp;Key&nbsp;2"&nbsp;at&nbsp;index&nbsp;1&nbsp;and&nbsp;want&nbsp;to&nbsp;get&nbsp;value&nbsp;at&nbsp;index&nbsp;1:<br/><div class='html-code'>var&nbsp;key1&nbsp;=&nbsp;COLLECTION_1.getKeyByIndex(1);<br></div>Now&nbsp;"key1"&nbsp;is&nbsp;set&nbsp;to&nbsp;String&nbsp;"Value&nbsp;for&nbsp;Key&nbsp;2".<br/></div><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>index</B></td>
+<td width="120px" class="parameter-type"><B>int</B></td>
+<td width="*" class="parameter-help"> index </td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;s&nbsp;=&nbsp;this.items;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;a&nbsp;=&nbsp;[];<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(s!=&quot;&quot;)&nbsp;a&nbsp;=&nbsp;JSON.parse(s);&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;r&nbsp;=&nbsp;&quot;N/A&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(a.length&gt;index){&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r&nbsp;=&nbsp;a[index].key;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;r;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getKeys">String<br/>getKeys</td>
+<td valign="top" width="*" class="function-help">Returns&nbsp;all&nbsp;keys&nbsp;as&nbsp;String&nbsp;separated&nbsp;by&nbsp;given&nbsp;optional&nbsp;separator.&nbsp;default&nbsp;separator&nbsp;is&nbsp;comma&nbsp;,<br/><div class='html-example'">You&nbsp;have&nbsp;an&nbsp;array&nbsp;with&nbsp;3&nbsp;elements&nbsp;with&nbsp;keys&nbsp;["K1",&nbsp;"K2",&nbsp;"K3"]:<br/><div class='html-code'>var&nbsp;keysAsString&nbsp;=&nbsp;COLLECTION_1.getKeys&nbsp;("|");<br></div>The&nbsp;"keysAsString"&nbsp;has&nbsp;now&nbsp;"K1|K2|K3"&nbsp;as&nbsp;content.<br/></div><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>separator</B></td>
+<td width="120px" class="parameter-type"><B>String [ optional ]</B></td>
+<td width="*" class="parameter-help">separator</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;s&nbsp;=&nbsp;this.items;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;a&nbsp;=&nbsp;[];<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(s!=&quot;&quot;)&nbsp;a&nbsp;=&nbsp;JSON.parse(s);<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;tempA&nbsp;=&nbsp;[];<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;for(var&nbsp;i=0;i&lt;a.length;i++){&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tempA.push(a[i].key);&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(separator&nbsp;==&nbsp;undefined)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;separator&nbsp;=&nbsp;&quot;,&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;tempA.join(separator);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getLabelByIndex">String<br/>getLabelByIndex</td>
+<td valign="top" width="*" class="function-help">Returns&nbsp;label&nbsp;by&nbsp;given&nbsp;index.&nbsp;Indices&nbsp;are&nbsp;0-based.&nbsp;In&nbsp;case&nbsp;the&nbsp;index&nbsp;does&nbsp;not&nbsp;exist,&nbsp;"N/A"&nbsp;is&nbsp;given&nbsp;back.<br/><div class='html-example'">You&nbsp;have&nbsp;a&nbsp;"k1,k2,k3"&nbsp;collection&nbsp;with&nbsp;label&nbsp;"Value&nbsp;for&nbsp;Key&nbsp;2"&nbsp;at&nbsp;index&nbsp;1&nbsp;and&nbsp;want&nbsp;to&nbsp;get&nbsp;value&nbsp;at&nbsp;index&nbsp;1:<br/><div class='html-code'>var&nbsp;label1&nbsp;=&nbsp;COLLECTION_1.getLabelByIndex(1);<br></div>Now&nbsp;"label1"&nbsp;is&nbsp;set&nbsp;to&nbsp;String&nbsp;"Value&nbsp;for&nbsp;Key&nbsp;2".<br/></div><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>index</B></td>
+<td width="120px" class="parameter-type"><B>int</B></td>
+<td width="*" class="parameter-help"> index </td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;s&nbsp;=&nbsp;this.items;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;a&nbsp;=&nbsp;[];<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(s!=&quot;&quot;)&nbsp;a&nbsp;=&nbsp;JSON.parse(s);&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;r&nbsp;=&nbsp;&quot;N/A&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(a.length&gt;index){&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r&nbsp;=&nbsp;a[index].label;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;r;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getLabelByKey">String<br/>getLabelByKey</td>
+<td valign="top" width="*" class="function-help">Returns&nbsp;label&nbsp;by&nbsp;given&nbsp;key.&nbsp;In&nbsp;case&nbsp;the&nbsp;key&nbsp;does&nbsp;not&nbsp;exist,&nbsp;"N/A"&nbsp;is&nbsp;given&nbsp;back.<br/><div class='html-example'">You&nbsp;have&nbsp;a&nbsp;"k1,k2,k3"&nbsp;collection&nbsp;with&nbsp;value&nbsp;"Value&nbsp;for&nbsp;Key&nbsp;2"&nbsp;at&nbsp;index&nbsp;1&nbsp;(key&nbsp;==&nbsp;"k2")&nbsp;and&nbsp;want&nbsp;to&nbsp;get&nbsp;value&nbsp;at&nbsp;key&nbsp;"k2":<br/><div class='html-code'>var&nbsp;label1&nbsp;=&nbsp;COLLECTION_1.getLabelByKey("k2");<br></div>Now&nbsp;"label1"&nbsp;is&nbsp;set&nbsp;to&nbsp;float&nbsp;"Value&nbsp;for&nbsp;Key&nbsp;2".<br/></div><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>key</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"> key </td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;s&nbsp;=&nbsp;this.items;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;a&nbsp;=&nbsp;[];<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(s!=&quot;&quot;)&nbsp;a&nbsp;=&nbsp;JSON.parse(s);&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;r&nbsp;=&nbsp;&quot;N/A&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;for(var&nbsp;i=0;i&lt;a.length;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(a[i].key&nbsp;==&nbsp;key)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r&nbsp;=&nbsp;a[i].label;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;r;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getLabels">String<br/>getLabels</td>
+<td valign="top" width="*" class="function-help">Returns&nbsp;all&nbsp;labels&nbsp;as&nbsp;String&nbsp;separated&nbsp;by&nbsp;given&nbsp;optional&nbsp;separator.&nbsp;default&nbsp;separator&nbsp;is&nbsp;comma&nbsp;,<br/><div class='html-example'">You&nbsp;have&nbsp;an&nbsp;array&nbsp;with&nbsp;3&nbsp;elements&nbsp;with&nbsp;labels&nbsp;["L1",&nbsp;"L2",&nbsp;"L3"]:<br/><div class='html-code'>var&nbsp;labelsAsString&nbsp;=&nbsp;COLLECTION_1.getLabels&nbsp;("|");<br></div>The&nbsp;"labelsAsString"&nbsp;has&nbsp;now&nbsp;"L1|L2|L3"&nbsp;as&nbsp;content.<br/></div><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>separator</B></td>
+<td width="120px" class="parameter-type"><B>String [ optional ]</B></td>
+<td width="*" class="parameter-help">separator</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;s&nbsp;=&nbsp;this.items;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;a&nbsp;=&nbsp;[];<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(s!=&quot;&quot;)&nbsp;a&nbsp;=&nbsp;JSON.parse(s);<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;tempA&nbsp;=&nbsp;[];<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;for(var&nbsp;i=0;i&lt;a.length;i++){&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tempA.push(a[i].label);&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(separator&nbsp;==&nbsp;undefined)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;separator&nbsp;=&nbsp;&quot;,&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;tempA.join(separator);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getLength">int<br/>getLength</td>
+<td valign="top" width="*" class="function-help">Returns&nbsp;length&nbsp;of&nbsp;current&nbsp;collection<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;s&nbsp;=&nbsp;this.items;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;a&nbsp;=&nbsp;[];&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(s!=&quot;&quot;)&nbsp;a&nbsp;=&nbsp;JSON.parse(s);<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;a.length;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getValueByIndex">float<br/>getValueByIndex</td>
+<td valign="top" width="*" class="function-help">Returns&nbsp;value&nbsp;by&nbsp;given&nbsp;index.&nbsp;Indices&nbsp;are&nbsp;0-based.&nbsp;In&nbsp;case&nbsp;the&nbsp;index&nbsp;does&nbsp;not&nbsp;exist,&nbsp;"0.0"&nbsp;is&nbsp;given&nbsp;back.<br/><div class='html-example'">You&nbsp;have&nbsp;a&nbsp;"k1,k2,k3"&nbsp;collection&nbsp;with&nbsp;value&nbsp;"54.48"&nbsp;at&nbsp;index&nbsp;1&nbsp;and&nbsp;want&nbsp;to&nbsp;get&nbsp;value&nbsp;at&nbsp;index&nbsp;1:<br/><div class='html-code'>var&nbsp;value1&nbsp;=&nbsp;COLLECTION_1.getValueByIndex(1);<br></div>Now&nbsp;"value1"&nbsp;is&nbsp;set&nbsp;to&nbsp;float&nbsp;"54.48".<br/></div><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>index</B></td>
+<td width="120px" class="parameter-type"><B>int</B></td>
+<td width="*" class="parameter-help"> index </td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;s&nbsp;=&nbsp;this.items;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;a&nbsp;=&nbsp;[];<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(s!=&quot;&quot;)&nbsp;a&nbsp;=&nbsp;JSON.parse(s);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;r&nbsp;=&nbsp;0.0;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(a.length&gt;index){&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r&nbsp;=&nbsp;a[index].value;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;r;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getValueByIndexAsString">String<br/>getValueByIndexAsString</td>
+<td valign="top" width="*" class="function-help">Returns&nbsp;value&nbsp;by&nbsp;given&nbsp;index.&nbsp;Indices&nbsp;are&nbsp;0-based.&nbsp;In&nbsp;case&nbsp;the&nbsp;index&nbsp;does&nbsp;not&nbsp;exist,&nbsp;"NaN"&nbsp;is&nbsp;given&nbsp;back.<br/><div class='html-example'">You&nbsp;have&nbsp;a&nbsp;"k1,k2,k3"&nbsp;collection&nbsp;with&nbsp;value&nbsp;"54.48"&nbsp;at&nbsp;index&nbsp;1&nbsp;and&nbsp;want&nbsp;to&nbsp;get&nbsp;value&nbsp;at&nbsp;index&nbsp;1:<br/><div class='html-code'>var&nbsp;value1&nbsp;=&nbsp;COLLECTION_1.getValueByIndexAsString(1);<br></div>Now&nbsp;"value1"&nbsp;is&nbsp;set&nbsp;to&nbsp;String&nbsp;"54.48".<br/></div><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>index</B></td>
+<td width="120px" class="parameter-type"><B>int</B></td>
+<td width="*" class="parameter-help"> index </td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;s&nbsp;=&nbsp;this.items;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;a&nbsp;=&nbsp;[];<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(s!=&quot;&quot;)&nbsp;a&nbsp;=&nbsp;JSON.parse(s);&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;r&nbsp;=&nbsp;&quot;NaN&quot;;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(a.length&gt;index){&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r&nbsp;=&nbsp;a[index].value;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;r;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getValueByKey">float<br/>getValueByKey</td>
+<td valign="top" width="*" class="function-help">Returns&nbsp;value&nbsp;by&nbsp;given&nbsp;key.&nbsp;In&nbsp;case&nbsp;the&nbsp;index&nbsp;does&nbsp;not&nbsp;exist,&nbsp;"0.0"&nbsp;is&nbsp;given&nbsp;back.<br/><div class='html-example'">You&nbsp;have&nbsp;a&nbsp;"k1,k2,k3"&nbsp;collection&nbsp;with&nbsp;value&nbsp;"54.48"&nbsp;at&nbsp;index&nbsp;1&nbsp;(key&nbsp;==&nbsp;"k2")&nbsp;and&nbsp;want&nbsp;to&nbsp;get&nbsp;value&nbsp;at&nbsp;key&nbsp;"k2":<br/><div class='html-code'>var&nbsp;value1&nbsp;=&nbsp;COLLECTION_1.getValueByKey("k2");<br></div>Now&nbsp;"value1"&nbsp;is&nbsp;set&nbsp;to&nbsp;float&nbsp;"54.48".<br/></div><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>key</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"> index </td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;s&nbsp;=&nbsp;this.items;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;a&nbsp;=&nbsp;[];<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(s!=&quot;&quot;)&nbsp;a&nbsp;=&nbsp;JSON.parse(s);&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;r&nbsp;=&nbsp;0.0;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;for(var&nbsp;i=0;i&lt;a.length;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(a[i].key&nbsp;==&nbsp;key)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r&nbsp;=&nbsp;a[i].value;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;r;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getValueByKeyAsString">String<br/>getValueByKeyAsString</td>
+<td valign="top" width="*" class="function-help">Returns&nbsp;value&nbsp;by&nbsp;given&nbsp;key.&nbsp;In&nbsp;case&nbsp;the&nbsp;index&nbsp;does&nbsp;not&nbsp;exist,&nbsp;"NaN"&nbsp;is&nbsp;given&nbsp;back.<br/><div class='html-example'">You&nbsp;have&nbsp;a&nbsp;"k1,k2,k3"&nbsp;collection&nbsp;with&nbsp;value&nbsp;"54.48"&nbsp;at&nbsp;index&nbsp;1&nbsp;(key&nbsp;==&nbsp;"k2")&nbsp;and&nbsp;want&nbsp;to&nbsp;get&nbsp;value&nbsp;at&nbsp;key&nbsp;"k2":<br/><div class='html-code'>var&nbsp;value1&nbsp;=&nbsp;COLLECTION_1.getValueByKeyAsString("k2");<br></div>Now&nbsp;"value1"&nbsp;is&nbsp;set&nbsp;to&nbsp;String&nbsp;"54.48".<br/></div><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>key</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"> key </td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;s&nbsp;=&nbsp;this.items;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;a&nbsp;=&nbsp;[];<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(s!=&quot;&quot;)&nbsp;a&nbsp;=&nbsp;JSON.parse(s);&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;r&nbsp;=&nbsp;&quot;NaN&quot;;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;for(var&nbsp;i=0;i&lt;a.length;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(a[i].key&nbsp;==&nbsp;key)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r&nbsp;=&nbsp;a[i].value;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;r;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getValues">String<br/>getValues</td>
+<td valign="top" width="*" class="function-help">Returns&nbsp;all&nbsp;values&nbsp;as&nbsp;String&nbsp;separated&nbsp;by&nbsp;given&nbsp;optional&nbsp;separator.&nbsp;default&nbsp;separator&nbsp;is&nbsp;comma&nbsp;,<br/><div class='html-example'">You&nbsp;have&nbsp;an&nbsp;array&nbsp;with&nbsp;3&nbsp;elements&nbsp;with&nbsp;values&nbsp;["11.4",&nbsp;"87.66",&nbsp;"147.41"]:<br/><div class='html-code'>var&nbsp;valuesAsString&nbsp;=&nbsp;COLLECTION_1.getValues&nbsp;("|");<br></div>The&nbsp;"valuesAsString"&nbsp;has&nbsp;now&nbsp;"11.4|87.66|147.41"&nbsp;as&nbsp;content.<br/></div><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>separator</B></td>
+<td width="120px" class="parameter-type"><B>String [ optional ]</B></td>
+<td width="*" class="parameter-help">separator</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;s&nbsp;=&nbsp;this.items;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;a&nbsp;=&nbsp;[];<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(s!=&quot;&quot;)&nbsp;a&nbsp;=&nbsp;JSON.parse(s);<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;tempA&nbsp;=&nbsp;[];&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;for(var&nbsp;i=0;i&lt;a.length;i++){&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tempA.push(a[i].value);&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(separator&nbsp;==&nbsp;undefined)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;separator&nbsp;=&nbsp;&quot;,&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;tempA.join(separator);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_removeAllItems">void<br/>removeAllItems</td>
+<td valign="top" width="*" class="function-help">Removes&nbsp;all&nbsp;Items&nbsp;(clears&nbsp;the&nbsp;collection)<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;a&nbsp;=&nbsp;[];<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.items&nbsp;=&nbsp;JSON.stringify(a);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_removeItem">int<br/>removeItem</td>
+<td valign="top" width="*" class="function-help">Removes&nbsp;an&nbsp;item&nbsp;from&nbsp;existing&nbsp;collection.&nbsp;This&nbsp;implementation&nbsp;of&nbsp;collection&nbsp;allows&nbsp;duplicate&nbsp;keys&nbsp;-&nbsp;all&nbsp;keys&nbsp;will&nbsp;be&nbsp;removed.<br/><div class='html-example'">You&nbsp;have&nbsp;an&nbsp;array&nbsp;with&nbsp;keys&nbsp;"k1,k2,k3":<br/><div class='html-code'>ARRAY_1.removeItem("k1");<br></div>This&nbsp;array&nbsp;has&nbsp;now&nbsp;following&nbsp;values:&nbsp;k2,k3<br/>Return&nbsp;is&nbsp;the&nbsp;number&nbsp;of&nbsp;removed&nbsp;items.&nbsp;0&nbsp;means&nbsp;no&nbsp;removal&nbsp;was&nbsp;done.<br/></div><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>key</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">key</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;s&nbsp;=&nbsp;this.items;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;a&nbsp;=&nbsp;[];&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(s!=&quot;&quot;)&nbsp;a&nbsp;=&nbsp;JSON.parse(s);<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;newArray&nbsp;=&nbsp;[];<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;foundNumber&nbsp;=&nbsp;0;<br/>&nbsp;&nbsp;&nbsp;&nbsp;for(var&nbsp;aI&nbsp;in&nbsp;a){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(a[aI].key&nbsp;==&nbsp;key)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;foundNumber++;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newArray.push(a[aI]);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;this.items&nbsp;=&nbsp;JSON.stringify(newArray);<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;foundNumber;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setItems">void<br/>setItems</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;items&nbsp;of&nbsp;the&nbsp;array&nbsp;by&nbsp;2&nbsp;strings:&nbsp;for&nbsp;keys,&nbsp;labels,&nbsp;values.&nbsp;Optionally&nbsp;a&nbsp;given&nbsp;separator&nbsp;can&nbsp;be&nbsp;specified.&nbsp;This&nbsp;implementation&nbsp;of&nbsp;collection&nbsp;allows&nbsp;duplicate&nbsp;keys.<br/>Values&nbsp;must&nbsp;be&nbsp;float&nbsp;numbers.&nbsp;The&nbsp;content&nbsp;length&nbsp;is&nbsp;equal&nbsp;with&nbsp;number&nbsp;of&nbsp;keys.&nbsp;in&nbsp;case&nbsp;labels&nbsp;or&nbsp;values&nbsp;are&nbsp;shorter,&nbsp;correspondingly&nbsp;an&nbsp;empty&nbsp;label&nbsp;or&nbsp;0.0&nbsp;will&nbsp;be&nbsp;inserted.<br/><div class='html-example'">You&nbsp;want&nbsp;to&nbsp;set&nbsp;the&nbsp;string&nbsp;"k1;k2;k3"&nbsp;array:<br/><div class='html-code'>COLLECTION_1.setItems("k1;k2;k3",&nbsp;"l1;l2;l3",&nbsp;"12.4;25.1;94.2",&nbsp;";");<br></div>This&nbsp;array&nbsp;has&nbsp;now&nbsp;following&nbsp;values:&nbsp;k1,k2,k3<br/></div><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>keys</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">keys</td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>labels</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">labels</td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>values</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">values</td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>separator</B></td>
+<td width="120px" class="parameter-type"><B>String [ optional ]</B></td>
+<td width="*" class="parameter-help">separator</td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>prop1s</B></td>
+<td width="120px" class="parameter-type"><B>String [ optional ]</B></td>
+<td width="*" class="parameter-help">optional prop 1 array</td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>prop2s</B></td>
+<td width="120px" class="parameter-type"><B>String [ optional ]</B></td>
+<td width="*" class="parameter-help">optional prop 2 array</td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>prop3s</B></td>
+<td width="120px" class="parameter-type"><B>String [ optional ]</B></td>
+<td width="*" class="parameter-help">optional prop 3 array</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;a&nbsp;=&nbsp;[];<br/>&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(separator&nbsp;==&nbsp;undefined)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;separator&nbsp;=&nbsp;&quot;,&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(prop1s&nbsp;==&nbsp;undefined)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prop1s&nbsp;=&nbsp;&quot;&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(prop2s&nbsp;==&nbsp;undefined)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prop2s&nbsp;=&nbsp;&quot;&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(prop3s&nbsp;==&nbsp;undefined)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prop3s&nbsp;=&nbsp;&quot;&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;k&nbsp;=&nbsp;keys.split(separator);&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;l&nbsp;=&nbsp;labels.split(separator);&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;v&nbsp;=&nbsp;values.split(separator);<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;p1&nbsp;=&nbsp;prop1s.split(separator);<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;p2&nbsp;=&nbsp;prop2s.split(separator);<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;p3&nbsp;=&nbsp;prop3s.split(separator);<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;while(k.length&gt;l.length)&nbsp;l.push(&quot;&quot;);&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;while(k.length&gt;v.length)&nbsp;v.push(&quot;0&quot;);<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;while(k.length&gt;p1.length)&nbsp;p1.push(&quot;&quot;);<br/>&nbsp;&nbsp;&nbsp;&nbsp;while(k.length&gt;p2.length)&nbsp;p2.push(&quot;&quot;);<br/>&nbsp;&nbsp;&nbsp;&nbsp;while(k.length&gt;p3.length)&nbsp;p3.push(&quot;&quot;);<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;for(var&nbsp;i=0;&nbsp;i&lt;k.length;&nbsp;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;itemDef&nbsp;=&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;key&quot;&nbsp;:&nbsp;k[i],<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;label&quot;&nbsp;:&nbsp;l[i],&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;value&quot;&nbsp;:&nbsp;v[i],<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;prop1&quot;:&nbsp;p1[i],<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;prop2&quot;:&nbsp;p2[i],<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;prop3&quot;:&nbsp;p3[i]<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a.push(itemDef);<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.items&nbsp;=&nbsp;JSON.stringify(a);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_size">int<br/>size</td>
+<td valign="top" width="*" class="function-help">Returns&nbsp;the&nbsp;current&nbsp;size.<br/><div class='html-example'">You&nbsp;have&nbsp;a&nbsp;"k1,k2,k3"&nbsp;collection&nbsp;with&nbsp;value&nbsp;"54.48"&nbsp;at&nbsp;index&nbsp;1&nbsp;(key&nbsp;==&nbsp;"k2")&nbsp;and&nbsp;want&nbsp;to&nbsp;get&nbsp;the&nbsp;size:<br/><div class='html-code'>var&nbsp;size&nbsp;=&nbsp;COLLECTION_1.size();<br></div>Now&nbsp;"size"&nbsp;is&nbsp;set&nbsp;to&nbsp;integer&nbsp;"3".<br/></div><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;s&nbsp;=&nbsp;this.items;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;a&nbsp;=&nbsp;[];<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(s!=&quot;&quot;)&nbsp;a&nbsp;=&nbsp;JSON.parse(s);&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;a.length;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_sortByKey">void<br/>sortByKey</td>
+<td valign="top" width="*" class="function-help">Sorts&nbsp;the&nbsp;collection&nbsp;by&nbsp;values&nbsp;with&nbsp;optional&nbsp;parameter&nbsp;for&nbsp;direction&nbsp;(ascending&nbsp;is&nbsp;default)<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>direction</B></td>
+<td width="120px" class="parameter-type"><B>org_scn_community_shared_SortDirectionEnumfield [ optional ]</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+if(direction&nbsp;==&nbsp;org_scn_community_shared_SortDirection.Descending)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.sortByKeyDescending();<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;s&nbsp;=&nbsp;this.items;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;a&nbsp;=&nbsp;[];<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(s!=&quot;&quot;)&nbsp;a&nbsp;=&nbsp;JSON.parse(s);&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;a.sort(function(p,m){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;A&nbsp;=&nbsp;p.key.toLowerCase();<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;B&nbsp;=&nbsp;m.key.toLowerCase();<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(A&nbsp;&lt;&nbsp;B){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;1;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}else&nbsp;if&nbsp;(A&nbsp;&gt;&nbsp;B){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;&nbsp;-1;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}else{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;0;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;});&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.items&nbsp;=&nbsp;JSON.stringify(a);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_sortByKeyDescending">void<br/>sortByKeyDescending</td>
+<td valign="top" width="*" class="function-help">Sorts&nbsp;the&nbsp;collection&nbsp;by&nbsp;key&nbsp;(descending)<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;s&nbsp;=&nbsp;this.items;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;a&nbsp;=&nbsp;[];<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(s!=&quot;&quot;)&nbsp;a&nbsp;=&nbsp;JSON.parse(s);&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;a.sort(function(p,m){&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;A&nbsp;=&nbsp;p.key.toLowerCase();<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;B&nbsp;=&nbsp;m.key.toLowerCase();<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(A&nbsp;&gt;&nbsp;B){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;1;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}else&nbsp;if&nbsp;(A&nbsp;&lt;&nbsp;B){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;&nbsp;-1;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}else{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;0;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;});&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.items&nbsp;=&nbsp;JSON.stringify(a);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_sortByLabel">void<br/>sortByLabel</td>
+<td valign="top" width="*" class="function-help">Sorts&nbsp;the&nbsp;collection&nbsp;by&nbsp;values&nbsp;with&nbsp;optional&nbsp;parameter&nbsp;for&nbsp;direction&nbsp;(ascending&nbsp;is&nbsp;default)<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>direction</B></td>
+<td width="120px" class="parameter-type"><B>org_scn_community_shared_SortDirectionEnumfield [ optional ]</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+if(direction&nbsp;==&nbsp;org_scn_community_shared_SortDirection.Descending)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.sortByLabelDescending();<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;s&nbsp;=&nbsp;this.items;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;a&nbsp;=&nbsp;[];<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(s!=&quot;&quot;)&nbsp;a&nbsp;=&nbsp;JSON.parse(s);&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;a.sort(function(p,m){&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;A&nbsp;=&nbsp;p.label.toLowerCase();<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;B&nbsp;=&nbsp;m.label.toLowerCase();<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(A&nbsp;&lt;&nbsp;B){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;1;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}else&nbsp;if&nbsp;(A&nbsp;&gt;&nbsp;B){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;&nbsp;-1;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}else{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;0;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;});&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.items&nbsp;=&nbsp;JSON.stringify(a);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_sortByLabelDescending">void<br/>sortByLabelDescending</td>
+<td valign="top" width="*" class="function-help">Sorts&nbsp;the&nbsp;collection&nbsp;by&nbsp;labels&nbsp;(descending)<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;s&nbsp;=&nbsp;this.items;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;a&nbsp;=&nbsp;[];<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(s!=&quot;&quot;)&nbsp;a&nbsp;=&nbsp;JSON.parse(s);&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;a.sort(function(p,m){&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;A&nbsp;=&nbsp;p.label.toLowerCase();<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;B&nbsp;=&nbsp;m.label.toLowerCase();<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(A&nbsp;&gt;&nbsp;B){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;1;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}else&nbsp;if&nbsp;(A&nbsp;&lt;&nbsp;B){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;&nbsp;-1;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}else{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;0;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;});&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.items&nbsp;=&nbsp;JSON.stringify(a);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_sortByValue">void<br/>sortByValue</td>
+<td valign="top" width="*" class="function-help">Sorts&nbsp;the&nbsp;collection&nbsp;by&nbsp;values&nbsp;with&nbsp;optional&nbsp;parameter&nbsp;for&nbsp;direction&nbsp;(ascending&nbsp;is&nbsp;default)<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>direction</B></td>
+<td width="120px" class="parameter-type"><B>org_scn_community_shared_SortDirectionEnumfield [ optional ]</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+if(direction&nbsp;==&nbsp;org_scn_community_shared_SortDirection.Descending)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.sortByValueDescending();<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;s&nbsp;=&nbsp;this.items;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;a&nbsp;=&nbsp;[];<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(s!=&quot;&quot;)&nbsp;a&nbsp;=&nbsp;JSON.parse(s);&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;a.sort(function(p,m){&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;newA&nbsp;=&nbsp;parseFloat(p.value);&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;newB&nbsp;=&nbsp;parseFloat(m.value);&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;newB-newA;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;});<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.items&nbsp;=&nbsp;JSON.stringify(a);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_sortByValueDescending">void<br/>sortByValueDescending</td>
+<td valign="top" width="*" class="function-help">Sorts&nbsp;the&nbsp;collection&nbsp;by&nbsp;values&nbsp;(descending)<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;s&nbsp;=&nbsp;this.items;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;a&nbsp;=&nbsp;[];<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(s!=&quot;&quot;)&nbsp;a&nbsp;=&nbsp;JSON.parse(s);&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;a.sort(function(p,m){&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;newA&nbsp;=&nbsp;parseFloat(p.value);&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;newB&nbsp;=&nbsp;parseFloat(m.value);&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;newA-newB;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;});<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.items&nbsp;=&nbsp;JSON.stringify(a);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+
+	</TABLE>
+	<div style="height:20px!important"> THE END </div>
+	</div>
+	
+	<div style="height:60px!important"></div>
+	
+</div>
+</body>
+</html>

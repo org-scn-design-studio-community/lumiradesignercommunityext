@@ -1,0 +1,1219 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../../doc.css">
+<link rel="stylesheet" type="text/css" href="../../tables.css">
+<script id="sap-ui-bootstrap" type="text/javascript" 
+      /*src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"*/
+      src="https://sapui5.hana.ondemand.com/sdk/resources/sap-ui-core.js"
+      data-sap-ui-theme="sap_bluecrystal" data-sap-ui-libs="sap.m,sap.ui.commons,sap.suite.ui.commons,sap.ui.ux3"></script>
+
+<script type="text/javascript" src="../js/ComponentMain.js"></script>
+<script type="text/javascript" src="../js/PostResponseParser/PostResponseParser.js"></script>
+<script type="text/javascript" src="../js/TimeLine.js"></script>
+<script type="text/javascript" src="../js/ga.js"></script>
+
+<script> 
+	requestChangeLog("../../../../sdkhelp/web/components/chartmaps/choropleth/changes/changelog.json");
+	requestContent("Blog", "../../../../sdkhelp/web/components/chartmaps/choropleth/blogs.json");
+	requestContent("Example", "../../../../sdkhelp/web/components/chartmaps/choropleth/examples.json");
+</script>
+
+<title>Choropleth Map - SCN Design Studio Community</title>
+</head>
+<body class="comp-body" style="height:100%">
+<div class="comp-main" style="height:100%">
+
+ 	<div class="component-name">
+	Choropleth [ScnCommunityVisualizations]
+	</div>
+	<div class="component-title">
+	Choropleth Map
+	</div>
+
+<div id="componentnav"></div>
+	<div id="intro">This page is giving short introduction to the component with summary of the change status (green/yellow/red)<div id="introStatus" height="120px"></div><br></div>
+	<div id="blogs" hidden="true" height="100%">This page is listing community blogs on this component, follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/08/introducing-blog-list-for-community-components" target="_blank">this link</a> to learn more.<div id="BlogsList" height="100%"></div></div>
+	<div id="changelog" hidden="true" height="100%">This page is listing all changes which have been done on this component with corresponding test status (green: ok, red: not ok, yellow: untested), follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/07/introducing-change-log-for-community-components" target="_blank">this link</a> to learn more.<div id="changelogList" height="100%"></div></div>
+	<div id="examples" hidden="true" height="100%">This page is listing all example applications with this component, follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/08/introducing-blog-list-for-community-components" target="_blank">this link</a> to learn more.<div id="ExamplesList" height="100%"></div></div>
+	<div id="about" hidden="true">This page will bring more "about" details (generated)</div>
+	<div id="technical" hidden="true">
+	<br/>
+	<div class="component-properties">VISIBLE PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>data<br/>[ResultSet]</B></td>
+<td width="*" class="property-title-tooltip"><B>Data Selection</B><br/>Data Selection
+
+</td>
+<td width="60px" class="property-group">DataBinding</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">VISIBLE EVENTS</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>onSelect<br/>[ScriptText]</B></td>
+<td width="*" class="property-title-tooltip"><B>On Select</B><br/>On Select
+
+</td>
+<td width="60px" class="property-group">Events</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS LIST</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Parameters</th><th>Return</th></tr>
+	<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getSelectedFeature [<a href="#FUNCTION_getSelectedFeature">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setBubbleColor [<a href="#FUNCTION_setBubbleColor">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">color</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setBubbleMeasure [<a href="#FUNCTION_setBubbleMeasure">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">measure</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setColorPalette [<a href="#FUNCTION_setColorPalette">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">palette</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setFeatureProperty [<a href="#FUNCTION_setFeatureProperty">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">attribute</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setLabelProperty [<a href="#FUNCTION_setLabelProperty">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">attribute</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setLegendVisible [<a href="#FUNCTION_setLegendVisible">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">visible</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setMeasure [<a href="#FUNCTION_setMeasure">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">measure</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setProjection [<a href="#FUNCTION_setProjection">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">projection</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">HIDDEN (TECHNICAL) PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>backgroundColor<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Background Colour</B><br/>Background Colour
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>bubbleAlpha<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>Bubble Alpha (0-100)</B><br/>Bubble Alpha (0-100)
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">50</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>bubbleColor<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Bubble Colour</B><br/>Bubble Colour
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">#006699</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>bubbleMax<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>Bubble Max Radius</B><br/>Bubble Max Radius
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">50</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>bubbleMember<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Measure to use as Bubble (Blank hide bubble)</B><br/>Measure to use as Bubble (Blank hide bubble)
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">{"fieldType":"position","fieldPosition":1}</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>bubbleMin<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>Bubble Min Radius</B><br/>Bubble Min Radius
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">3</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>chartTitle<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Chart Title</B><br/>Chart Title
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">Choropleth Map</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>chartTitleStyle<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Chart Title Style</B><br/>Chart Title Style
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>chartValueSize<br/>[float]</B></td>
+<td width="*" class="property-title-tooltip"><B>Chart Value Size (px)</B><br/>Chart Value Size (px)
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">10</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>chartValueWidthThreshold<br/>[float]</B></td>
+<td width="*" class="property-title-tooltip"><B>Chart Value Width Visibility Threshold (%)</B><br/>Chart Value Width Visibility Threshold (%)
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">80</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>colorPalette<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Colour Palette</B><br/>Colour Palette
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">#EFF3FF,#BDD7E7,#6BAED6,#3182BD,#08519C</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>colorScale<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Color Scale</B><br/>Color Scale
+<table style="width: 100%; border-top: 1px solid #000;" class="table1">
+<tr class="values-table-th"><th>Posible Value</th><th>Default</th></tr>
+<tr class="list-tr">
+<td class="value-td">quantile</td>
+<td class="value-td">X</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">quantize</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+
+</table>
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">quantile</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>defaultFillColor<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Default Land Colour</B><br/>Default Land Colour
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">#E9E5DC</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>enableZoom<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Enable Zoom</B><br/>Enable Zoom
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">false</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>featureProperty<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Feature Property</B><br/>Feature Property
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">NAME_1</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>floor<br/>[float]</B></td>
+<td width="*" class="property-title-tooltip"><B>Minimum Scale Value</B><br/>Minimum Scale Value
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">0.0</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>globeColor<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Globe Colour</B><br/>Globe Colour
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">#7FB5DF</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>globeOn<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Show Globe</B><br/>Show Globe
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>gradientBottom<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>Horizontal Scale Bottom</B><br/>Horizontal Scale Bottom
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">15</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>gradientHeight<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>Horizontal Scale Height</B><br/>Horizontal Scale Height
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">10</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>gradientLeft<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>Horizontal Scale Left</B><br/>Horizontal Scale Left
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">30</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>gradientRight<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>Horizontal Scale Right</B><br/>Horizontal Scale Right
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">30</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>graticuleColor<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Graticule Colour</B><br/>Graticule Colour
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">#808080</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>graticuleOn<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Show Graticule Grid</B><br/>Show Graticule Grid
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>graticuleThickness<br/>[float]</B></td>
+<td width="*" class="property-title-tooltip"><B>Graticule Thickness</B><br/>Graticule Thickness
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">.5</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>hoverColor<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Hover Feature Colour</B><br/>Hover Feature Colour
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">#999900</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>ignoreExpandedNodes<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Ignore Expanded Nodes</B><br/>Ignore Expanded Nodes
+
+</td>
+<td width="60px" class="property-group">DataBinding</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>ignoreTotals<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Ignore Totals</B><br/>Ignore Totals
+
+</td>
+<td width="60px" class="property-group">DataBinding</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>labelProperty<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Label Property</B><br/>Label Property
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">NAME_1</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>labelSize<br/>[float]</B></td>
+<td width="*" class="property-title-tooltip"><B>Label Size (px)</B><br/>Label Size (px)
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">10</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>legendOn<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Show Legend</B><br/>Show Legend
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>legendScale<br/>[float]</B></td>
+<td width="*" class="property-title-tooltip"><B>Legend Scale</B><br/>Legend Scale
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">1</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>legendTitle<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Legend Title</B><br/>Legend Title
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">Legend Title</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>legendWidth<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>Legend Width (px)</B><br/>Legend Width (px)
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">125</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>legendX<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>Legend Offset X</B><br/>Legend Offset X
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>legendY<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>Legend Offset Y</B><br/>Legend Offset Y
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>makeRoomX<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Avoid Legend</B><br/>Avoid Legend
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>mapData<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Map Data</B><br/>Map Data
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>margin<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>Margin Size</B><br/>Margin Size
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">20</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>maxZoom<br/>[float]</B></td>
+<td width="*" class="property-title-tooltip"><B>Maximum Zoom Scale</B><br/>Maximum Zoom Scale
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">1</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>measureMember<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Measure to Colour (Blank will take whatever is in first column)</B><br/>Measure to Colour (Blank will take whatever is in first column)
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">{"fieldType":"position","fieldPosition":0}</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>minZoom<br/>[float]</B></td>
+<td width="*" class="property-title-tooltip"><B>Minimum Zoom Scale</B><br/>Minimum Zoom Scale
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">1</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>ms<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>Animation Duration (ms)</B><br/>Animation Duration (ms)
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">750</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>pitch<br/>[float]</B></td>
+<td width="*" class="property-title-tooltip"><B>Pitch</B><br/>Pitch
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">0.0</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>plotAlpha<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>Plot Alpha</B><br/>Plot Alpha
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">95</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>plotBottom<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>Plot Offset Bottom</B><br/>Plot Offset Bottom
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>plotLeft<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>Plot Offset Left</B><br/>Plot Offset Left
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>plotRight<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>Plot Offset Right</B><br/>Plot Offset Right
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>plotThickness<br/>[float]</B></td>
+<td width="*" class="property-title-tooltip"><B>Plot Thickness</B><br/>Plot Thickness
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">1.0</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>plotTop<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>Plot Offset Top</B><br/>Plot Offset Top
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>pollInterval<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>Resize Poll Interval</B><br/>Resize Poll Interval
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">250</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>projection<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Projection</B><br/>Projection
+<table style="width: 100%; border-top: 1px solid #000;" class="table1">
+<tr class="values-table-th"><th>Posible Value</th><th>Default</th></tr>
+<tr class="list-tr">
+<td class="value-td">Albers USA</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Mercator</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Orthographic</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Equirectangular</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Aitoff</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Albers</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">August</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Baker</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Boggs</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Bonne</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Bromley</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Collignon</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Craster Parabolic</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Eckert I</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Eckert II</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Eckert III</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Eckert IV</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Eckert V</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Eckert VI</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Eisenlohr</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Equirectangular (Plate CarrÃ©e)</td>
+<td class="value-td">X</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Hammer</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Hill</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Goode Homolosine</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Kavrayskiy VII</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Lambert cylindrical equal-area</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Lagrange</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">LarrivÃ©e</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Laskowski</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Loximuthal</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Miller</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">McBrydeâ€“Thomas Flat-Polar Parabolic</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">McBrydeâ€“Thomas Flat-Polar Quartic</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">McBrydeâ€“Thomas Flat-Polar Sinusoidal</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Mollweide</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Natural Earth</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Nellâ€“Hammer</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Polyconic</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Robinson</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Sinusoidal</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Sinu-Mollweide</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">van der Grinten</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">van der Grinten IV</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Wagner IV</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Wagner VI</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Wagner VII</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Winkel Tripel</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+
+</table>
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">Equirectangular (Plate CarrÃ©e)</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>roll<br/>[float]</B></td>
+<td width="*" class="property-title-tooltip"><B>Roll</B><br/>Roll
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">0.0</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>selectedColor<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Selection Colour</B><br/>Selection Colour
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">#009966</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>selectedFeature<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Selected Feature</B><br/>Selected Feature
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>selectedValue<br/>[float]</B></td>
+<td width="*" class="property-title-tooltip"><B>Selected Value</B><br/>Selected Value
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>showTitle<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Show Title</B><br/>Show Title
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>showTooltips<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Show Tooltips</B><br/>Show Tooltips
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>showValues<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Show Values</B><br/>Show Values
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>styleClasses<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>CSS Classes</B><br/>CSS Classes
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>swapAxes<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Swap Axes</B><br/>Swap Axes
+
+</td>
+<td width="60px" class="property-group">DataBinding</td>
+<td width="100px" class="property-default">false</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>tooltipBottom<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Tooltip Bottom</B><br/>Tooltip Bottom
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">auto</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>tooltipLeft<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Tooltip Left</B><br/>Tooltip Left
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">auto</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>tooltipOn<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Enable Tooltips</B><br/>Enable Tooltips
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>tooltipPositioning<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Tooltip Positioning</B><br/>Tooltip Positioning
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">followmouse</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>tooltipRight<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Tooltip Right</B><br/>Tooltip Right
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">0px</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>tooltipTop<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Tooltip Top</B><br/>Tooltip Top
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">0px</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>useMockData<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Use Mock Data</B><br/>Use Mock Data
+
+</td>
+<td width="60px" class="property-group">DataBinding</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>yaw<br/>[float]</B></td>
+<td width="*" class="property-title-tooltip"><B>Yaw</B><br/>Yaw
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">0.0</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS IN DETAIL</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="">
+	<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getSelectedFeature">String<br/>getSelectedFeature</td>
+<td valign="top" width="*" class="function-help">Get&nbsp;selected&nbsp;feature<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.selectedFeature;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setBubbleColor">void<br/>setBubbleColor</td>
+<td valign="top" width="*" class="function-help">Set&nbsp;Bubble&nbsp;Color<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>color</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Color</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.bubbleColor&nbsp;=&nbsp;color;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setBubbleMeasure">void<br/>setBubbleMeasure</td>
+<td valign="top" width="*" class="function-help">Set&nbsp;Bubble&nbsp;Measure&nbsp;to&nbsp;use&nbsp;for&nbsp;coloring<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>measure</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Measure</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.bubbleMember&nbsp;=&nbsp;measure;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setColorPalette">void<br/>setColorPalette</td>
+<td valign="top" width="*" class="function-help">Set&nbsp;Color&nbsp;Palette<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>palette</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Color Palette</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.colorPalette&nbsp;=&nbsp;palette;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setFeatureProperty">void<br/>setFeatureProperty</td>
+<td valign="top" width="*" class="function-help">Set&nbsp;Feature&nbsp;Attribute&nbsp;from&nbsp;GeoJSON&nbsp;that&nbsp;matches&nbsp;values&nbsp;in&nbsp;rows<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>attribute</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Attribute</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.featureProperty&nbsp;=&nbsp;attribute;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setLabelProperty">void<br/>setLabelProperty</td>
+<td valign="top" width="*" class="function-help">Set&nbsp;Label&nbsp;Attribute&nbsp;from&nbsp;GeoJSON&nbsp;that&nbsp;should&nbsp;be&nbsp;used&nbsp;for&nbsp;labeling<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>attribute</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Attribute</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.labelProperty&nbsp;=&nbsp;attribute;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setLegendVisible">void<br/>setLegendVisible</td>
+<td valign="top" width="*" class="function-help">Set&nbsp;Legend&nbsp;Visibility<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>visible</B></td>
+<td width="120px" class="parameter-type"><B>boolean</B></td>
+<td width="*" class="parameter-help">Visible</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.legendOn&nbsp;=&nbsp;visible;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setMeasure">void<br/>setMeasure</td>
+<td valign="top" width="*" class="function-help">Set&nbsp;Measure&nbsp;to&nbsp;use&nbsp;for&nbsp;coloring<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>measure</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Measure</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.measureMember&nbsp;=&nbsp;measure;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setProjection">void<br/>setProjection</td>
+<td valign="top" width="*" class="function-help">Set&nbsp;Projection&nbsp;Method<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>projection</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Projection</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.projection&nbsp;=&nbsp;projection;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+
+	</TABLE>
+	<div style="height:20px!important"> THE END </div>
+	</div>
+	
+	<div style="height:60px!important"></div>
+	
+</div>
+</body>
+</html>

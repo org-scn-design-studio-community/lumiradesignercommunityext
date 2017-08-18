@@ -1,0 +1,719 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../../doc.css">
+<link rel="stylesheet" type="text/css" href="../../tables.css">
+<script id="sap-ui-bootstrap" type="text/javascript" 
+      /*src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"*/
+      src="https://sapui5.hana.ondemand.com/sdk/resources/sap-ui-core.js"
+      data-sap-ui-theme="sap_bluecrystal" data-sap-ui-libs="sap.m,sap.ui.commons,sap.suite.ui.commons,sap.ui.ux3"></script>
+
+<script type="text/javascript" src="../js/ComponentMain.js"></script>
+<script type="text/javascript" src="../js/PostResponseParser/PostResponseParser.js"></script>
+<script type="text/javascript" src="../js/TimeLine.js"></script>
+<script type="text/javascript" src="../js/ga.js"></script>
+
+<script> 
+	requestChangeLog("../../../../sdkhelp/web/10/components/utils/debugger/changes/changelog.json");
+	requestContent("Blog", "../../../../sdkhelp/web/10/components/utils/debugger/blogs.json");
+	requestContent("Example", "../../../../sdkhelp/web/10/components/utils/debugger/examples.json");
+</script>
+
+<title>Debugger Code Inspector - SCN Design Studio Community</title>
+</head>
+<body class="comp-body" style="height:100%">
+<div class="comp-main" style="height:100%">
+
+ 	<div class="component-name">
+	Debugger [ScnCommunityUtils]
+	</div>
+	<div class="component-title">
+	Debugger Code Inspector
+	</div>
+
+<div id="componentnav"></div>
+	<div id="intro">This page is giving short introduction to the component with summary of the change status (green/yellow/red)<div id="introStatus" height="120px"></div><br><p>
+ For beter work with Arrays
+</p>
+<p>
+Link to blog: <a target="_blank" href="http://scn.sap.com/docs/DOC-62081">Design Studio SDK: BIAL and ZTL Debugger Component</a>
+</p>
+</div>
+	<div id="blogs" hidden="true" height="100%">This page is listing community blogs on this component, follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/08/introducing-blog-list-for-community-components" target="_blank">this link</a> to learn more.<div id="BlogsList" height="100%"></div></div>
+	<div id="changelog" hidden="true" height="100%">This page is listing all changes which have been done on this component with corresponding test status (green: ok, red: not ok, yellow: untested), follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/07/introducing-change-log-for-community-components" target="_blank">this link</a> to learn more.<div id="changelogList" height="100%"></div></div>
+	<div id="examples" hidden="true" height="100%">This page is listing all example applications with this component, follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/08/introducing-blog-list-for-community-components" target="_blank">this link</a> to learn more.<div id="ExamplesList" height="100%"></div></div>
+	<div id="about" hidden="true">This page will bring more "about" details (generated)</div>
+	<div id="technical" hidden="true">
+	<br/>
+	<div class="component-properties">VISIBLE PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>DActive<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Active</B><br/>&nbsp;
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DLogActive<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Log Active</B><br/>&nbsp;
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DGlobals<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Track Globals</B><br/>&nbsp;
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DOwner<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Track Owner</B><br/>&nbsp;
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DLocals<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Track Locals</B><br/>&nbsp;
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">VISIBLE EVENTS</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS LIST</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Parameters</th><th>Return</th></tr>
+	<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">isActive [<a href="#FUNCTION_isActive">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">boolean</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setActive [<a href="#FUNCTION_setActive">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">value</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">isLogActive [<a href="#FUNCTION_isLogActive">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">boolean</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setLogActive [<a href="#FUNCTION_setLogActive">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">valu</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">openZtl [<a href="#FUNCTION_openZtl">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">thisValue, locals</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">exitZtl [<a href="#FUNCTION_exitZtl">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">thisValue, locals</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">inspectNow [<a href="#FUNCTION_inspectNow">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">(comment), (thisValue)</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">processZtlException [<a href="#FUNCTION_processZtlException">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">thisValue, locals, exception</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">inspectZtl [<a href="#FUNCTION_inspectZtl">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">thisValue, locals, exception</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">private_inspect [<a href="#FUNCTION_private_inspect">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">thisValue, locals, exception, (fullScope)</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getCallStack [<a href="#FUNCTION_getCallStack">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">(exception)</td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getCallingMethod [<a href="#FUNCTION_getCallingMethod">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">toConsole [<a href="#FUNCTION_toConsole">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">value, (withDate)</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getConsole [<a href="#FUNCTION_getConsole">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">clearConsole [<a href="#FUNCTION_clearConsole">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">reset [<a href="#FUNCTION_reset">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">HIDDEN (TECHNICAL) PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>DConsole<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Technical proprty for console</B><br/>&nbsp;
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DStack<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Technical proprty for stack</B><br/>&nbsp;
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">[]</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DVariables<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Technical proprty for variables</B><br/>&nbsp;
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">[]</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>onInternalClear<br/>[ScriptText]</B></td>
+<td width="*" class="property-title-tooltip"><B>On Clear Content</B><br/>&nbsp;
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">this.reset();</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS IN DETAIL</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="">
+	<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_isActive">boolean<br/>isActive</td>
+<td valign="top" width="*" class="function-help">Returns&nbsp;active&nbsp;flag<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DActive;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setActive">void<br/>setActive</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;active&nbsp;flag<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>value</B></td>
+<td width="120px" class="parameter-type"><B>boolean</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DActive&nbsp;=&nbsp;value;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_isLogActive">boolean<br/>isLogActive</td>
+<td valign="top" width="*" class="function-help">Returns&nbsp;log&nbsp;active&nbsp;flag<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DLogActive;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setLogActive">void<br/>setLogActive</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;log&nbsp;active&nbsp;flag<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>valu</B></td>
+<td width="120px" class="parameter-type"><B>boolean</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DLogActive&nbsp;=&nbsp;value;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_openZtl">void<br/>openZtl</td>
+<td valign="top" width="*" class="function-help">Only&nbsp;for&nbsp;Use&nbsp;in&nbsp;SDK&nbsp;Development&nbsp;in&nbsp;ZTL&nbsp;code!<br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>thisValue</B></td>
+<td width="120px" class="parameter-type"><B>Object</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>locals</B></td>
+<td width="120px" class="parameter-type"><B>Object</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+if(this.DActive&nbsp;!=&nbsp;true)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.internal_assureGlobalAccess();<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.toConsole(&quot;Component&nbsp;[ENTRY]&nbsp;:&nbsp;&quot;&nbsp;+&nbsp;thisValue._VariableName,&nbsp;true);<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.private_inspect(thisValue,&nbsp;locals);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_exitZtl">void<br/>exitZtl</td>
+<td valign="top" width="*" class="function-help">Only&nbsp;for&nbsp;Use&nbsp;in&nbsp;SDK&nbsp;Development&nbsp;in&nbsp;ZTL&nbsp;code!<br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>thisValue</B></td>
+<td width="120px" class="parameter-type"><B>Object</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>locals</B></td>
+<td width="120px" class="parameter-type"><B>Object</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+if(this.DActive&nbsp;!=&nbsp;true)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.internal_assureGlobalAccess();<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.toConsole(&quot;Component&nbsp;[EXIT]&nbsp;:&nbsp;&quot;&nbsp;+&nbsp;thisValue._VariableName,&nbsp;true);<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.private_inspect(thisValue,&nbsp;locals);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_inspectNow">void<br/>inspectNow</td>
+<td valign="top" width="*" class="function-help">Inspection&nbsp;Function&nbsp;for&nbsp;Use&nbsp;in&nbsp;BIAL&nbsp;Event&nbsp;Sctips.<br/>You&nbsp;can&nbsp;use&nbsp;it&nbsp;to&nbsp;inspect&nbsp;the&nbsp;GLOBAL&nbsp;VARIABLES&nbsp;and&nbsp;also&nbsp;Components&nbsp;(see&nbsp;optional&nbsp;parameters)<br/>In&nbsp;case&nbsp;of&nbsp;"standard"&nbsp;components&nbsp;it&nbsp;does&nbsp;not&nbsp;show&nbsp;much,&nbsp;but&nbsp;on&nbsp;SDK&nbsp;components&nbsp;it&nbsp;shows&nbsp;calues&nbsp;of&nbsp;all&nbsp;internal&nbsp;propertes.<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>comment</B></td>
+<td width="120px" class="parameter-type"><B>String [ optional ]</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>thisValue</B></td>
+<td width="120px" class="parameter-type"><B>Component [ optional ]</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+if(this.DActive&nbsp;!=&nbsp;true)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.internal_assureGlobalAccess();<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(comment&nbsp;==&nbsp;undefined)&nbsp;{comment=&quot;&quot;;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(thisValue&nbsp;==&nbsp;undefined)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;thisValue&nbsp;=&nbsp;{};<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>//&nbsp;&nbsp;&nbsp;&nbsp;if(thisValue._VariableName&nbsp;==&nbsp;undefined)&nbsp;{<br/>//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;thisValue._VariableName&nbsp;=&nbsp;comment;<br/>//&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.toConsole(&quot;Component&nbsp;[CUSTOM]&nbsp;:&nbsp;&quot;&nbsp;+&nbsp;thisValue._VariableName,&nbsp;true);<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.private_inspect(thisValue);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_processZtlException">void<br/>processZtlException</td>
+<td valign="top" width="*" class="function-help">Only&nbsp;for&nbsp;Use&nbsp;in&nbsp;SDK&nbsp;Development&nbsp;in&nbsp;ZTL&nbsp;code!<br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>thisValue</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>locals</B></td>
+<td width="120px" class="parameter-type"><B>Object</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>exception</B></td>
+<td width="120px" class="parameter-type"><B>Object</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+if(this.DActive&nbsp;!=&nbsp;true)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.internal_assureGlobalAccess();<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.toConsole(&quot;Component&nbsp;[EXCEPTION]&nbsp;:&nbsp;&quot;&nbsp;+&nbsp;thisValue._VariableName,&nbsp;true);<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.private_inspect(thisValue,&nbsp;locals,&nbsp;exception);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_inspectZtl">void<br/>inspectZtl</td>
+<td valign="top" width="*" class="function-help">Only&nbsp;for&nbsp;Use&nbsp;in&nbsp;SDK&nbsp;Development&nbsp;in&nbsp;ZTL&nbsp;code!<br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>thisValue</B></td>
+<td width="120px" class="parameter-type"><B>Object</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>locals</B></td>
+<td width="120px" class="parameter-type"><B>Object</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>exception</B></td>
+<td width="120px" class="parameter-type"><B>Object</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+if(this.DActive&nbsp;!=&nbsp;true)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.internal_assureGlobalAccess();<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.toConsole(&quot;Component&nbsp;[INSPECT]&nbsp;:&nbsp;&quot;&nbsp;+&nbsp;thisValue._VariableName,&nbsp;true);<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.private_inspect(thisValue,&nbsp;locals,&nbsp;exception);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_private_inspect">void<br/>private_inspect</td>
+<td valign="top" width="*" class="function-help">Private&nbsp;Inspection&nbsp;Method.<br/>Do&nbsp;not&nbsp;Use&nbsp;externally,&nbsp;API&nbsp;can&nbsp;be&nbsp;changed&nbsp;here!<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>thisValue</B></td>
+<td width="120px" class="parameter-type"><B>Object</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>locals</B></td>
+<td width="120px" class="parameter-type"><B>Object</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>exception</B></td>
+<td width="120px" class="parameter-type"><B>Object</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>fullScope</B></td>
+<td width="120px" class="parameter-type"><B>boolean [ optional ]</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+if(this.DActive&nbsp;!=&nbsp;true)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;that&nbsp;=&nbsp;this;<br/>&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(fullScope==undefined)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fullScope&nbsp;=&nbsp;false;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;lStack&nbsp;=&nbsp;undefined;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(this.DStack&nbsp;==&nbsp;&quot;&quot;)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lStack&nbsp;=&nbsp;[];<br/>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lStack&nbsp;=&nbsp;JSON.parse(this.DStack);<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;lVariables&nbsp;=&nbsp;undefined;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(this.DVariables&nbsp;==&nbsp;&quot;&quot;)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lVariables&nbsp;=&nbsp;[];<br/>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lVariables&nbsp;=&nbsp;JSON.parse(this.DVariables);<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;l&nbsp;=&nbsp;{};<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;l.mydate&nbsp;=&nbsp;new&nbsp;Date();<br/>&nbsp;&nbsp;&nbsp;&nbsp;l.date&nbsp;=&nbsp;l.mydate.toString(&quot;yyyymmddhhmmss&quot;);<br/>&nbsp;&nbsp;&nbsp;&nbsp;l.date&nbsp;=&nbsp;l.date&nbsp;+&nbsp;&quot;&nbsp;-&nbsp;&quot;&nbsp;+&nbsp;l.mydate.getSeconds()&nbsp;+&nbsp;&quot;,&quot;&nbsp;+&nbsp;l.mydate.getMilliseconds();<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;l.stackEntry&nbsp;&nbsp;=&nbsp;{};<br/>&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.internal_assureGlobalAccess();<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;method&nbsp;=&nbsp;this.getCallingMethod();<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;line&nbsp;=&nbsp;0;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(method.indexOf(&quot;:&quot;)&nbsp;&gt;&nbsp;-1)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line&nbsp;=&nbsp;method.substring(method.indexOf(&quot;:&quot;)&nbsp;+&nbsp;1);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(line.indexOf(&quot;\n&quot;)&nbsp;&gt;&nbsp;-1)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line&nbsp;=&nbsp;line.substring(0,&nbsp;line.indexOf(&quot;\n&quot;));<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;method&nbsp;=&nbsp;method.substring(0,&nbsp;method.indexOf(&quot;:&quot;));<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(method&nbsp;==&nbsp;undefined&nbsp;||&nbsp;method&nbsp;==&nbsp;&quot;&quot;)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;method&nbsp;=&nbsp;thisValue._VariableName;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.toConsole(&quot;Calling&nbsp;Method:&nbsp;&quot;&nbsp;+&nbsp;method);<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;l.stackEntry[&quot;method&quot;]&nbsp;=&nbsp;method;<br/>&nbsp;&nbsp;&nbsp;&nbsp;l.stackEntry[&quot;date&quot;]&nbsp;=&nbsp;l.date;<br/>&nbsp;&nbsp;&nbsp;&nbsp;l.stackEntry[&quot;line&quot;]&nbsp;=&nbsp;line;<br/>&nbsp;&nbsp;&nbsp;&nbsp;l.stackEntry[&quot;component&quot;]&nbsp;=&nbsp;thisValue._VariableName;<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(that.DGlobals)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;globals<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.toConsole(&quot;GLOBALS&quot;);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;globalScope&nbsp;=&nbsp;this.getGlobal();<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;name&nbsp;in&nbsp;globalScope)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;something&nbsp;=&nbsp;globalScope[name];<br/>&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(something&nbsp;==&nbsp;undefined)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;value&nbsp;=&nbsp;globalScope[name];<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(value.indexOf(&quot;com.sap.ip.bi.zen&quot;)&nbsp;&gt;&nbsp;-1)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;internal&nbsp;object<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.toConsole(&quot;&nbsp;&nbsp;&quot;&nbsp;+&nbsp;name&nbsp;+&nbsp;&quot;=&quot;&nbsp;+&nbsp;value);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lVariables.push({&quot;date&quot;:l.date,&nbsp;&quot;name&quot;:name,&nbsp;&quot;value&quot;:value,&nbsp;&quot;type&quot;:&quot;global&quot;});<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(e)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;ignore<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;if(that.DOwner)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;owner<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.toConsole(&quot;OWNER&nbsp;?&nbsp;&quot;+(thisValue&nbsp;!=&nbsp;undefined));<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(thisValue)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;owner&nbsp;=&nbsp;thisValue.getOwner();<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(owner)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lVariables.push({&quot;date&quot;:l.date,&nbsp;&quot;item-type&quot;:name,&nbsp;&quot;value&quot;:owner.getItemType(),&nbsp;&quot;type&quot;:&quot;info&quot;});<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lVariables.push({&quot;date&quot;:l.date,&nbsp;&quot;item-name&quot;:name,&nbsp;&quot;value&quot;:owner.getName(),&nbsp;&quot;type&quot;:&quot;info&quot;});<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;name&nbsp;in&nbsp;thisValue)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(!fullScope&nbsp;&amp;&amp;&nbsp;name.indexOf(&quot;_VariableName&quot;)&nbsp;&gt;&nbsp;-1)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(name.indexOf(&quot;MARGIN&quot;)&nbsp;&gt;&nbsp;-1&nbsp;||&nbsp;name.indexOf(&quot;margin&quot;)&nbsp;&gt;&nbsp;-1)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.toConsole(&quot;&nbsp;&nbsp;&quot;&nbsp;+&nbsp;name&nbsp;+&nbsp;&quot;=&lt;not&nbsp;read&gt;&quot;);&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;value&nbsp;=&nbsp;thisValue[name];<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(!fullScope&nbsp;&amp;&amp;&nbsp;value.indexOf(&quot;function&quot;)&nbsp;&gt;&nbsp;-1)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;internal&nbsp;function<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(!fullScope&nbsp;&amp;&amp;&nbsp;value.indexOf(&quot;com.sap.ip.bi.zen&quot;)&nbsp;&gt;&nbsp;-1)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;internal&nbsp;object<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(value.indexOf(&quot;{&quot;)&nbsp;==&nbsp;0&nbsp;||&nbsp;value.indexOf(&quot;[&quot;)&nbsp;==&nbsp;0&nbsp;||&nbsp;value.indexOf(&quot;object&quot;)&nbsp;&gt;&nbsp;-1||&nbsp;value.indexOf(&quot;org.mozilla.javascript.NativeArray&quot;)&nbsp;&gt;&nbsp;-1)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;jValue&nbsp;=&nbsp;JSON.stringify(value);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.toConsole(&quot;&nbsp;&nbsp;&quot;&nbsp;+&nbsp;name&nbsp;+&nbsp;&quot;=&quot;&nbsp;+&nbsp;jValue);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lVariables.push({&quot;date&quot;:l.date,&nbsp;&quot;name&quot;:name,&nbsp;&quot;value&quot;:jValue,&nbsp;&quot;type&quot;:&quot;owner&quot;});<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.toConsole(&quot;&nbsp;&nbsp;&quot;&nbsp;+&nbsp;name&nbsp;+&nbsp;&quot;=&quot;&nbsp;+&nbsp;value);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lVariables.push({&quot;date&quot;:l.date,&nbsp;&quot;name&quot;:name,&nbsp;&quot;value&quot;:value,&nbsp;&quot;type&quot;:&quot;owner&quot;});<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(e)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lVariables.push({&quot;date&quot;:l.date,&nbsp;&quot;name&quot;:name,&nbsp;&quot;value&quot;:&quot;&lt;read&nbsp;error&gt;&quot;,&nbsp;&quot;type&quot;:&quot;owner&quot;});<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;if(that.DLocals)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;locals<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.toConsole(&quot;LOCALS&nbsp;?&nbsp;&quot;+(locals&nbsp;!=&nbsp;undefined));<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(locals&nbsp;!=&nbsp;undefined)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;name&nbsp;in&nbsp;locals)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;value&nbsp;=&nbsp;locals[name];<br/>&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(value.indexOf(&quot;{&quot;)&nbsp;==&nbsp;0&nbsp;||&nbsp;value.indexOf(&quot;[&quot;)&nbsp;==&nbsp;0&nbsp;||&nbsp;value.indexOf(&quot;object&quot;)&nbsp;&gt;&nbsp;-1&nbsp;||&nbsp;value.indexOf(&quot;org.mozilla.javascript.NativeArray&quot;)&nbsp;&gt;&nbsp;-1)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;jValue&nbsp;=&nbsp;JSON.stringify(value);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.toConsole(&quot;&nbsp;&nbsp;&quot;&nbsp;+&nbsp;name&nbsp;+&nbsp;&quot;=&quot;&nbsp;+&nbsp;jValue);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lVariables.push({&quot;date&quot;:l.date,&nbsp;&quot;name&quot;:name,&nbsp;&quot;value&quot;:jValue,&nbsp;&quot;type&quot;:&quot;local&quot;});<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.toConsole(&quot;&nbsp;&nbsp;&quot;&nbsp;+&nbsp;name&nbsp;+&nbsp;&quot;=&quot;&nbsp;+&nbsp;value);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lVariables.push({&quot;date&quot;:l.date,&nbsp;&quot;name&quot;:name,&nbsp;&quot;value&quot;:value,&nbsp;&quot;type&quot;:&quot;local&quot;});<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(e)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lVariables.push({&quot;date&quot;:l.date,&nbsp;&quot;name&quot;:name,&nbsp;&quot;value&quot;:&quot;&lt;read&nbsp;error&gt;&quot;,&nbsp;&quot;type&quot;:&quot;local&quot;});<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;callstack<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.toConsole(&quot;CALLSTACK&quot;);<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;callstack&nbsp;=&nbsp;this.getCallStack(exception);<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.toConsole(callstack);<br/>&nbsp;&nbsp;&nbsp;&nbsp;l.stackEntry[&quot;callstack&quot;]&nbsp;=&nbsp;callstack;<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;lStack.push(l.stackEntry);<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.DStack&nbsp;=&nbsp;JSON.stringify(lStack);<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;this.DVariables&nbsp;=&nbsp;JSON.stringify(lVariables);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getCallStack">String<br/>getCallStack</td>
+<td valign="top" width="*" class="function-help"><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>exception</B></td>
+<td width="120px" class="parameter-type"><B>Object [ optional ]</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;stackValue&nbsp;=&nbsp;&quot;&quot;;<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;if(exception&nbsp;!=&nbsp;undefined)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stackValue&nbsp;=&nbsp;stackValue&nbsp;+&nbsp;exception.stack;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;s;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s.key&nbsp;=&nbsp;&quot;a&quot;;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(e)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stackValue&nbsp;=&nbsp;stackValue&nbsp;+&nbsp;e.stack;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;indexOfCut&nbsp;=&nbsp;stackValue.indexOf(&quot;(private_inspect)&quot;)&nbsp;+&nbsp;&quot;(private_inspect)&quot;.length;<br/>&nbsp;&nbsp;&nbsp;&nbsp;stackValue&nbsp;=&nbsp;stackValue.substring(indexOfCut);<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;indexOfCut&nbsp;=&nbsp;stackValue.indexOf(&quot;at&nbsp;&quot;)&nbsp;+&nbsp;&quot;at&nbsp;&quot;.length;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;stackValue&nbsp;=&nbsp;stackValue.substring(indexOfCut);<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;indexOfCut&nbsp;=&nbsp;stackValue.indexOf(&quot;at&nbsp;&quot;);<br/>&nbsp;&nbsp;&nbsp;&nbsp;stackValue&nbsp;=&nbsp;stackValue.substring(indexOfCut);<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;stackValue;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getCallingMethod">String<br/>getCallingMethod</td>
+<td valign="top" width="*" class="function-help"><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;methodName&nbsp;=&nbsp;&quot;&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;s;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s.key&nbsp;=&nbsp;&quot;a&quot;;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(e)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;methodName&nbsp;=&nbsp;methodName&nbsp;+&nbsp;e.stack;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;indexOfCut&nbsp;=&nbsp;methodName.indexOf(&quot;(private_inspect)&quot;)&nbsp;+&nbsp;&quot;(private_inspect)&quot;.length;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(indexOfCut&nbsp;&gt;&nbsp;-1)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;methodName&nbsp;=&nbsp;methodName.substring(indexOfCut);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;indexOfCut&nbsp;=&nbsp;methodName.indexOf(&quot;at&nbsp;&quot;)&nbsp;+&nbsp;&quot;at&nbsp;&quot;.length;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;methodName&nbsp;=&nbsp;methodName.substring(indexOfCut);<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;indexOfCut&nbsp;=&nbsp;methodName.indexOf(&quot;at&nbsp;&quot;)&nbsp;+&nbsp;&quot;at&nbsp;&quot;.length;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;methodName&nbsp;=&nbsp;methodName.substring(indexOfCut);<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;indexOfCut&nbsp;=&nbsp;methodName.indexOf(&quot;&nbsp;(&quot;);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;methodName&nbsp;=&nbsp;methodName.substring(0,&nbsp;indexOfCut);<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;methodName;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_toConsole">void<br/>toConsole</td>
+<td valign="top" width="*" class="function-help">you&nbsp;can&nbsp;use&nbsp;this&nbsp;method&nbsp;to&nbsp;push&nbsp;some&nbsp;code&nbsp;to&nbsp;console,&nbsp;APPLICATION.log(value).The&nbsp;difference&nbsp;is,&nbsp;you&nbsp;can&nbsp;activate&nbsp;or&nbsp;deactivate&nbsp;the&nbsp;function&nbsp;in&nbsp;properties&nbsp;w/o&nbsp;changes&nbsp;in&nbsp;the&nbsp;code.<br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>value</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>withDate</B></td>
+<td width="120px" class="parameter-type"><B>boolean [ optional ]</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+if(withDate)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;mydate&nbsp;=&nbsp;new&nbsp;Date();<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;date&nbsp;=&nbsp;mydate.toString('dddd&nbsp;MMM&nbsp;yyyy&nbsp;h:mm:ss');<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;=&nbsp;date&nbsp;+&nbsp;&quot;:&nbsp;&quot;&nbsp;+&nbsp;value;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.DConsole&nbsp;=&nbsp;this.DConsole&nbsp;+&nbsp;value&nbsp;+&nbsp;&quot;\r\n&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(this.DLogActive)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;APPLICATION.log(value);&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getConsole">String<br/>getConsole</td>
+<td valign="top" width="*" class="function-help">Returns&nbsp;Console&nbsp;Content<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DConsole;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_clearConsole">void<br/>clearConsole</td>
+<td valign="top" width="*" class="function-help">Clears&nbsp;Console&nbsp;Content<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DConsole&nbsp;=&nbsp;&quot;&quot;;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_reset">void<br/>reset</td>
+<td valign="top" width="*" class="function-help">Resets&nbsp;Completely&nbsp;the&nbsp;Content<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.clearConsole();<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.DStack&nbsp;=&nbsp;&quot;[]&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.DVariables&nbsp;=&nbsp;&quot;[]&quot;;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+
+	</TABLE>
+	<div style="height:20px!important"> THE END </div>
+	</div>
+	
+	<div style="height:60px!important"></div>
+	
+</div>
+</body>
+</html>

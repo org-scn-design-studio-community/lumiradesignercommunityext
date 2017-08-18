@@ -1,0 +1,364 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../../doc.css">
+<link rel="stylesheet" type="text/css" href="../../tables.css">
+<script id="sap-ui-bootstrap" type="text/javascript" 
+      /*src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"*/
+      src="https://sapui5.hana.ondemand.com/sdk/resources/sap-ui-core.js"
+      data-sap-ui-theme="sap_bluecrystal" data-sap-ui-libs="sap.m,sap.ui.commons,sap.suite.ui.commons,sap.ui.ux3"></script>
+
+<script type="text/javascript" src="../js/ComponentMain.js"></script>
+<script type="text/javascript" src="../js/PostResponseParser/PostResponseParser.js"></script>
+<script type="text/javascript" src="../js/TimeLine.js"></script>
+<script type="text/javascript" src="../js/ga.js"></script>
+
+<script> 
+	requestChangeLog("../../../../sdkhelp/web/10/components/basics/daterangescroller/changes/changelog.json");
+	requestContent("Blog", "../../../../sdkhelp/web/10/components/basics/daterangescroller/blogs.json");
+	requestContent("Example", "../../../../sdkhelp/web/10/components/basics/daterangescroller/examples.json");
+</script>
+
+<title>Date Range Scroller - SCN Design Studio Community</title>
+</head>
+<body class="comp-body" style="height:100%">
+<div class="comp-main" style="height:100%">
+
+ 	<div class="component-name">
+	DateRangeScroller [ScnCommunityBasics]
+	</div>
+	<div class="component-title">
+	Date Range Scroller
+	</div>
+
+<div id="componentnav"></div>
+	<div id="intro">This page is giving short introduction to the component with summary of the change status (green/yellow/red)<div id="introStatus" height="120px"></div><br><p>
+Basic wrapper on SAP UI5 Date Range Scroller
+</p>
+<p>
+Link to blog: <a target="_blank" href="http://scn.sap.com/docs/DOC-61863">Design Studio SDK: Date Range Scroller Component</a>
+</p>
+</div>
+	<div id="blogs" hidden="true" height="100%">This page is listing community blogs on this component, follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/08/introducing-blog-list-for-community-components" target="_blank">this link</a> to learn more.<div id="BlogsList" height="100%"></div></div>
+	<div id="changelog" hidden="true" height="100%">This page is listing all changes which have been done on this component with corresponding test status (green: ok, red: not ok, yellow: untested), follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/07/introducing-change-log-for-community-components" target="_blank">this link</a> to learn more.<div id="changelogList" height="100%"></div></div>
+	<div id="examples" hidden="true" height="100%">This page is listing all example applications with this component, follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/08/introducing-blog-list-for-community-components" target="_blank">this link</a> to learn more.<div id="ExamplesList" height="100%"></div></div>
+	<div id="about" hidden="true">This page will bring more "about" details (generated)</div>
+	<div id="technical" hidden="true">
+	<br/>
+	<div class="component-properties">VISIBLE PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>DDate<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Date (yyyymmdd)</B><br/>&nbsp;
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DSpecialDuration<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>Duration of Custom Range (Custom*)</B><br/>&nbsp;
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">14</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DSpecialDay<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>Day of Week to Start (CustomWeek)</B><br/>Week Day, 0 - Sunday to 6 - Saturday
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">0</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DViewType<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Range View Type</B><br/>&nbsp;
+<table style="width: 100%; border-top: 1px solid #000;" class="table1">
+<tr class="values-table-th"><th>Posible Value</th><th>Default</th></tr>
+<tr class="list-tr">
+<td class="value-td">Day</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Week</td>
+<td class="value-td">X</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Month</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Year</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">CustomWeek</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">CustomDuration</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+
+</table>
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">Week</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DLangFormat<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Language Dependent Format</B><br/>&nbsp;
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">false</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DLangPattern<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Custom Format Pattern</B><br/>&nbsp;
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DLangStyle<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Custom Format Style</B><br/>&nbsp;
+<table style="width: 100%; border-top: 1px solid #000;" class="table1">
+<tr class="values-table-th"><th>Posible Value</th><th>Default</th></tr>
+<tr class="list-tr">
+<td class="value-td">short</td>
+<td class="value-td">X</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">medium</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">long</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+
+</table>
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">short</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DLangRelative<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Custom Format Relative</B><br/>&nbsp;
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">false</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">VISIBLE EVENTS</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>onChange<br/>[ScriptText]</B></td>
+<td width="*" class="property-title-tooltip"><B>On Change</B><br/>&nbsp;
+
+</td>
+<td width="60px" class="property-group">Events</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS LIST</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Parameters</th><th>Return</th></tr>
+	<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setEditable [<a href="#FUNCTION_setEditable">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">editable</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">isEditable [<a href="#FUNCTION_isEditable">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">boolean</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getStartDate [<a href="#FUNCTION_getStartDate">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getEndDate [<a href="#FUNCTION_getEndDate">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">HIDDEN (TECHNICAL) PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>DStartDate<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Start Date (yyyymmdd)</B><br/>&nbsp;
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DEndDate<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Date (yyyymmdd)</B><br/>&nbsp;
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>editable<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Editable</B><br/>&nbsp;
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS IN DETAIL</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="">
+	<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setEditable">void<br/>setEditable</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;the&nbsp;editable&nbsp;value<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>editable</B></td>
+<td width="120px" class="parameter-type"><B>boolean</B></td>
+<td width="*" class="parameter-help"> Editable value </td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.editable&nbsp;=&nbsp;editable;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_isEditable">boolean<br/>isEditable</td>
+<td valign="top" width="*" class="function-help">Returns&nbsp;the&nbsp;editable&nbsp;value<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.editable;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getStartDate">String<br/>getStartDate</td>
+<td valign="top" width="*" class="function-help">Returns&nbsp;the&nbsp;start&nbsp;date<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DStartDate;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getEndDate">String<br/>getEndDate</td>
+<td valign="top" width="*" class="function-help">Returns&nbsp;the&nbsp;end&nbsp;date<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.dEndDate;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+
+	</TABLE>
+	<div style="height:20px!important"> THE END </div>
+	</div>
+	
+	<div style="height:60px!important"></div>
+	
+</div>
+</body>
+</html>

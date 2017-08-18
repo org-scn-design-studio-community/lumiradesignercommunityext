@@ -1,0 +1,827 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../../doc.css">
+<link rel="stylesheet" type="text/css" href="../../tables.css">
+<script id="sap-ui-bootstrap" type="text/javascript" 
+      /*src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"*/
+      src="https://sapui5.hana.ondemand.com/sdk/resources/sap-ui-core.js"
+      data-sap-ui-theme="sap_bluecrystal" data-sap-ui-libs="sap.m,sap.ui.commons,sap.suite.ui.commons,sap.ui.ux3"></script>
+
+<script type="text/javascript" src="../js/ComponentMain.js"></script>
+<script type="text/javascript" src="../js/PostResponseParser/PostResponseParser.js"></script>
+<script type="text/javascript" src="../js/TimeLine.js"></script>
+<script type="text/javascript" src="../js/ga.js"></script>
+
+<script> 
+	requestChangeLog("../../../../sdkhelp/web/components/basics/notificationbar/changes/changelog.json");
+	requestContent("Blog", "../../../../sdkhelp/web/components/basics/notificationbar/blogs.json");
+	requestContent("Example", "../../../../sdkhelp/web/components/basics/notificationbar/examples.json");
+</script>
+
+<title>Notification Bar 2.0 - SCN Design Studio Community</title>
+</head>
+<body class="comp-body" style="height:100%">
+<div class="comp-main" style="height:100%">
+
+ 	<div class="component-name">
+	NotificationBar [ScnCommunityBasics]
+	</div>
+	<div class="component-title">
+	Notification Bar 2.0
+	</div>
+
+<div id="componentnav"></div>
+	<div id="intro">This page is giving short introduction to the component with summary of the change status (green/yellow/red)<div id="introStatus" height="120px"></div><br><p>
+Different style of positing notifications (messages) to end users. Reuse of the SAPUI5 proposed "NotificationBar" (demo link) as Design Studio component
+</p>
+<p>
+Link to blog: <a target="_blank" href="http://scn.sap.com/docs/DOC-57305">Design Studio SDK: NotificationBar Component</a>
+</p>
+</div>
+	<div id="blogs" hidden="true" height="100%">This page is listing community blogs on this component, follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/08/introducing-blog-list-for-community-components" target="_blank">this link</a> to learn more.<div id="BlogsList" height="100%"></div></div>
+	<div id="changelog" hidden="true" height="100%">This page is listing all changes which have been done on this component with corresponding test status (green: ok, red: not ok, yellow: untested), follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/07/introducing-change-log-for-community-components" target="_blank">this link</a> to learn more.<div id="changelogList" height="100%"></div></div>
+	<div id="examples" hidden="true" height="100%">This page is listing all example applications with this component, follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/08/introducing-blog-list-for-community-components" target="_blank">this link</a> to learn more.<div id="ExamplesList" height="100%"></div></div>
+	<div id="about" hidden="true">This page will bring more "about" details (generated)</div>
+	<div id="technical" hidden="true">
+	<br/>
+	<div class="component-properties">VISIBLE PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>connectToCommonMessages<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Connect To Common Messages</B><br/>Connect To Common Messages
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">false</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>defaultImage<br/>[Url]</B></td>
+<td width="*" class="property-title-tooltip"><B>Url For Default Image</B><br/>Url For Default Image
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>deleteNotificationOnClick<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Delete Notification When Clicked</B><br/>Delete Notification When Clicked
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">false</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>removeAllOnMinimize<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Remove All Notifications When Minimized</B><br/>Remove All Notifications When Minimized
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">false</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>showOnNewNotifications<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Show Notification Bar When New Notifications Are Available</B><br/>Show Notification Bar When New Notifications Are Available
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>splitNotificationsByPriority<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Split Notifications By Priority</B><br/>Split Notifications By Priority
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">VISIBLE EVENTS</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS LIST</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Parameters</th><th>Return</th></tr>
+	<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">addCategory [<a href="#FUNCTION_addCategory">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">categoryKey, categoryText, categoryImage</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">addErrorNotification [<a href="#FUNCTION_addErrorNotification">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">notificationText, (categoryKey)</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">addInfoNotification [<a href="#FUNCTION_addInfoNotification">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">notificationText, (categoryKey)</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">addNotification [<a href="#FUNCTION_addNotification">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">notificationText, notificationLevel, (categoryKey), (notificationKey)</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">addSuccessNotification [<a href="#FUNCTION_addSuccessNotification">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">notificationText, (categoryKey)</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">addWarningNotification [<a href="#FUNCTION_addWarningNotification">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">notificationText, (categoryKey)</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">calcTimestamp [<a href="#FUNCTION_calcTimestamp">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getDefaultImage [<a href="#FUNCTION_getDefaultImage">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">isConnectToCommonMessages [<a href="#FUNCTION_isConnectToCommonMessages">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">boolean</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">isDeleteNotificationOnClick [<a href="#FUNCTION_isDeleteNotificationOnClick">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">boolean</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">isRemoveAllOnMinimize [<a href="#FUNCTION_isRemoveAllOnMinimize">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">boolean</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">isShowOnNewNotifications [<a href="#FUNCTION_isShowOnNewNotifications">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">boolean</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">isSplitNotificationsByPriority [<a href="#FUNCTION_isSplitNotificationsByPriority">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">boolean</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">minimizeBar [<a href="#FUNCTION_minimizeBar">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setConnectToCommonMessages [<a href="#FUNCTION_setConnectToCommonMessages">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">connectToCommonMessages</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setDefaultImage [<a href="#FUNCTION_setDefaultImage">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">defaultImage</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setDeleteNotificationOnClick [<a href="#FUNCTION_setDeleteNotificationOnClick">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">deleteNotificationOnClick</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setRemoveAllOnMinimize [<a href="#FUNCTION_setRemoveAllOnMinimize">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">removeAllOnMinimize</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setShowOnNewNotifications [<a href="#FUNCTION_setShowOnNewNotifications">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">showOnNewNotifications</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setSplitNotificationsByPriority [<a href="#FUNCTION_setSplitNotificationsByPriority">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">splitNotificationsByPriority</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">HIDDEN (TECHNICAL) PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>categories<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Categories</B><br/>Categories
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>minimize<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Minimize function trigger</B><br/>Minimize function trigger
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>notifications<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Notifications</B><br/>Notifications
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS IN DETAIL</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="">
+	<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_addCategory">void<br/>addCategory</td>
+<td valign="top" width="*" class="function-help">/START&nbsp;HERE&nbsp;PLACE&nbsp;FOR&nbsp;CUSTOM&nbsp;ZTL&nbsp;FUNCTIONS<br/>Add&nbsp;Category<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>categoryKey</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Category Key</td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>categoryText</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Category Text</td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>categoryImage</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Category Image</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;categoryDef&nbsp;=&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;key&quot;:&nbsp;categoryKey,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;text&quot;:&nbsp;categoryText,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;image&quot;:&nbsp;categoryImage<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(this.categories&nbsp;===&nbsp;undefined&nbsp;||&nbsp;this.categories&nbsp;===&nbsp;&quot;&quot;&nbsp;||&nbsp;this.categories&nbsp;===&nbsp;&quot;&lt;delete&gt;&quot;){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.categories&nbsp;=&nbsp;&quot;[]&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;caregoriesJson&nbsp;=&nbsp;JSON.parse(this.categories);<br/>&nbsp;&nbsp;&nbsp;&nbsp;caregoriesJson.push(categoryDef);<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.categories&nbsp;=&nbsp;JSON.stringify(caregoriesJson);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_addErrorNotification">void<br/>addErrorNotification</td>
+<td valign="top" width="*" class="function-help">Add&nbsp;an&nbsp;Error&nbsp;Notification<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>notificationText</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Notification Text </td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>categoryKey</B></td>
+<td width="120px" class="parameter-type"><B>String [ optional ]</B></td>
+<td width="*" class="parameter-help">Optional: Category Key as defined in addCategory</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.addNotification(notificationText,&nbsp;&quot;ERROR&quot;,&nbsp;categoryKey,&nbsp;&quot;&quot;);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_addInfoNotification">void<br/>addInfoNotification</td>
+<td valign="top" width="*" class="function-help">Add&nbsp;an&nbsp;Info&nbsp;Notification<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>notificationText</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Notification Text </td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>categoryKey</B></td>
+<td width="120px" class="parameter-type"><B>String [ optional ]</B></td>
+<td width="*" class="parameter-help">Optional: Category Key as defined in addCategory</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.addNotification(notificationText,&nbsp;&quot;INFO&quot;,&nbsp;categoryKey,&nbsp;&quot;&quot;);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_addNotification">void<br/>addNotification</td>
+<td valign="top" width="*" class="function-help">Add&nbsp;Notification<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>notificationText</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Notification Text </td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>notificationLevel</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Notification Level (ERROR|WARNING|INFO|SUCCESS) </td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>categoryKey</B></td>
+<td width="120px" class="parameter-type"><B>String [ optional ]</B></td>
+<td width="*" class="parameter-help">Optional: Category Key as defined in addCategory</td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>notificationKey</B></td>
+<td width="120px" class="parameter-type"><B>String [ optional ]</B></td>
+<td width="*" class="parameter-help">Optional: Notification Key </td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;itemDef&nbsp;=&nbsp;{&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;category&quot;:&nbsp;categoryKey,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;key&quot;:&nbsp;notificationKey,&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;text&quot;:&nbsp;notificationText,&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;level&quot;:&nbsp;notificationLevel<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(this.notifications&nbsp;===&nbsp;undefined&nbsp;||&nbsp;this.notifications&nbsp;===&nbsp;&quot;&quot;&nbsp;||&nbsp;this.notifications&nbsp;===&nbsp;&quot;&lt;delete&gt;&quot;){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.notifications&nbsp;=&nbsp;&quot;[]&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;notificationsJson&nbsp;=&nbsp;JSON.parse(this.notifications);<br/>&nbsp;&nbsp;&nbsp;&nbsp;notificationsJson.push(itemDef);<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;this.notifications&nbsp;=&nbsp;JSON.stringify(notificationsJson);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_addSuccessNotification">void<br/>addSuccessNotification</td>
+<td valign="top" width="*" class="function-help">Add&nbsp;a&nbsp;Success&nbsp;Notification<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>notificationText</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Notification Text </td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>categoryKey</B></td>
+<td width="120px" class="parameter-type"><B>String [ optional ]</B></td>
+<td width="*" class="parameter-help">Optional: Category Key as defined in addCategory</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.addNotification(notificationText,&nbsp;&quot;SUCCESS&quot;,&nbsp;categoryKey,&nbsp;&quot;&quot;);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_addWarningNotification">void<br/>addWarningNotification</td>
+<td valign="top" width="*" class="function-help">Add&nbsp;a&nbsp;Warning&nbsp;Notification<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>notificationText</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Notification Text </td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>categoryKey</B></td>
+<td width="120px" class="parameter-type"><B>String [ optional ]</B></td>
+<td width="*" class="parameter-help">Optional: Category Key as defined in addCategory</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.addNotification(notificationText,&nbsp;&quot;WARNING&quot;,&nbsp;categoryKey,&nbsp;&quot;&quot;);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_calcTimestamp">String<br/>calcTimestamp</td>
+<td valign="top" width="*" class="function-help">@Visibility(private)<br/>Workaround&nbsp;for&nbsp;strange&nbsp;DesignStudio&nbsp;lifecycle&nbsp;handling&nbsp;when&nbsp;calling&nbsp;functions&nbsp;via&nbsp;scriptting&nbsp;triggers<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;new&nbsp;Date().valueOf();
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getDefaultImage">String<br/>getDefaultImage</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Url&nbsp;For&nbsp;Default&nbsp;Image&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.defaultImage;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_isConnectToCommonMessages">boolean<br/>isConnectToCommonMessages</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Connect&nbsp;To&nbsp;Common&nbsp;Messages&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.connectToCommonMessages;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_isDeleteNotificationOnClick">boolean<br/>isDeleteNotificationOnClick</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Delete&nbsp;Notification&nbsp;When&nbsp;Clicked&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.deleteNotificationOnClick;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_isRemoveAllOnMinimize">boolean<br/>isRemoveAllOnMinimize</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Remove&nbsp;All&nbsp;Notifications&nbsp;When&nbsp;Minimized&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.removeAllOnMinimize;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_isShowOnNewNotifications">boolean<br/>isShowOnNewNotifications</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Show&nbsp;Notification&nbsp;Bar&nbsp;When&nbsp;New&nbsp;Notifications&nbsp;Are&nbsp;Available&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.showOnNewNotifications;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_isSplitNotificationsByPriority">boolean<br/>isSplitNotificationsByPriority</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Split&nbsp;Notifications&nbsp;By&nbsp;Priority&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.splitNotificationsByPriority;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_minimizeBar">void<br/>minimizeBar</td>
+<td valign="top" width="*" class="function-help">Minimize&nbsp;notification&nbsp;bar&nbsp;(for&nbsp;example&nbsp;on&nbsp;timeout&nbsp;event&nbsp;of&nbsp;TIMEOUT&nbsp;component)<br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.minimize&nbsp;=&nbsp;calcTimestamp();
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setConnectToCommonMessages">void<br/>setConnectToCommonMessages</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Connect&nbsp;To&nbsp;Common&nbsp;Messages&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>connectToCommonMessages</B></td>
+<td width="120px" class="parameter-type"><B>boolean</B></td>
+<td width="*" class="parameter-help">Connect To Common Messages</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.connectToCommonMessages&nbsp;=&nbsp;connectToCommonMessages;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setDefaultImage">void<br/>setDefaultImage</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Url&nbsp;For&nbsp;Default&nbsp;Image&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>defaultImage</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Url For Default Image</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.defaultImage&nbsp;=&nbsp;defaultImage;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setDeleteNotificationOnClick">void<br/>setDeleteNotificationOnClick</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Delete&nbsp;Notification&nbsp;When&nbsp;Clicked&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>deleteNotificationOnClick</B></td>
+<td width="120px" class="parameter-type"><B>boolean</B></td>
+<td width="*" class="parameter-help">Delete Notification When Clicked</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.deleteNotificationOnClick&nbsp;=&nbsp;deleteNotificationOnClick;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setRemoveAllOnMinimize">void<br/>setRemoveAllOnMinimize</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Remove&nbsp;All&nbsp;Notifications&nbsp;When&nbsp;Minimized&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>removeAllOnMinimize</B></td>
+<td width="120px" class="parameter-type"><B>boolean</B></td>
+<td width="*" class="parameter-help">Remove All Notifications When Minimized</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.removeAllOnMinimize&nbsp;=&nbsp;removeAllOnMinimize;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setShowOnNewNotifications">void<br/>setShowOnNewNotifications</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Show&nbsp;Notification&nbsp;Bar&nbsp;When&nbsp;New&nbsp;Notifications&nbsp;Are&nbsp;Available&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>showOnNewNotifications</B></td>
+<td width="120px" class="parameter-type"><B>boolean</B></td>
+<td width="*" class="parameter-help">Show Notification Bar When New Notifications Are Available</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.showOnNewNotifications&nbsp;=&nbsp;showOnNewNotifications;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setSplitNotificationsByPriority">void<br/>setSplitNotificationsByPriority</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Split&nbsp;Notifications&nbsp;By&nbsp;Priority&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>splitNotificationsByPriority</B></td>
+<td width="120px" class="parameter-type"><B>boolean</B></td>
+<td width="*" class="parameter-help">Split Notifications By Priority</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.splitNotificationsByPriority&nbsp;=&nbsp;splitNotificationsByPriority;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+
+	</TABLE>
+	<div style="height:20px!important"> THE END </div>
+	</div>
+	
+	<div style="height:60px!important"></div>
+	
+</div>
+</body>
+</html>

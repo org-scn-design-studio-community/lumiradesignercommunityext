@@ -1,0 +1,534 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../../doc.css">
+<link rel="stylesheet" type="text/css" href="../../tables.css">
+<script id="sap-ui-bootstrap" type="text/javascript" 
+      /*src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"*/
+      src="https://sapui5.hana.ondemand.com/sdk/resources/sap-ui-core.js"
+      data-sap-ui-theme="sap_bluecrystal" data-sap-ui-libs="sap.m,sap.ui.commons,sap.suite.ui.commons,sap.ui.ux3"></script>
+
+<script type="text/javascript" src="../js/ComponentMain.js"></script>
+<script type="text/javascript" src="../js/PostResponseParser/PostResponseParser.js"></script>
+<script type="text/javascript" src="../js/TimeLine.js"></script>
+<script type="text/javascript" src="../js/ga.js"></script>
+
+<script> 
+	requestChangeLog("../../../../sdkhelp/web/components/datasource/byodata/changes/changelog.json");
+	requestContent("Blog", "../../../../sdkhelp/web/components/datasource/byodata/blogs.json");
+	requestContent("Example", "../../../../sdkhelp/web/components/datasource/byodata/examples.json");
+</script>
+
+<title>Bring Your Own Data - SCN Design Studio Community</title>
+</head>
+<body class="comp-body" style="height:100%">
+<div class="comp-main" style="height:100%">
+
+ 	<div class="component-name">
+	BYOData [datasource]
+	</div>
+	<div class="component-title">
+	Bring Your Own Data
+	</div>
+
+<div id="componentnav"></div>
+	<div id="intro">This page is giving short introduction to the component with summary of the change status (green/yellow/red)<div id="introStatus" height="120px"></div><br></div>
+	<div id="blogs" hidden="true" height="100%">This page is listing community blogs on this component, follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/08/introducing-blog-list-for-community-components" target="_blank">this link</a> to learn more.<div id="BlogsList" height="100%"></div></div>
+	<div id="changelog" hidden="true" height="100%">This page is listing all changes which have been done on this component with corresponding test status (green: ok, red: not ok, yellow: untested), follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/07/introducing-change-log-for-community-components" target="_blank">this link</a> to learn more.<div id="changelogList" height="100%"></div></div>
+	<div id="examples" hidden="true" height="100%">This page is listing all example applications with this component, follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/08/introducing-blog-list-for-community-components" target="_blank">this link</a> to learn more.<div id="ExamplesList" height="100%"></div></div>
+	<div id="about" hidden="true">This page will bring more "about" details (generated)</div>
+	<div id="technical" hidden="true">
+	<br/>
+	<div class="component-properties">VISIBLE PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>data<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Data</B><br/>Data
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">Region,Year,Sales,Quantity~|~East,2011,100,5~|~West,2011,75,7</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>kfIndex<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Number of Dimensions</B><br/>Number of Dimensions
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">2</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>mutators<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Mutators</B><br/>Mutators
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">[1,1,1]</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>sortMethod<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Sort Method</B><br/>Sort Method
+<table style="width: 100%; border-top: 1px solid #000;" class="table1">
+<tr class="values-table-th"><th>Posible Value</th><th>Default</th></tr>
+<tr class="list-tr">
+<td class="value-td">NONE</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Alphanumeric Ascending</td>
+<td class="value-td">X</td>
+</tr>
+<tr class="list-tr">
+<td class="value-td">Alphanumeric Descending</td>
+<td class="value-td">&nbsp;</td>
+</tr>
+
+</table>
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">Alphanumeric Ascending</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>swap<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Measures in Rows</B><br/>Measures in Rows
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">false</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">VISIBLE EVENTS</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS LIST</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Parameters</th><th>Return</th></tr>
+	<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">addRow [<a href="#FUNCTION_addRow">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">dimensions, measures, (overwrite)</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">balanceDimension [<a href="#FUNCTION_balanceDimension">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">dimensions</td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">clear [<a href="#FUNCTION_clear">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">deleteRow [<a href="#FUNCTION_deleteRow">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">dimensions</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getDataString [<a href="#FUNCTION_getDataString">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getDimensionCount [<a href="#FUNCTION_getDimensionCount">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">int</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getRotateAxis [<a href="#FUNCTION_getRotateAxis">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">boolean</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setDataString [<a href="#FUNCTION_setDataString">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">dataString</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setDimensionCount [<a href="#FUNCTION_setDimensionCount">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">i</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setHeaders [<a href="#FUNCTION_setHeaders">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">s</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setMutator [<a href="#FUNCTION_setMutator">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">index, factor</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setRotateAxis [<a href="#FUNCTION_setRotateAxis">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">b</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">HIDDEN (TECHNICAL) PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS IN DETAIL</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="">
+	<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_addRow">void<br/>addRow</td>
+<td valign="top" width="*" class="function-help">Add&nbsp;or&nbsp;Replace&nbsp;a&nbsp;Row&nbsp;by&nbsp;a&nbsp;given&nbsp;Dimension&nbsp;Key<br/><div class='html-example'">Add&nbsp;a&nbsp;row&nbsp;with&nbsp;2&nbsp;Dimensions&nbsp;and&nbsp;2&nbsp;Measures<br/><div class='html-code'>DS_1.addRow("Grocery,Juice",&nbsp;"100,1.25");<br></div></div><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>dimensions</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Dimensions</td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>measures</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Measures</td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>overwrite</B></td>
+<td width="120px" class="parameter-type"><B>boolean [ optional ]</B></td>
+<td width="*" class="parameter-help">Overwrite</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+if(overwrite)&nbsp;deleteRow(dimensions);<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;dims&nbsp;=&nbsp;balanceDimension(dimensions).split(&quot;,&quot;);<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;kfs&nbsp;=&nbsp;measures.split(&quot;,&quot;);<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;rows&nbsp;=&nbsp;this.data.split(&quot;\n&quot;);<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;columnCount&nbsp;=&nbsp;0;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;newRow&nbsp;=&nbsp;dims.join(&quot;,&quot;)&nbsp;+&nbsp;&quot;,&quot;&nbsp;+&nbsp;kfs.join(&quot;,&quot;);<br/>&nbsp;&nbsp;&nbsp;&nbsp;rows.push(newRow);<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;newRows&nbsp;=&nbsp;rows.join(&quot;\n&quot;);<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.data&nbsp;=&nbsp;newRows;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_balanceDimension">String<br/>balanceDimension</td>
+<td valign="top" width="*" class="function-help">Balance&nbsp;a&nbsp;Dimension&nbsp;Selection<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>dimensions</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Dimensions</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;dims&nbsp;=&nbsp;dimensions.split(&quot;,&quot;);<br/>&nbsp;&nbsp;&nbsp;&nbsp;while(dims.length&gt;this.kfIndex){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dims.splice(dims.length-1,1);<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;while(dims.length&lt;kfIndex){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dims.push(&quot;#&quot;);<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;for(var&nbsp;i=0;i&lt;dims.length;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(dims[i]==&quot;&quot;)&nbsp;dims[i]==&quot;#&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;dims.join(&quot;,&quot;);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_clear">void<br/>clear</td>
+<td valign="top" width="*" class="function-help">Delete&nbsp;all&nbsp;data<br/><div class='html-example'"><div class='html-code'>DS_1.clear();<br></div></div><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;d&nbsp;=&nbsp;this.data.split(&quot;\n&quot;);<br/>&nbsp;&nbsp;&nbsp;&nbsp;d.splice(1,d.length-1);<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.data&nbsp;=&nbsp;d.join(&quot;\n&quot;);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_deleteRow">void<br/>deleteRow</td>
+<td valign="top" width="*" class="function-help">Delete&nbsp;a&nbsp;Row&nbsp;by&nbsp;a&nbsp;given&nbsp;Dimension&nbsp;Key.<br/><div class='html-example'">Delete&nbsp;a&nbsp;row&nbsp;with&nbsp;2&nbsp;Dimensions&nbsp;Values&nbsp;of&nbsp;'Grocery'&nbsp;and&nbsp;'Juice'<br/><div class='html-code'>DS_1.deleteRow("Grocery,Juice");<br></div></div><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>dimensions</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Dimensions</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;dims&nbsp;=&nbsp;balanceDimension(dimensions);<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;match&nbsp;=&nbsp;0;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;rows&nbsp;=&nbsp;this.data.split(&quot;\n&quot;);<br/>&nbsp;&nbsp;&nbsp;&nbsp;while(match&gt;-1){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;match&nbsp;=&nbsp;-1;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(var&nbsp;i=0;i&lt;rows.length;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;row&nbsp;=&nbsp;rows[i].split(&quot;,&quot;);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;key&nbsp;=&nbsp;[];<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(var&nbsp;j=0;j&lt;this.kfIndex;j++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key.push(row[j]);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;hash&nbsp;=&nbsp;key.join(&quot;,&quot;);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(hash==dims)&nbsp;match&nbsp;=&nbsp;i;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(match&gt;-1)&nbsp;rows.splice(match,1);<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.data&nbsp;=&nbsp;rows.join(&quot;\n&quot;);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getDataString">String<br/>getDataString</td>
+<td valign="top" width="*" class="function-help">Returns&nbsp;serialized&nbsp;string&nbsp;representing&nbsp;data.&nbsp;&nbsp;Meant&nbsp;to&nbsp;be&nbsp;used&nbsp;with&nbsp;another<br/>SCN&nbsp;Community&nbsp;BYO&nbsp;Data&nbsp;component.<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.data;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getDimensionCount">int<br/>getDimensionCount</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;number&nbsp;of&nbsp;columns&nbsp;that&nbsp;are&nbsp;Dimensions.<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.kfIndex;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getRotateAxis">boolean<br/>getRotateAxis</td>
+<td valign="top" width="*" class="function-help">Get&nbsp;if&nbsp;axis&nbsp;is&nbsp;rotated<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.swap;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setDataString">void<br/>setDataString</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;data&nbsp;in&nbsp;serialized&nbsp;string&nbsp;form.&nbsp;&nbsp;Meant&nbsp;to&nbsp;be&nbsp;used&nbsp;in&nbsp;conjunction&nbsp;with<br/>SCN&nbsp;Community&nbsp;Projection&nbsp;data&nbsp;component&nbsp;or&nbsp;another&nbsp;BYO&nbsp;Data&nbsp;component.<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>dataString</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">String</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.data&nbsp;=&nbsp;dataString;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setDimensionCount">void<br/>setDimensionCount</td>
+<td valign="top" width="*" class="function-help">Set&nbsp;number&nbsp;of&nbsp;columns&nbsp;that&nbsp;should&nbsp;be&nbsp;treated&nbsp;as&nbsp;dimensional.&nbsp;&nbsp;Remaining&nbsp;columns&nbsp;are&nbsp;treated&nbsp;as&nbsp;Measures.<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>i</B></td>
+<td width="120px" class="parameter-type"><B>int</B></td>
+<td width="*" class="parameter-help">Number of Columns</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.kfIndex&nbsp;=&nbsp;i;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setHeaders">void<br/>setHeaders</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;title&nbsp;of&nbsp;Headers.<br/><div class='html-example'">Set&nbsp;Headers&nbsp;'Department','Product','Sales','Quantity'.<br/><div class='html-code'>DS_1.setHeaders("Department,Product,Sales,Quantity");<br></div></div><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>s</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Header Names</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;d&nbsp;=&nbsp;this.data.split(&quot;\n&quot;);<br/>&nbsp;&nbsp;&nbsp;&nbsp;d[0]&nbsp;=&nbsp;s;<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.data&nbsp;=&nbsp;d.join(&quot;\n&quot;);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setMutator">void<br/>setMutator</td>
+<td valign="top" width="*" class="function-help">Set&nbsp;a&nbsp;mutator&nbsp;for&nbsp;a&nbsp;measure&nbsp;by&nbsp;index&nbsp;(starting&nbsp;at&nbsp;0)<br/><div class='html-example'">Set&nbsp;a&nbsp;mutator&nbsp;to&nbsp;increase&nbsp;the&nbsp;second&nbsp;measures's&nbsp;value&nbsp;by&nbsp;25%<br/><div class='html-code'>DS_1.setMutator(1,&nbsp;1.25);<br></div></div><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>index</B></td>
+<td width="120px" class="parameter-type"><B>int</B></td>
+<td width="*" class="parameter-help">Index</td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>factor</B></td>
+<td width="120px" class="parameter-type"><B>float</B></td>
+<td width="*" class="parameter-help">Factor</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;m&nbsp;=&nbsp;eval(this.mutators);<br/>&nbsp;&nbsp;&nbsp;&nbsp;while(m.length&lt;index){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m.push(1.0);<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;m[index]&nbsp;=&nbsp;factor;<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.mutators&nbsp;=&nbsp;JSON.stringify(m);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setRotateAxis">void<br/>setRotateAxis</td>
+<td valign="top" width="*" class="function-help">Whether&nbsp;to&nbsp;swap&nbsp;axis<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>b</B></td>
+<td width="120px" class="parameter-type"><B>boolean</B></td>
+<td width="*" class="parameter-help">Rotate</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.swap&nbsp;=&nbsp;b;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+
+	</TABLE>
+	<div style="height:20px!important"> THE END </div>
+	</div>
+	
+	<div style="height:60px!important"></div>
+	
+</div>
+</body>
+</html>

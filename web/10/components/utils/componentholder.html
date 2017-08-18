@@ -1,0 +1,192 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../../doc.css">
+<link rel="stylesheet" type="text/css" href="../../tables.css">
+</head>
+<body class="comp-body">
+<div class="comp-main">
+
+	<div class="component-name">
+	ComponentHolder [ScnCommunityUtils]
+	</div>
+	<div class="component-title">
+	Component Holder
+	</div>
+
+	<p>
+Sends client infromation available via browser API to the BIAL scriptis
+</p>
+<p>
+Link to blog: <a href="http://scn.sap.com/docs/DOC-61450">Design Studio SDK: Client Information Component</a>
+</p>
+
+
+	<br/>
+	<div class="component-properties">VISIBLE PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">VISIBLE EVENTS</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS LIST</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Parameters</th><th>Return</th></tr>
+	<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getAsPanel [<a href="#FUNCTION_getAsPanel">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">name</td>
+<td valign="top" width="160px" class="function-short-return">Panel</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">listComponents [<a href="#FUNCTION_listComponents">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">listComponentsWindow [<a href="#FUNCTION_listComponentsWindow">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name"> org.scn.community.utils.ComponentHolder getHolder [<a href="#FUNCTION_ org.scn.community.utils.ComponentHolder getHolder">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">//</td>
+</tr>
+
+
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">HIDDEN (TECHNICAL) PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS IN DETAIL</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="">
+	<tr class="function-table-tr">
+<A NAME="FUNCTION_getAsPanel">
+<td valign="top" width="220px" class="function-return-name">Panel<br/>getAsPanel</td>
+<td valign="top" width="*" class="function-help"><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>name</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;panel&nbsp;=&nbsp;eval(name);<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;panel;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<A NAME="FUNCTION_listComponents">
+<td valign="top" width="220px" class="function-return-name">String<br/>listComponents</td>
+<td valign="top" width="*" class="function-help"><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;output&nbsp;=&nbsp;&quot;&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;key&nbsp;in&nbsp;this)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;output&nbsp;=&nbsp;output&nbsp;+&nbsp;key&nbsp;+&nbsp;&quot;;&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;var&nbsp;value&nbsp;=&nbsp;this[key];<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(key.indexOf(&quot;PANEL&quot;)&nbsp;&gt;&nbsp;-1)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;output&nbsp;=&nbsp;output&nbsp;+&nbsp;&quot;PANEL:&quot;&nbsp;+&nbsp;key&nbsp;+&nbsp;&quot;;&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;output&nbsp;=&nbsp;output&nbsp;+&nbsp;&quot;;&quot;&nbsp;+&nbsp;key&nbsp;+&nbsp;&quot;=&quot;&nbsp;+&nbsp;value;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;output&nbsp;=&nbsp;output&nbsp;+&nbsp;&quot;VAR:&nbsp;&quot;&nbsp;+&nbsp;eval(&quot;this._VariableName&quot;)&nbsp;+&nbsp;&quot;;&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;output&nbsp;=&nbsp;output&nbsp;+&nbsp;&quot;VAR:&nbsp;&quot;&nbsp;+&nbsp;eval(&quot;this.get_VariableName()&quot;)&nbsp;+&nbsp;&quot;;&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;output&nbsp;=&nbsp;output&nbsp;+&nbsp;&quot;VAR:&nbsp;&quot;&nbsp;+&nbsp;eval(&quot;this.getOwner().getName()&quot;)&nbsp;+&nbsp;&quot;;&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;output;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<A NAME="FUNCTION_listComponentsWindow">
+<td valign="top" width="220px" class="function-return-name">String<br/>listComponentsWindow</td>
+<td valign="top" width="*" class="function-help"><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;output&nbsp;=&nbsp;&quot;&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(this.getGlobal&nbsp;==&nbsp;undefined)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.getGlobal&nbsp;=&nbsp;function&nbsp;()&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(function()&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;this;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}).call(null);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;key&nbsp;in&nbsp;this.getGlobal())&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;output&nbsp;=&nbsp;output&nbsp;+&nbsp;key&nbsp;+&nbsp;&quot;;&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;output;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<A NAME="FUNCTION_ org.scn.community.utils.ComponentHolder getHolder">
+<td valign="top" width="220px" class="function-return-name">//<br/> org.scn.community.utils.ComponentHolder getHolder</td>
+<td valign="top" width="*" class="function-help">}<br/>Singleton&nbsp;for&nbsp;ComponentHolderFactory<br/>//class&nbsp;ComponentHolderFactory&nbsp;extends&nbsp;Singleton&nbsp;{<br/>//<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+//&nbsp;&nbsp;&nbsp;&nbsp;this.holder&nbsp;=&nbsp;new&nbsp;n.community.utils.ComponentHolder();<br/>//&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;holder;<br/>//
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+
+	</TABLE>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,420 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../../doc.css">
+<link rel="stylesheet" type="text/css" href="../../tables.css">
+<script id="sap-ui-bootstrap" type="text/javascript" 
+      /*src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"*/
+      src="https://sapui5.hana.ondemand.com/sdk/resources/sap-ui-core.js"
+      data-sap-ui-theme="sap_bluecrystal" data-sap-ui-libs="sap.m,sap.ui.commons,sap.suite.ui.commons,sap.ui.ux3"></script>
+
+<script type="text/javascript" src="../js/ComponentMain.js"></script>
+<script type="text/javascript" src="../js/PostResponseParser/PostResponseParser.js"></script>
+<script type="text/javascript" src="../js/TimeLine.js"></script>
+<script type="text/javascript" src="../js/ga.js"></script>
+
+<script> 
+	requestChangeLog("../../../../sdkhelp/web/components/databound/pictogram/changes/changelog.json");
+	requestContent("Blog", "../../../../sdkhelp/web/components/databound/pictogram/blogs.json");
+	requestContent("Example", "../../../../sdkhelp/web/components/databound/pictogram/examples.json");
+</script>
+
+<title>Pictogram - SCN Design Studio Community</title>
+</head>
+<body class="comp-body" style="height:100%">
+<div class="comp-main" style="height:100%">
+
+ 	<div class="component-name">
+	Pictogram [ScnCommunityDataBound]
+	</div>
+	<div class="component-title">
+	Pictogram
+	</div>
+
+<div id="componentnav"></div>
+	<div id="intro">This page is giving short introduction to the component with summary of the change status (green/yellow/red)<div id="introStatus" height="120px"></div><br></div>
+	<div id="blogs" hidden="true" height="100%">This page is listing community blogs on this component, follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/08/introducing-blog-list-for-community-components" target="_blank">this link</a> to learn more.<div id="BlogsList" height="100%"></div></div>
+	<div id="changelog" hidden="true" height="100%">This page is listing all changes which have been done on this component with corresponding test status (green: ok, red: not ok, yellow: untested), follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/07/introducing-change-log-for-community-components" target="_blank">this link</a> to learn more.<div id="changelogList" height="100%"></div></div>
+	<div id="examples" hidden="true" height="100%">This page is listing all example applications with this component, follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/08/introducing-blog-list-for-community-components" target="_blank">this link</a> to learn more.<div id="ExamplesList" height="100%"></div></div>
+	<div id="about" hidden="true">This page will bring more "about" details (generated)</div>
+	<div id="technical" hidden="true">
+	<br/>
+	<div class="component-properties">VISIBLE PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>kpi<br/>[ResultCell]</B></td>
+<td width="*" class="property-title-tooltip"><B>KPI</B><br/>KPI
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>manualKpi<br/>[float]</B></td>
+<td width="*" class="property-title-tooltip"><B>Manual KPI</B><br/>Manual KPI
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">17</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>maxKpi<br/>[float]</B></td>
+<td width="*" class="property-title-tooltip"><B>Max Kpi</B><br/>Max Kpi
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">20</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>numColumns<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>Number of Columns</B><br/>Number of Columns
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">10</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>numRows<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>Number of Rows</B><br/>Number of Rows
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">2</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">VISIBLE EVENTS</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS LIST</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Parameters</th><th>Return</th></tr>
+	<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getNumCols [<a href="#FUNCTION_getNumCols">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">int</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getNumCols [<a href="#FUNCTION_getNumCols">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">int</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setNumCols [<a href="#FUNCTION_setNumCols">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">columns</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setNumRows [<a href="#FUNCTION_setNumRows">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">rows</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">HIDDEN (TECHNICAL) PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>backgroundColor<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Background Color</B><br/>Background Color
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">#E5E5E5</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>fillDirection<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Partial Fill Direction</B><br/>Partial Fill Direction
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">btt</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>fillOrder<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Fill Order</B><br/>Fill Order
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">forward</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>fontColor<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Font Color</B><br/>Font Color
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">#006699</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>fontFamily<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Font Family</B><br/>Font Family
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">sans-serif,Helvetica,Arial</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>fontSize<br/>[float]</B></td>
+<td width="*" class="property-title-tooltip"><B>Font Size</B><br/>Font Size
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">30</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>fontWeight<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Font Weight</B><br/>Font Weight
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">bold</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>paddingX<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>Padding-X</B><br/>Padding-X
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">25</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>paddingY<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>Padding-Y</B><br/>Padding-Y
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">25</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>precision<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Decimal Precision</B><br/>Decimal Precision
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">2</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>preserveAspectRatio<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Preserve Aspect Ratio</B><br/>Preserve Aspect Ratio
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">xMinYMin</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>scaleByMax<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Scale by Max</B><br/>Scale by Max
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>shape<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Shape</B><br/>Shape
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">M3.5,2H2.7C3,1.8,3.3,1.5,3.3,1.1c0-0.6-0.4-1-1-1c-0.6,0-1,0.4-1,1c0,0.4,0.2,0.7,0.6,0.9H1.1C0.7,2,0. ... truncated</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>shapeColorEmpty<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Shape Color Empty</B><br/>Shape Color Empty
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">#FFFFFF</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>shapeColorFill<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Shape Color Fill</B><br/>Shape Color Fill
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">#006699</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>showTitle<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Show Title</B><br/>Show Title
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>textSpacing<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>Text Spacing</B><br/>Text Spacing
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">15</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>title<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Title</B><br/>Title
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">{value} out of {max} people</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS IN DETAIL</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="">
+	<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getNumCols">int<br/>getNumCols</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;number&nbsp;of&nbsp;columns<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.numCols;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getNumCols">int<br/>getNumCols</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;number&nbsp;of&nbsp;rows<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.numRows;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setNumCols">void<br/>setNumCols</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;number&nbsp;of&nbsp;columns<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>columns</B></td>
+<td width="120px" class="parameter-type"><B>int</B></td>
+<td width="*" class="parameter-help"> Number of Columns </td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.numCols&nbsp;=&nbsp;columns;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setNumRows">void<br/>setNumRows</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;number&nbsp;of&nbsp;rows<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>rows</B></td>
+<td width="120px" class="parameter-type"><B>int</B></td>
+<td width="*" class="parameter-help"> Number of Rows </td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.numRows&nbsp;=&nbsp;rows;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+
+	</TABLE>
+	<div style="height:20px!important"> THE END </div>
+	</div>
+	
+	<div style="height:60px!important"></div>
+	
+</div>
+</body>
+</html>

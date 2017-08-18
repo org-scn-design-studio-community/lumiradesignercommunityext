@@ -1,0 +1,1265 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../../doc.css">
+<link rel="stylesheet" type="text/css" href="../../tables.css">
+<script id="sap-ui-bootstrap" type="text/javascript" 
+      /*src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"*/
+      src="https://sapui5.hana.ondemand.com/sdk/resources/sap-ui-core.js"
+      data-sap-ui-theme="sap_bluecrystal" data-sap-ui-libs="sap.m,sap.ui.commons,sap.suite.ui.commons,sap.ui.ux3"></script>
+
+<script type="text/javascript" src="../js/ComponentMain.js"></script>
+<script type="text/javascript" src="../js/PostResponseParser/PostResponseParser.js"></script>
+<script type="text/javascript" src="../js/TimeLine.js"></script>
+<script type="text/javascript" src="../js/ga.js"></script>
+
+<script> 
+	requestChangeLog("../../../../sdkhelp/web/components/databound/facetselector/changes/changelog.json");
+	requestContent("Blog", "../../../../sdkhelp/web/components/databound/facetselector/blogs.json");
+	requestContent("Example", "../../../../sdkhelp/web/components/databound/facetselector/examples.json");
+</script>
+
+<title>Facet Selector 2.0 - SCN Design Studio Community</title>
+</head>
+<body class="comp-body" style="height:100%">
+<div class="comp-main" style="height:100%">
+
+ 	<div class="component-name">
+	FacetSelector [ScnCommunityDataBound]
+	</div>
+	<div class="component-title">
+	Facet Selector 2.0
+	</div>
+
+<div id="componentnav"></div>
+	<div id="intro">This page is giving short introduction to the component with summary of the change status (green/yellow/red)<div id="introStatus" height="120px"></div><br></div>
+	<div id="blogs" hidden="true" height="100%">This page is listing community blogs on this component, follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/08/introducing-blog-list-for-community-components" target="_blank">this link</a> to learn more.<div id="BlogsList" height="100%"></div></div>
+	<div id="changelog" hidden="true" height="100%">This page is listing all changes which have been done on this component with corresponding test status (green: ok, red: not ok, yellow: untested), follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/07/introducing-change-log-for-community-components" target="_blank">this link</a> to learn more.<div id="changelogList" height="100%"></div></div>
+	<div id="examples" hidden="true" height="100%">This page is listing all example applications with this component, follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/08/introducing-blog-list-for-community-components" target="_blank">this link</a> to learn more.<div id="ExamplesList" height="100%"></div></div>
+	<div id="about" hidden="true">This page will bring more "about" details (generated)</div>
+	<div id="technical" hidden="true">
+	<br/>
+	<div class="component-properties">VISIBLE PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>DClearOthers<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Clear Selections if 0</B><br/>Clear Selections if 0
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DContentMode<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Content Mode</B><br/>Content Mode
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">Resultset</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DCustomDimensions<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Custom Dimensions</B><br/>Custom Dimensions
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">[]</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DDisplayText<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Display Text</B><br/>Display Text
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">Text</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DFacetWidth<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>Facet Width in px</B><br/>Facet Width in px
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">160</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DMaxDisplayMembers<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>Maximum Number of Members</B><br/>Maximum Number of Members
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">5</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DMaxMembers<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>Maximum Number of Members</B><br/>Maximum Number of Members
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">1000</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DSortingDirection<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Member Sorting Direction</B><br/>Member Sorting Direction
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">Ascending</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DSortingType<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Member Sorting Type</B><br/>Member Sorting Type
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">Default</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DZeroValuesMode<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Zero Values Display Mode</B><br/>Zero Values Display Mode
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">Show</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>dataCellList<br/>[ResultCellList]</B></td>
+<td width="*" class="property-title-tooltip"><B>Data List</B><br/>Data List
+
+</td>
+<td width="60px" class="property-group">DataBinding</td>
+<td width="100px" class="property-default">null</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">VISIBLE EVENTS</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS LIST</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Parameters</th><th>Return</th></tr>
+	<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getContentMode [<a href="#FUNCTION_getContentMode">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">org_scn_community_shared_DimensionSetEnumfield</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getContentModeAsString [<a href="#FUNCTION_getContentModeAsString">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getCustomDimensions [<a href="#FUNCTION_getCustomDimensions">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">StringArray</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getDisplayText [<a href="#FUNCTION_getDisplayText">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">org_scn_community_shared_MemberDisplayEnumfield</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getDisplayTextAsString [<a href="#FUNCTION_getDisplayTextAsString">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getFacetWidth [<a href="#FUNCTION_getFacetWidth">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">int</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getMaxDisplayMembers [<a href="#FUNCTION_getMaxDisplayMembers">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">int</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getMaxMembers [<a href="#FUNCTION_getMaxMembers">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">int</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getSortingDirection [<a href="#FUNCTION_getSortingDirection">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">org_scn_community_shared_SortDirectionEnumfield</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getSortingDirectionAsString [<a href="#FUNCTION_getSortingDirectionAsString">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getSortingType [<a href="#FUNCTION_getSortingType">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">org_scn_community_shared_SortTypeEnumfield</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getSortingTypeAsString [<a href="#FUNCTION_getSortingTypeAsString">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getZeroValuesMode [<a href="#FUNCTION_getZeroValuesMode">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">org_scn_community_shared_Enumfield</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getZeroValuesModeAsString [<a href="#FUNCTION_getZeroValuesModeAsString">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">isClearOthers [<a href="#FUNCTION_isClearOthers">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">boolean</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">private_onSelectionChanged [<a href="#FUNCTION_private_onSelectionChanged">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">private_readDimensions [<a href="#FUNCTION_private_readDimensions">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">dataSource</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">reloadDataSource [<a href="#FUNCTION_reloadDataSource">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">(memberAccessSource)</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">reloadSelection [<a href="#FUNCTION_reloadSelection">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">(memberAccessSource)</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">resetDimensions [<a href="#FUNCTION_resetDimensions">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setClearOthers [<a href="#FUNCTION_setClearOthers">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">clearOthers</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setContentMode [<a href="#FUNCTION_setContentMode">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">contentMode</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setContentModeByString [<a href="#FUNCTION_setContentModeByString">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">contentMode</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setCustomDimensions [<a href="#FUNCTION_setCustomDimensions">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">customDimensions</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setDisplayText [<a href="#FUNCTION_setDisplayText">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">displayText</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setDisplayTextByString [<a href="#FUNCTION_setDisplayTextByString">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">displayText</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setFacetWidth [<a href="#FUNCTION_setFacetWidth">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">facetWidth</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setMaxDisplayMembers [<a href="#FUNCTION_setMaxDisplayMembers">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">maxDisplayMembers</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setMaxMembers [<a href="#FUNCTION_setMaxMembers">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">maxMembers</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setSortingDirection [<a href="#FUNCTION_setSortingDirection">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">sortingDirection</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setSortingDirectionByString [<a href="#FUNCTION_setSortingDirectionByString">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">sortingDirection</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setSortingType [<a href="#FUNCTION_setSortingType">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">sortingType</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setSortingTypeByString [<a href="#FUNCTION_setSortingTypeByString">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">sortingType</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setZeroValuesMode [<a href="#FUNCTION_setZeroValuesMode">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">zeroValuesMode</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setZeroValuesModeByString [<a href="#FUNCTION_setZeroValuesModeByString">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">zeroValuesMode</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">HIDDEN (TECHNICAL) PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>DElements<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Master Data Elements</B><br/>Master Data Elements
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>DSelection<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Selected Elements</B><br/>Selected Elements
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>onBeforeRender<br/>[ScriptText]</B></td>
+<td width="*" class="property-title-tooltip"><B>On Before Render</B><br/>On Before Render
+
+</td>
+<td width="60px" class="property-group">Events</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>onInternalSelectionChanged<br/>[ScriptText]</B></td>
+<td width="*" class="property-title-tooltip"><B>On List Selection</B><br/>On List Selection
+
+</td>
+<td width="60px" class="property-group">Events</td>
+<td width="100px" class="property-default">this.private_onSelectionChanged();</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS IN DETAIL</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="">
+	<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getContentMode">org_scn_community_shared_DimensionSetEnumfield<br/>getContentMode</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Content&nbsp;Mode&nbsp;Property&nbsp;as&nbsp;Choice&nbsp;Option<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DContentMode;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getContentModeAsString">String<br/>getContentModeAsString</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Content&nbsp;Mode&nbsp;Property&nbsp;as&nbsp;String<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DContentMode;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getCustomDimensions">StringArray<br/>getCustomDimensions</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Custom&nbsp;Dimensions&nbsp;Property&nbsp;as&nbsp;StringArray<br/><div class='html-example'">You&nbsp;want&nbsp;to&nbsp;ask&nbsp;for&nbsp;the&nbsp;current&nbsp;property&nbsp;value<br/><div class='html-code'>FACETSELECTOR.getCustomDimensions();<br></div></div><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;elementsJson&nbsp;=&nbsp;JSON.parse(this.DCustomDimensions);<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;elementsJson;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getDisplayText">org_scn_community_shared_MemberDisplayEnumfield<br/>getDisplayText</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Display&nbsp;Text&nbsp;Property&nbsp;as&nbsp;Choice&nbsp;Option<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DDisplayText;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getDisplayTextAsString">String<br/>getDisplayTextAsString</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Display&nbsp;Text&nbsp;Property&nbsp;as&nbsp;String<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DDisplayText;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getFacetWidth">int<br/>getFacetWidth</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Facet&nbsp;Width&nbsp;in&nbsp;px&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DFacetWidth;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getMaxDisplayMembers">int<br/>getMaxDisplayMembers</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Maximum&nbsp;Number&nbsp;of&nbsp;Members&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DMaxDisplayMembers;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getMaxMembers">int<br/>getMaxMembers</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Maximum&nbsp;Number&nbsp;of&nbsp;Members&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DMaxMembers;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getSortingDirection">org_scn_community_shared_SortDirectionEnumfield<br/>getSortingDirection</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Member&nbsp;Sorting&nbsp;Direction&nbsp;Property&nbsp;as&nbsp;Choice&nbsp;Option<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DSortingDirection;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getSortingDirectionAsString">String<br/>getSortingDirectionAsString</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Member&nbsp;Sorting&nbsp;Direction&nbsp;Property&nbsp;as&nbsp;String<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DSortingDirection;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getSortingType">org_scn_community_shared_SortTypeEnumfield<br/>getSortingType</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Member&nbsp;Sorting&nbsp;Type&nbsp;Property&nbsp;as&nbsp;Choice&nbsp;Option<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DSortingType;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getSortingTypeAsString">String<br/>getSortingTypeAsString</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Member&nbsp;Sorting&nbsp;Type&nbsp;Property&nbsp;as&nbsp;String<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DSortingType;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getZeroValuesMode">org_scn_community_shared_Enumfield<br/>getZeroValuesMode</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Zero&nbsp;Values&nbsp;Display&nbsp;Mode&nbsp;Property&nbsp;as&nbsp;Choice&nbsp;Option<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DZeroValuesMode;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getZeroValuesModeAsString">String<br/>getZeroValuesModeAsString</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Zero&nbsp;Values&nbsp;Display&nbsp;Mode&nbsp;Property&nbsp;as&nbsp;String<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DZeroValuesMode;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_isClearOthers">boolean<br/>isClearOthers</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Clear&nbsp;Selections&nbsp;if&nbsp;0&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.DClearOthers;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_private_onSelectionChanged">void<br/>private_onSelectionChanged</td>
+<td valign="top" width="*" class="function-help">DO&nbsp;NOT&nbsp;USE&nbsp;PRIVATE&nbsp;METHODS<br/>@Visibility(private)<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+/*&nbsp;entering&nbsp;general&nbsp;block*/<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;that&nbsp;=&nbsp;this;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;l&nbsp;=&nbsp;{};<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;try{<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(this.isDebug())&nbsp;{&nbsp;&nbsp;DEBUG.openZtl(that,&nbsp;l)};<br/>&nbsp;&nbsp;&nbsp;&nbsp;/*&nbsp;entering&nbsp;general&nbsp;block*/<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;l.selection&nbsp;=&nbsp;this.DSelection;<br/>&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;l.selectionJson&nbsp;=&nbsp;JSON.parse(l.selection);<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;l.dimensionName&nbsp;=&nbsp;l.selectionJson.dimension;<br/>&nbsp;&nbsp;&nbsp;&nbsp;l.keys&nbsp;=&nbsp;l.selectionJson.keys;<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;l.keysAsArray&nbsp;=&nbsp;[];<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;l.DS&nbsp;=&nbsp;this.getDataSource();<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(this.isDebug())&nbsp;{&nbsp;&nbsp;DEBUG.inspectZtl(that,&nbsp;l)};<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(l.DS)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(l.selectionJson.clearOthers&nbsp;&amp;&amp;&nbsp;that.isClearOthers())&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.private_readDimensions(l.DS);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.dimensions&nbsp;=&nbsp;this._tempDimensions;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(this.isDebug())&nbsp;{&nbsp;&nbsp;DEBUG.inspectZtl(this,&nbsp;l)};<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.dimensions.forEach(function(dimension,&nbsp;index)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(!dimension.isMeasuresDimension)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.currentDimensionName&nbsp;=&nbsp;dimension.name<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(l.currentDimensionName&nbsp;!=&nbsp;l.dimensionName)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.DS.clearFilter(l.currentDimensionName);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(l.keys.length&nbsp;==&nbsp;1&nbsp;&amp;&amp;&nbsp;l.keys[0]&nbsp;==&nbsp;&quot;-ALL-&quot;)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.DS.clearFilter(l.dimensionName);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;iK&nbsp;=&nbsp;0;&nbsp;iK&nbsp;&lt;&nbsp;l.keys.length;&nbsp;iK++)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.key&nbsp;=&nbsp;l.keys[iK];<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.keysAsArray.push(l.key);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(this.isDebug())&nbsp;{&nbsp;&nbsp;DEBUG.inspectZtl(that,&nbsp;l)};<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.DS.setFilter(l.dimensionName,&nbsp;l.keysAsArray);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(this.isDebug())&nbsp;{&nbsp;&nbsp;DEBUG.exitZtl(that,&nbsp;l)};<br/>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(e)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(this.isDebug())&nbsp;{&nbsp;&nbsp;DEBUG.processZtlException(that,&nbsp;l,&nbsp;e)};throw&nbsp;e;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_private_readDimensions">void<br/>private_readDimensions</td>
+<td valign="top" width="*" class="function-help">/START&nbsp;HERE&nbsp;PLACE&nbsp;FOR&nbsp;CUSTOM&nbsp;ZTL&nbsp;FUNCTIONS<br/>Reads&nbsp;the&nbsp;Dimensions&nbsp;from&nbsp;Data&nbsp;Source<br/>@Visibility(private)<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>dataSource</B></td>
+<td width="120px" class="parameter-type"><B>Object</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+/*&nbsp;entering&nbsp;general&nbsp;block*/<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;that&nbsp;=&nbsp;this;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;l&nbsp;=&nbsp;{};<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;try{<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(this.isDebug())&nbsp;{&nbsp;&nbsp;DEBUG.openZtl(that,&nbsp;l)};<br/>&nbsp;&nbsp;&nbsp;&nbsp;/*&nbsp;entering&nbsp;general&nbsp;block*/<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;if(this.DContentMode&nbsp;==&nbsp;&quot;Resultset&quot;)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.dimensionsRows&nbsp;=&nbsp;dataSource.getDimensions(Axis.ROWS);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.dimensionsColumns&nbsp;=&nbsp;dataSource.getDimensions(Axis.COLUMNS);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.dimensions&nbsp;=&nbsp;[];<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.dimensionsRows.forEach(function(dimension,&nbsp;indexD)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.dimensions.push(dimension);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.dimensionsColumns.forEach(function(dimension,&nbsp;indexD)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.dimensions.push(dimension);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(this.isDebug())&nbsp;{&nbsp;&nbsp;DEBUG.inspectZtl(that,&nbsp;l)};<br/>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;if(this.DContentMode&nbsp;==&nbsp;&quot;Custom&quot;)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.dimensionsAll&nbsp;=&nbsp;dataSource.getDimensions();<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.customDimensions&nbsp;=&nbsp;JSON.parse(that.DCustomDimensions);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.customDimensionsFlat&nbsp;=&nbsp;&quot;|&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;iD&nbsp;=&nbsp;0;&nbsp;iD&nbsp;&lt;&nbsp;l.customDimensions.length;&nbsp;iD++)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.customDimensionsFlat&nbsp;=&nbsp;l.customDimensionsFlat&nbsp;+&nbsp;l.customDimensions[iD]&nbsp;+&nbsp;&quot;|&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.dimensions&nbsp;=&nbsp;[];<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.dimensionsAll.forEach(function(dimension,&nbsp;indexD)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.currentAvailableDimensionName&nbsp;=&nbsp;dimension.name;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(l.customDimensionsFlat.indexOf(&quot;|&quot;&nbsp;+&nbsp;l.currentAvailableDimensionName&nbsp;+&nbsp;&quot;|&quot;)&nbsp;&gt;&nbsp;-1)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.dimensions.push(dimension);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.dimensions&nbsp;=&nbsp;dataSource.getDimensions();<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;/*&nbsp;exiting&nbsp;general&nbsp;block*/<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(this.isDebug())&nbsp;{&nbsp;&nbsp;DEBUG.exitZtl(that,&nbsp;l)};<br/>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(e)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(this.isDebug())&nbsp;{&nbsp;&nbsp;DEBUG.processZtlException(that,&nbsp;l,&nbsp;e)};throw&nbsp;e;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;/*&nbsp;exiting&nbsp;general&nbsp;block*/<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;this._tempDimensions&nbsp;=&nbsp;l.dimensions;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_reloadDataSource">void<br/>reloadDataSource</td>
+<td valign="top" width="*" class="function-help">This&nbsp;function&nbsp;must&nbsp;be&nbsp;used&nbsp;for&nbsp;initialization&nbsp;and&nbsp;in&nbsp;case&nbsp;the&nbsp;drilldown&nbsp;structure&nbsp;has&nbsp;been&nbsp;changed.<br/>You&nbsp;should&nbsp;trigger&nbsp;it&nbsp;once&nbsp;and&nbsp;ideally&nbsp;when&nbsp;filters&nbsp;are&nbsp;NOT&nbsp;set&nbsp;on&nbsp;dimensions,&nbsp;other&nbsp;case&nbsp;you&nbsp;will&nbsp;see&nbsp;only&nbsp;members&nbsp;which&nbsp;are&nbsp;available&nbsp;in&nbsp;resultset&nbsp;(depends&nbsp;on&nbsp;your&nbsp;setting&nbsp;"member&nbsp;selection"&nbsp;on&nbsp;dimension&nbsp;level).<br/>When&nbsp;to&nbsp;use&nbsp;this&nbsp;method?<br/>-&nbsp;As&nbsp;soon&nbsp;the&nbsp;Data&nbsp;Source&nbsp;is&nbsp;initialized,&nbsp;either&nbsp;in&nbsp;"onStartup()"&nbsp;script&nbsp;or&nbsp;after&nbsp;loading&nbsp;in&nbsp;script.<br/><div class='html-example'">You&nbsp;have&nbsp;loaded&nbsp;the&nbsp;data&nbsp;source&nbsp;and&nbsp;want&nbsp;to&nbsp;initialize.<br/>The&nbsp;code&nbsp;should&nbsp;be&nbsp;placed&nbsp;in&nbsp;"onStartup()"&nbsp;method.<div class='html-code'>FACET.reloadDataSource();<br/>FACET.reloadSelection();<br/></div></div><div class='html-example'">Especially&nbsp;when&nbsp;you&nbsp;are&nbsp;using&nbsp;option&nbsp;of&nbsp;"Only&nbsp;From&nbsp;Result&nbsp;Set",&nbsp;you&nbsp;can&nbsp;bind&nbsp;a&nbsp;different&nbsp;data&nbsp;source&nbsp;(on&nbsp;the&nbsp;same&nbsp;query)&nbsp;to&nbsp;assure&nbsp;that&nbsp;it&nbsp;stays&nbsp;unfiltered&nbsp;for&nbsp;member&nbsp;selection.&nbsp;This&nbsp;Data&nbsp;Source&nbsp;should&nbsp;be&nbsp;not&nbsp;filtered&nbsp;on&nbsp;any&nbsp;dimension.<br/>The&nbsp;code&nbsp;should&nbsp;be&nbsp;placed&nbsp;in&nbsp;"onStartup()"&nbsp;method.<div class='html-code'>FACET.reloadDataSource(DS_FULL);<br/>FACET.reloadSelection(DS_FULL);<br/></div></div><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>memberAccessSource</B></td>
+<td width="120px" class="parameter-type"><B>DataSourceAlias [ optional ]</B></td>
+<td width="*" class="parameter-help">Data Source which should be used for member selection in case not the linked Data Source</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+/*&nbsp;entering&nbsp;general&nbsp;block*/<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;that&nbsp;=&nbsp;this;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;l&nbsp;=&nbsp;{};<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;try{<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(this.isDebug())&nbsp;{&nbsp;&nbsp;DEBUG.openZtl(that,&nbsp;l)};<br/>&nbsp;&nbsp;&nbsp;&nbsp;/*&nbsp;entering&nbsp;general&nbsp;block*/<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;l.elementsJson&nbsp;=&nbsp;[];<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;l.DS&nbsp;=&nbsp;this.getDataSource();<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;if(!memberAccessSource)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;memberAccessSource&nbsp;=&nbsp;l.DS;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;if(l.DS)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.private_readDimensions(memberAccessSource);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.dimensions&nbsp;=&nbsp;this._tempDimensions;<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(this.isDebug())&nbsp;{&nbsp;&nbsp;DEBUG.inspectZtl(that,&nbsp;l)};<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.dimensionKeys&nbsp;=&nbsp;&quot;&quot;;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.dimensions.forEach(function(dimension,&nbsp;index)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.dimensionKeys&nbsp;=&nbsp;l.dimensionKeys&nbsp;+&nbsp;dimension.name;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(this.oldDimensionKeys&nbsp;!=&nbsp;l.dimensionKeys)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.dimensions.forEach(function(dimension,&nbsp;index)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(!dimension.isMeasuresDimension)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;warnings&nbsp;to&nbsp;assure&nbsp;query&nbsp;is&nbsp;ok<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(l.DS.isHierarchyActive(dimension))&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;APPLICATION.createWarningMessage(&quot;Data&nbsp;Source&nbsp;has&nbsp;an&nbsp;Active&nbsp;Hierarchy&nbsp;on&nbsp;Dimension:&nbsp;&quot;&nbsp;+&nbsp;dimension.name);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.members&nbsp;=&nbsp;memberAccessSource.getMembers(dimension,&nbsp;that.getMaxMembers());<br/>&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.dimensionJson&nbsp;=&nbsp;{};<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.dimensionJson.name&nbsp;=&nbsp;dimension.name;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.dimensionJson.text&nbsp;=&nbsp;dimension.text;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.dimensionJson.isMeasuresDimension&nbsp;=&nbsp;dimension.isMeasuresDimension;<br/>&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.dimensionJson.hierarchyActive&nbsp;=&nbsp;l.DS.isHierarchyActive(dimension);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.dimensionJson.filterExt&nbsp;=&nbsp;&quot;;&quot;&nbsp;+&nbsp;l.DS.getFilterExt(dimension);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.dimensionJson.members&nbsp;=&nbsp;l.members;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.elementsJson.push(l.dimensionJson);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.DElements&nbsp;=&nbsp;JSON.stringify(l.elementsJson);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.oldDimensionKeys&nbsp;=&nbsp;l.dimensionKeys;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(this.isDebug())&nbsp;{&nbsp;&nbsp;DEBUG.inspectZtl(that,&nbsp;l)};<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;/*&nbsp;exiting&nbsp;general&nbsp;block*/<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(this.isDebug())&nbsp;{&nbsp;&nbsp;DEBUG.exitZtl(that,&nbsp;l)};<br/>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(e)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(this.isDebug())&nbsp;{&nbsp;&nbsp;DEBUG.processZtlException(that,&nbsp;l,&nbsp;e)};throw&nbsp;e;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;/*&nbsp;exiting&nbsp;general&nbsp;block*/
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_reloadSelection">void<br/>reloadSelection</td>
+<td valign="top" width="*" class="function-help">This&nbsp;function&nbsp;can&nbsp;be&nbsp;used&nbsp;after&nbsp;the&nbsp;filter&nbsp;in&nbsp;data&nbsp;source&nbsp;was&nbsp;changed&nbsp;to&nbsp;update&nbsp;the&nbsp;component.<br/>You&nbsp;should&nbsp;be&nbsp;trigered&nbsp;every&nbsp;time&nbsp;the&nbsp;filter&nbsp;change&nbsp;occurs,&nbsp;therefore&nbsp;the&nbsp;event&nbsp;in&nbsp;Data&nbsp;Source&nbsp;->&nbsp;onResultSetChanged()&nbsp;is&nbsp;a&nbsp;good&nbsp;place.<br/>When&nbsp;to&nbsp;use&nbsp;this&nbsp;method?<br/>-&nbsp;Always&nbsp;the&nbsp;filter&nbsp;is&nbsp;changed,&nbsp;also&nbsp;the&nbsp;"onResultSetChanged()"&nbsp;event&nbsp;is&nbsp;good&nbsp;for&nbsp;this.<br/><div class='html-example'">You&nbsp;want&nbsp;to&nbsp;keep&nbsp;the&nbsp;selections&nbsp;with&nbsp;data&nbsp;source.<br/>The&nbsp;code&nbsp;should&nbsp;be&nbsp;placed&nbsp;in&nbsp;"onResultSetChanged()"&nbsp;method.<div class='html-code'>//&nbsp;if&nbsp;you&nbsp;want&nbsp;to&nbsp;update&nbsp;also&nbsp;dimensions&nbsp;when&nbsp;drilldown&nbsp;is&nbsp;changed<br/>FACET.reloadDataSource();<br/>//&nbsp;every&nbsp;time<br/>FACET.reloadSelection();<br/></div></div><div class='html-example'">Especially&nbsp;when&nbsp;you&nbsp;are&nbsp;using&nbsp;option&nbsp;of&nbsp;"Only&nbsp;From&nbsp;Result&nbsp;Set",&nbsp;you&nbsp;can&nbsp;bind&nbsp;a&nbsp;different&nbsp;data&nbsp;source&nbsp;(on&nbsp;the&nbsp;same&nbsp;query)&nbsp;to&nbsp;assure&nbsp;that&nbsp;it&nbsp;stays&nbsp;unfiltered&nbsp;for&nbsp;member&nbsp;selection.&nbsp;This&nbsp;Data&nbsp;Source&nbsp;should&nbsp;be&nbsp;not&nbsp;filtered&nbsp;on&nbsp;any&nbsp;dimension.<br/>The&nbsp;code&nbsp;should&nbsp;be&nbsp;placed&nbsp;in&nbsp;"onStartup()"&nbsp;method.<div class='html-code'>FACET.reloadDataSource(DS_FULL);<br/>FACET.reloadSelection(DS_FULL);<br/></div></div><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>memberAccessSource</B></td>
+<td width="120px" class="parameter-type"><B>DataSourceAlias [ optional ]</B></td>
+<td width="*" class="parameter-help">Data Source which should be used for member selection in case not the linked Data Source</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+/*&nbsp;entering&nbsp;general&nbsp;block*/<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;that&nbsp;=&nbsp;this;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;l&nbsp;=&nbsp;{};<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;try{<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(this.isDebug())&nbsp;{&nbsp;&nbsp;DEBUG.openZtl(that,&nbsp;l)};<br/>&nbsp;&nbsp;&nbsp;&nbsp;/*&nbsp;entering&nbsp;general&nbsp;block*/<br/>&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;l.elementsJson&nbsp;=&nbsp;{};<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;l.DS&nbsp;=&nbsp;this.getDataSource();<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;if(!memberAccessSource)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;memberAccessSource&nbsp;=&nbsp;l.DS;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(l.DS)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.private_readDimensions(memberAccessSource);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.dimensions&nbsp;=&nbsp;this._tempDimensions;<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(this.isDebug())&nbsp;{&nbsp;&nbsp;DEBUG.inspectZtl(that,&nbsp;l)};<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.dimensions.forEach(function(dimension,&nbsp;indexD)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.members&nbsp;=&nbsp;memberAccessSource.getMembers(dimension,&nbsp;that.getMaxMembers());<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.dimensionJson&nbsp;=&nbsp;{};<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.dimensionJson.name&nbsp;=&nbsp;dimension.name;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.dimensionJson.members&nbsp;=&nbsp;[];<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.dimensionJson.filterExt&nbsp;=&nbsp;&quot;;&nbsp;&quot;&nbsp;+&nbsp;l.DS.getFilterExt(dimension)&nbsp;+&nbsp;&quot;;&quot;;<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.elementsJson[dimension.name]&nbsp;=&nbsp;l.dimensionJson;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.DSelection&nbsp;=&nbsp;JSON.stringify(l.elementsJson);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(this.isDebug())&nbsp;{&nbsp;&nbsp;DEBUG.inspectZtl(that,&nbsp;l)};<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;/*&nbsp;exiting&nbsp;general&nbsp;block*/<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(this.isDebug(&quot;DEBUG_2&quot;))&nbsp;{&nbsp;DEBUG_2.exitZtl(that,&nbsp;l)};<br/>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(e)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(this.isDebug())&nbsp;{&nbsp;&nbsp;DEBUG.processZtlException(that,&nbsp;l,&nbsp;e)};throw&nbsp;e;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;/*&nbsp;exiting&nbsp;general&nbsp;block*/
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_resetDimensions">void<br/>resetDimensions</td>
+<td valign="top" width="*" class="function-help">Resets&nbsp;the&nbsp;actual&nbsp;data&nbsp;of&nbsp;all&nbsp;dimensions&nbsp;(and&nbsp;causes&nbsp;reload&nbsp;of&nbsp;all&nbsp;members&nbsp;in&nbsp;"reloadDataSource"&nbsp;method.<br/>Use&nbsp;it&nbsp;together&nbsp;like&nbsp;below<br/><div class='html-example'">You&nbsp;want&nbsp;to&nbsp;reload&nbsp;actual&nbsp;members&nbsp;again<br/><div class='html-code'>FACET.resetDimensions();<br/>FACET.reloadSelection();<br/></div></div><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.oldDimensionKeys&nbsp;=&nbsp;&quot;&quot;;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setClearOthers">void<br/>setClearOthers</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Clear&nbsp;Selections&nbsp;if&nbsp;0&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>clearOthers</B></td>
+<td width="120px" class="parameter-type"><B>boolean</B></td>
+<td width="*" class="parameter-help">Clear Selections if 0</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DClearOthers&nbsp;=&nbsp;clearOthers;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setContentMode">void<br/>setContentMode</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Content&nbsp;Mode&nbsp;Property&nbsp;by&nbsp;Choice&nbsp;Option<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>contentMode</B></td>
+<td width="120px" class="parameter-type"><B>org_scn_community_shared_DimensionSetEnumfield</B></td>
+<td width="*" class="parameter-help">Content Mode</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DContentMode&nbsp;=&nbsp;contentMode;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setContentModeByString">void<br/>setContentModeByString</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Content&nbsp;Mode&nbsp;Property&nbsp;by&nbsp;String<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>contentMode</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Content Mode</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DContentMode&nbsp;=&nbsp;contentMode;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setCustomDimensions">void<br/>setCustomDimensions</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Custom&nbsp;Dimensions&nbsp;Property&nbsp;as&nbsp;StringArray<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>customDimensions</B></td>
+<td width="120px" class="parameter-type"><B>StringArray</B></td>
+<td width="*" class="parameter-help">Custom Dimensions</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DCustomDimensions&nbsp;=&nbsp;customDimensions;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setDisplayText">void<br/>setDisplayText</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Display&nbsp;Text&nbsp;Property&nbsp;by&nbsp;Choice&nbsp;Option<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>displayText</B></td>
+<td width="120px" class="parameter-type"><B>org_scn_community_shared_MemberDisplayEnumfield</B></td>
+<td width="*" class="parameter-help">Display Text</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DDisplayText&nbsp;=&nbsp;displayText;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setDisplayTextByString">void<br/>setDisplayTextByString</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Display&nbsp;Text&nbsp;Property&nbsp;by&nbsp;String<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>displayText</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Display Text</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DDisplayText&nbsp;=&nbsp;displayText;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setFacetWidth">void<br/>setFacetWidth</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Facet&nbsp;Width&nbsp;in&nbsp;px&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>facetWidth</B></td>
+<td width="120px" class="parameter-type"><B>int</B></td>
+<td width="*" class="parameter-help">Facet Width in px</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DFacetWidth&nbsp;=&nbsp;facetWidth;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setMaxDisplayMembers">void<br/>setMaxDisplayMembers</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Maximum&nbsp;Number&nbsp;of&nbsp;Members&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>maxDisplayMembers</B></td>
+<td width="120px" class="parameter-type"><B>int</B></td>
+<td width="*" class="parameter-help">Maximum Number of Members</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DMaxDisplayMembers&nbsp;=&nbsp;maxDisplayMembers;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setMaxMembers">void<br/>setMaxMembers</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Maximum&nbsp;Number&nbsp;of&nbsp;Members&nbsp;Property<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>maxMembers</B></td>
+<td width="120px" class="parameter-type"><B>int</B></td>
+<td width="*" class="parameter-help">Maximum Number of Members</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DMaxMembers&nbsp;=&nbsp;maxMembers;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setSortingDirection">void<br/>setSortingDirection</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Member&nbsp;Sorting&nbsp;Direction&nbsp;Property&nbsp;by&nbsp;Choice&nbsp;Option<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>sortingDirection</B></td>
+<td width="120px" class="parameter-type"><B>org_scn_community_shared_SortDirectionEnumfield</B></td>
+<td width="*" class="parameter-help">Member Sorting Direction</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DSortingDirection&nbsp;=&nbsp;sortingDirection;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setSortingDirectionByString">void<br/>setSortingDirectionByString</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Member&nbsp;Sorting&nbsp;Direction&nbsp;Property&nbsp;by&nbsp;String<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>sortingDirection</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Member Sorting Direction</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DSortingDirection&nbsp;=&nbsp;sortingDirection;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setSortingType">void<br/>setSortingType</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Member&nbsp;Sorting&nbsp;Type&nbsp;Property&nbsp;by&nbsp;Choice&nbsp;Option<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>sortingType</B></td>
+<td width="120px" class="parameter-type"><B>org_scn_community_shared_SortTypeEnumfield</B></td>
+<td width="*" class="parameter-help">Member Sorting Type</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DSortingType&nbsp;=&nbsp;sortingType;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setSortingTypeByString">void<br/>setSortingTypeByString</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Member&nbsp;Sorting&nbsp;Type&nbsp;Property&nbsp;by&nbsp;String<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>sortingType</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Member Sorting Type</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DSortingType&nbsp;=&nbsp;sortingType;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setZeroValuesMode">void<br/>setZeroValuesMode</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Zero&nbsp;Values&nbsp;Display&nbsp;Mode&nbsp;Property&nbsp;by&nbsp;Choice&nbsp;Option<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>zeroValuesMode</B></td>
+<td width="120px" class="parameter-type"><B>org_scn_community_shared_Enumfield</B></td>
+<td width="*" class="parameter-help">Zero Values Display Mode</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DZeroValuesMode&nbsp;=&nbsp;zeroValuesMode;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setZeroValuesModeByString">void<br/>setZeroValuesModeByString</td>
+<td valign="top" width="*" class="function-help">Sets&nbsp;Zero&nbsp;Values&nbsp;Display&nbsp;Mode&nbsp;Property&nbsp;by&nbsp;String<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>zeroValuesMode</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Zero Values Display Mode</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.DZeroValuesMode&nbsp;=&nbsp;zeroValuesMode;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+
+	</TABLE>
+	<div style="height:20px!important"> THE END </div>
+	</div>
+	
+	<div style="height:60px!important"></div>
+	
+</div>
+</body>
+</html>

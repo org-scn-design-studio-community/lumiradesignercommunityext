@@ -1,0 +1,302 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../../doc.css">
+<link rel="stylesheet" type="text/css" href="../../tables.css">
+<script id="sap-ui-bootstrap" type="text/javascript" 
+      /*src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"*/
+      src="https://sapui5.hana.ondemand.com/sdk/resources/sap-ui-core.js"
+      data-sap-ui-theme="sap_bluecrystal" data-sap-ui-libs="sap.m,sap.ui.commons,sap.suite.ui.commons,sap.ui.ux3"></script>
+
+<script type="text/javascript" src="../js/ComponentMain.js"></script>
+<script type="text/javascript" src="../js/PostResponseParser/PostResponseParser.js"></script>
+<script type="text/javascript" src="../js/TimeLine.js"></script>
+<script type="text/javascript" src="../js/ga.js"></script>
+
+<script> 
+	requestChangeLog("../../../../sdkhelp/web/10/components/basics/launchpad/changes/changelog.json");
+	requestContent("Blog", "../../../../sdkhelp/web/10/components/basics/launchpad/blogs.json");
+	requestContent("Example", "../../../../sdkhelp/web/10/components/basics/launchpad/examples.json");
+</script>
+
+<title>Launch Pad - SCN Design Studio Community</title>
+</head>
+<body class="comp-body" style="height:100%">
+<div class="comp-main" style="height:100%">
+
+ 	<div class="component-name">
+	LaunchPad [ScnCommunityBasics]
+	</div>
+	<div class="component-title">
+	Launch Pad
+	</div>
+
+<div id="componentnav"></div>
+	<div id="intro">This page is giving short introduction to the component with summary of the change status (green/yellow/red)<div id="introStatus" height="120px"></div><br></div>
+	<div id="blogs" hidden="true" height="100%">This page is listing community blogs on this component, follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/08/introducing-blog-list-for-community-components" target="_blank">this link</a> to learn more.<div id="BlogsList" height="100%"></div></div>
+	<div id="changelog" hidden="true" height="100%">This page is listing all changes which have been done on this component with corresponding test status (green: ok, red: not ok, yellow: untested), follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/07/introducing-change-log-for-community-components" target="_blank">this link</a> to learn more.<div id="changelogList" height="100%"></div></div>
+	<div id="examples" hidden="true" height="100%">This page is listing all example applications with this component, follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/08/introducing-blog-list-for-community-components" target="_blank">this link</a> to learn more.<div id="ExamplesList" height="100%"></div></div>
+	<div id="about" hidden="true">This page will bring more "about" details (generated)</div>
+	<div id="technical" hidden="true">
+	<br/>
+	<div class="component-properties">VISIBLE PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">VISIBLE EVENTS</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>onTileSelect<br/>[ScriptText]</B></td>
+<td width="*" class="property-title-tooltip"><B>On Tile Select</B><br/>&nbsp;
+
+</td>
+<td width="60px" class="property-group">Events</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS LIST</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Parameters</th><th>Return</th></tr>
+	<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getTileClicked [<a href="#FUNCTION_getTileClicked">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">removeAllTiles [<a href="#FUNCTION_removeAllTiles">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getTileProperty [<a href="#FUNCTION_getTileProperty">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">title</td>
+<td valign="top" width="160px" class="function-short-return">org.scn.community.basics.TileProperty</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">addTile [<a href="#FUNCTION_addTile">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">title, (info), (icon), (number), (numberUnit), (valueState), (styleClass)</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">removeTile [<a href="#FUNCTION_removeTile">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">title</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">HIDDEN (TECHNICAL) PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>tileConfig<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Tile Config</B><br/>&nbsp;
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>selectedTile<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Selected Tile</B><br/>&nbsp;
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS IN DETAIL</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="">
+	<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getTileClicked">String<br/>getTileClicked</td>
+<td valign="top" width="*" class="function-help">Gets&nbsp;Tile&nbsp;Selected<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.selectedTile;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_removeAllTiles">void<br/>removeAllTiles</td>
+<td valign="top" width="*" class="function-help">Remove&nbsp;All&nbsp;Tiles<br/><div class='html-example'">Remove&nbsp;all&nbsp;tiles<br/><div class='html-code'>LAUNCHPAD_1.removeAllTiles();<br></div></div><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.tileConfig&nbsp;=&nbsp;JSON.stringify([]);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getTileProperty">org.scn.community.basics.TileProperty<br/>getTileProperty</td>
+<td valign="top" width="*" class="function-help"><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>title</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Title</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;r&nbsp;=&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title&nbsp;:&nbsp;&quot;&quot;,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;info&nbsp;:&nbsp;&quot;&quot;,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;icon&nbsp;:&nbsp;&quot;&quot;,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number&nbsp;:&nbsp;&quot;&quot;,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;numberUnit&nbsp;:&nbsp;&quot;&quot;,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valueState&nbsp;:&nbsp;&quot;&quot;,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;styleClass&nbsp;:&nbsp;&quot;&quot;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;o&nbsp;=&nbsp;eval(this.tileConfig);<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;matchIndex&nbsp;=&nbsp;-1;<br/>&nbsp;&nbsp;&nbsp;&nbsp;for(var&nbsp;i=0;i&lt;o.length;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(o[i].title&nbsp;==&nbsp;title)&nbsp;matchIndex&nbsp;=&nbsp;i;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(matchIndex&gt;-1){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;tileConf&nbsp;=&nbsp;o[matchIndex];<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r.title&nbsp;=&nbsp;tileConf.title;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r.info&nbsp;=&nbsp;tileConf.info;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r.icon&nbsp;=&nbsp;tileConf.icon;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r.number&nbsp;=&nbsp;tileConf.number;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r.numberUnit&nbsp;=&nbsp;tileConf.numberUnit;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r.valueState&nbsp;=&nbsp;tileConf.valueState;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r.styleClass&nbsp;=&nbsp;tileConf.styleClass;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;r;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_addTile">void<br/>addTile</td>
+<td valign="top" width="*" class="function-help">Adds&nbsp;or&nbsp;Updates&nbsp;a&nbsp;Tile&nbsp;(if&nbsp;title&nbsp;already&nbsp;exists)<br/><div class='html-example'">Add/Update&nbsp;a&nbsp;tile&nbsp;called&nbsp;"Sales"<br/><div class='html-code'>LAUNCHPAD_1.addTile("Sales",&nbsp;"YTD",&nbsp;"sap-icon://money-bills",&nbsp;"1234",&nbsp;"USD",&nbsp;"good");<br></div></div><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>title</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Title</td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>info</B></td>
+<td width="120px" class="parameter-type"><B>String [ optional ]</B></td>
+<td width="*" class="parameter-help">Info</td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>icon</B></td>
+<td width="120px" class="parameter-type"><B>String [ optional ]</B></td>
+<td width="*" class="parameter-help">Icon</td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>number</B></td>
+<td width="120px" class="parameter-type"><B>String [ optional ]</B></td>
+<td width="*" class="parameter-help">Number</td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>numberUnit</B></td>
+<td width="120px" class="parameter-type"><B>String [ optional ]</B></td>
+<td width="*" class="parameter-help">Number Unit</td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>valueState</B></td>
+<td width="120px" class="parameter-type"><B>String [ optional ]</B></td>
+<td width="*" class="parameter-help">Value State</td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>styleClass</B></td>
+<td width="120px" class="parameter-type"><B>String [ optional ]</B></td>
+<td width="*" class="parameter-help">CSS Class</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;o&nbsp;=&nbsp;eval(this.tileConfig);<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(!o)&nbsp;o&nbsp;=&nbsp;[];<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;tile&nbsp;=&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title:&nbsp;title,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;info:&nbsp;info,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;icon:&nbsp;icon,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number:&nbsp;number,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;numberUnit:&nbsp;numberUnit,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valueState&nbsp;:&nbsp;valueState&nbsp;||&nbsp;&quot;None&quot;,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;styleClass&nbsp;:&nbsp;styleClass<br/>&nbsp;&nbsp;&nbsp;&nbsp;};&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;matchIndex&nbsp;=&nbsp;-1;<br/>&nbsp;&nbsp;&nbsp;&nbsp;for(var&nbsp;i=0;i&lt;o.length;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(o[i].title&nbsp;==&nbsp;title)&nbsp;matchIndex&nbsp;=&nbsp;i;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(matchIndex==-1){&nbsp;&nbsp;//&nbsp;New&nbsp;Tile<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;o.push(tile);<br/>&nbsp;&nbsp;&nbsp;&nbsp;}else{&nbsp;&nbsp;//&nbsp;Update&nbsp;Tile<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;o[matchIndex]&nbsp;=&nbsp;tile;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;tileConfig&nbsp;=&nbsp;JSON.stringify(o);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_removeTile">void<br/>removeTile</td>
+<td valign="top" width="*" class="function-help">Remove&nbsp;a&nbsp;tile<br/><div class='html-example'">Remove&nbsp;a&nbsp;tile&nbsp;titled&nbsp;"Sales"<br/><div class='html-code'>LAUNCHPAD_1.removeTile("Sales");<br></div></div><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>title</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help">Tile Title</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+var&nbsp;o&nbsp;=&nbsp;eval(this.tileConfig);<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(!o)&nbsp;o&nbsp;=&nbsp;[];<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;matchIndex&nbsp;=&nbsp;-1;<br/>&nbsp;&nbsp;&nbsp;&nbsp;for(var&nbsp;i=0;i&lt;o.length;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(o[i].title&nbsp;==&nbsp;title)&nbsp;matchIndex&nbsp;=&nbsp;i;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(matchIndex&gt;-1)&nbsp;o.splice(matchIndex,1);<br/>&nbsp;&nbsp;&nbsp;&nbsp;tileConfig&nbsp;=&nbsp;JSON.stringify(o);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+
+	</TABLE>
+	<div style="height:20px!important"> THE END </div>
+	</div>
+	
+	<div style="height:60px!important"></div>
+	
+</div>
+</body>
+</html>

@@ -1,0 +1,321 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../../doc.css">
+<link rel="stylesheet" type="text/css" href="../../tables.css">
+<script id="sap-ui-bootstrap" type="text/javascript" 
+      /*src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"*/
+      src="https://sapui5.hana.ondemand.com/sdk/resources/sap-ui-core.js"
+      data-sap-ui-theme="sap_bluecrystal" data-sap-ui-libs="sap.m,sap.ui.commons,sap.suite.ui.commons,sap.ui.ux3"></script>
+
+<script type="text/javascript" src="../js/ComponentMain.js"></script>
+<script type="text/javascript" src="../js/PostResponseParser/PostResponseParser.js"></script>
+<script type="text/javascript" src="../js/TimeLine.js"></script>
+<script type="text/javascript" src="../js/ga.js"></script>
+
+<script> 
+	requestChangeLog("../../../../sdkhelp/web/components/utils/flowlayouter/changes/changelog.json");
+	requestContent("Blog", "../../../../sdkhelp/web/components/utils/flowlayouter/blogs.json");
+	requestContent("Example", "../../../../sdkhelp/web/components/utils/flowlayouter/examples.json");
+</script>
+
+<title>Flow Layouter - SCN Design Studio Community</title>
+</head>
+<body class="comp-body" style="height:100%">
+<div class="comp-main" style="height:100%">
+
+ 	<div class="component-name">
+	FlowLayouter [ScnCommunityUtils]
+	</div>
+	<div class="component-title">
+	Flow Layouter
+	</div>
+
+<div id="componentnav"></div>
+	<div id="intro">This page is giving short introduction to the component with summary of the change status (green/yellow/red)<div id="introStatus" height="120px"></div><br><p>
+The target for this component is to achieve responsive layouting with standard design studio components (or other SDK components of course). There are some other options to make responsive layout, eg via CSS - Designing Responsive Components in Design Studio. This is fine, but it is restricted to the CSS functionality.
+</p>
+<p>
+Link to blog: <a target="_blank" href="http://scn.sap.com/docs/DOC-61417">Design Studio SDK: Flow Layouter Component (for responsive layouting)</a>
+</p>
+</div>
+	<div id="blogs" hidden="true" height="100%">This page is listing community blogs on this component, follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/08/introducing-blog-list-for-community-components" target="_blank">this link</a> to learn more.<div id="BlogsList" height="100%"></div></div>
+	<div id="changelog" hidden="true" height="100%">This page is listing all changes which have been done on this component with corresponding test status (green: ok, red: not ok, yellow: untested), follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/07/introducing-change-log-for-community-components" target="_blank">this link</a> to learn more.<div id="changelogList" height="100%"></div></div>
+	<div id="examples" hidden="true" height="100%">This page is listing all example applications with this component, follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/08/introducing-blog-list-for-community-components" target="_blank">this link</a> to learn more.<div id="ExamplesList" height="100%"></div></div>
+	<div id="about" hidden="true">This page will bring more "about" details (generated)</div>
+	<div id="technical" hidden="true">
+	<br/>
+	<div class="component-properties">VISIBLE PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>hideOnOverlap<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Hide components which are out of visible area</B><br/>Hide components which are out of visible area
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>splitSpace<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>Space between Elements in px</B><br/>Space between Elements in px
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">10</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">VISIBLE EVENTS</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS LIST</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Parameters</th><th>Return</th></tr>
+	<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">internal_print [<a href="#FUNCTION_internal_print">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">currentOuterWidth, componentWidth, currentTop, currentLeft, currentMaxHeight</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">reLayout [<a href="#FUNCTION_reLayout">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">registerComponent [<a href="#FUNCTION_registerComponent">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">component</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">registerParentComponent [<a href="#FUNCTION_registerParentComponent">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">component</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">removeAllComponents [<a href="#FUNCTION_removeAllComponents">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">unregisterComponent [<a href="#FUNCTION_unregisterComponent">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">component</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">HIDDEN (TECHNICAL) PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS IN DETAIL</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="">
+	<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_internal_print">void<br/>internal_print</td>
+<td valign="top" width="*" class="function-help">Internal&nbsp;method&nbsp;to&nbsp;print&nbsp;all&nbsp;data&nbsp;(for&nbsp;debugging)<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>currentOuterWidth</B></td>
+<td width="120px" class="parameter-type"><B>int</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>componentWidth</B></td>
+<td width="120px" class="parameter-type"><B>int</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>currentTop</B></td>
+<td width="120px" class="parameter-type"><B>int</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>currentLeft</B></td>
+<td width="120px" class="parameter-type"><B>int</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>currentMaxHeight</B></td>
+<td width="120px" class="parameter-type"><B>int</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+APPLICATION.createInfoMessage(&quot;TOP:&nbsp;&quot;&nbsp;+&nbsp;currentTop&nbsp;+&nbsp;&quot;,&nbsp;LEFT:&nbsp;&quot;&nbsp;+&nbsp;currentLeft&nbsp;+&nbsp;&quot;,&nbsp;OUTER:&nbsp;&quot;&nbsp;+&nbsp;currentOuterWidth&nbsp;+&nbsp;&quot;,&nbsp;WIDTH:&nbsp;&quot;&nbsp;+&nbsp;componentWidth&nbsp;+&nbsp;&quot;,&nbsp;HEIGHT:&nbsp;&quot;&nbsp;+&nbsp;currentMaxHeight);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_reLayout">void<br/>reLayout</td>
+<td valign="top" width="*" class="function-help">Re-Layout&nbsp;the&nbsp;content&nbsp;based&nbsp;on&nbsp;the&nbsp;given&nbsp;rules,&nbsp;which&nbsp;are:<br/>-&nbsp;the&nbsp;size&nbsp;will&nbsp;be&nbsp;taken&nbsp;from&nbsp;this&nbsp;layouter&nbsp;(split&nbsp;is&nbsp;done&nbsp;on&nbsp;width)<br/>-&nbsp;the&nbsp;space&nbsp;between&nbsp;components&nbsp;will&nbsp;be&nbsp;set&nbsp;by&nbsp;the&nbsp;property&nbsp;"split&nbsp;space"<br/>-&nbsp;if&nbsp;"hide&nbsp;on&nbsp;overlap"&nbsp;is&nbsp;set&nbsp;to&nbsp;true,&nbsp;components&nbsp;which&nbsp;are&nbsp;outside&nbsp;of&nbsp;visible&nbsp;area&nbsp;are&nbsp;hidden.<br/>-&nbsp;in&nbsp;other&nbsp;case,&nbsp;when&nbsp;the&nbsp;parent&nbsp;component&nbsp;is&nbsp;set,&nbsp;it&nbsp;will&nbsp;be&nbsp;resized&nbsp;to&nbsp;the&nbsp;new&nbsp;content<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+if(this.splitSpace&nbsp;&lt;&nbsp;0)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.splitSpace&nbsp;=&nbsp;0;<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.outerWidth&nbsp;=&nbsp;this.getWidth();<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.outerHeight&nbsp;=&nbsp;this.getHeight();<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;check&nbsp;the&nbsp;sizes<br/>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;check&nbsp;settings<br/>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;get&nbsp;width<br/>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;position<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;widths&nbsp;=&nbsp;[];<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;heights&nbsp;=&nbsp;[];<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;for(var&nbsp;i=0;&nbsp;i&lt;this.registeredComponents.length;&nbsp;i++){&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;widths.push(this.registeredComponents[i].getWidth());&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;heights.push(this.registeredComponents[i].getHeight());<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;reset&nbsp;the&nbsp;current&nbsp;sizes<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;currentOuterWidth&nbsp;=&nbsp;this.splitSpace;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;currentMaxHeight&nbsp;=&nbsp;this.splitSpace;<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;the&nbsp;maximum&nbsp;width&nbsp;of&nbsp;a&nbsp;line&nbsp;across&nbsp;all&nbsp;lines<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;maxVisibleWidth&nbsp;=&nbsp;0;<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;set&nbsp;the&nbsp;current&nbsp;positions<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;currentTop&nbsp;=&nbsp;this.getTopMargin()&nbsp;+&nbsp;this.splitSpace;<br/>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;currentLeft&nbsp;=&nbsp;this.getLeftMargin()&nbsp;+&nbsp;this.splitSpace;<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;for(var&nbsp;i=0;i&lt;this.registeredComponents.length;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;width&nbsp;=&nbsp;this.registeredComponents[i].getWidth();&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;height&nbsp;=&nbsp;this.registeredComponents[i].getHeight();<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;check&nbsp;if&nbsp;we&nbsp;are&nbsp;already&nbsp;more&nbsp;than&nbsp;the&nbsp;size<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(currentOuterWidth&nbsp;+&nbsp;width&nbsp;&gt;&nbsp;this.outerWidth)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;reset&nbsp;position&nbsp;to&nbsp;next&nbsp;row<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;currentLeft&nbsp;=&nbsp;this.getLeftMargin()&nbsp;+&nbsp;this.splitSpace;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;currentTop&nbsp;=&nbsp;currentTop&nbsp;+&nbsp;currentMaxHeight&nbsp;+&nbsp;this.splitSpace;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;add&nbsp;next&nbsp;line&nbsp;by&nbsp;updating&nbsp;the&nbsp;width&nbsp;and&nbsp;max&nbsp;height<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;currentOuterWidth&nbsp;=&nbsp;this.splitSpace&nbsp;+&nbsp;width&nbsp;+&nbsp;this.splitSpace;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;currentMaxHeight&nbsp;=&nbsp;height;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;calculate&nbsp;position<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;currentLeft&nbsp;=&nbsp;currentOuterWidth&nbsp;+&nbsp;this.getLeftMargin();<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;still&nbsp;fits<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;currentOuterWidth&nbsp;=&nbsp;currentOuterWidth&nbsp;+&nbsp;width&nbsp;+&nbsp;this.splitSpace;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(currentMaxHeight&nbsp;&lt;&nbsp;height)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;currentMaxHeight&nbsp;=&nbsp;height;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(maxVisibleWidth&nbsp;&lt;&nbsp;currentOuterWidth)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;maxVisibleWidth&nbsp;=&nbsp;currentOuterWidth;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;print&nbsp;current&nbsp;data&nbsp;for&nbsp;debugging<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;this.internal_print(currentOuterWidth,&nbsp;width,&nbsp;currentTop,&nbsp;currentLeft,&nbsp;currentMaxHeight);<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;position&nbsp;the&nbsp;component<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.registeredComponents[i].setLeftMargin(currentLeft);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.registeredComponents[i].setTopMargin(currentTop);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.registeredComponents[i].setVisible(true);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;check&nbsp;if&nbsp;out&nbsp;of&nbsp;visible&nbsp;area&nbsp;and&nbsp;hide<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(this.hideOnOverlap&nbsp;&amp;&amp;&nbsp;currentTop&nbsp;+&nbsp;currentMaxHeight&nbsp;&gt;&nbsp;this.outerHeight)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;this&nbsp;component&nbsp;is&nbsp;out&nbsp;of&nbsp;visible&nbsp;area<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.registeredComponents[i].setVisible(false);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if(!this.hideOnOverlap&nbsp;&amp;&amp;&nbsp;this.parentComponent&nbsp;!=&nbsp;undefined)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.parentComponent.setHeight(currentTop&nbsp;+&nbsp;currentMaxHeight&nbsp;+&nbsp;this.splitSpace);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.parentComponent.setWidth(maxVisibleWidth);<br/>&nbsp;&nbsp;&nbsp;&nbsp;}
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_registerComponent">void<br/>registerComponent</td>
+<td valign="top" width="*" class="function-help">Register&nbsp;components&nbsp;which&nbsp;will&nbsp;be&nbsp;repositioned&nbsp;by&nbsp;this&nbsp;layouter.<br/>The&nbsp;components&nbsp;will&nbsp;be&nbsp;placed&nbsp;in&nbsp;the&nbsp;registration&nbsp;order&nbsp;in&nbsp;its&nbsp;parent&nbsp;component.<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>component</B></td>
+<td width="120px" class="parameter-type"><B>Component</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+if(this.registeredComponents&nbsp;==&nbsp;undefined)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.registeredComponents&nbsp;=&nbsp;[];<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;this.registeredComponents.push(component);
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_registerParentComponent">void<br/>registerParentComponent</td>
+<td valign="top" width="*" class="function-help">Register&nbsp;the&nbsp;parent&nbsp;component&nbsp;in&nbsp;case&nbsp;you&nbsp;want&nbsp;to&nbsp;have&nbsp;a&nbsp;resize&nbsp;for&nbsp;the&nbsp;complete&nbsp;layout<br/>This&nbsp;component&nbsp;will&nbsp;be&nbsp;resized&nbsp;to&nbsp;the&nbsp;content&nbsp;+&nbsp;split&nbsp;space&nbsp;on&nbsp;all&nbsp;sides.<br/>There&nbsp;can&nbsp;be&nbsp;only&nbsp;one&nbsp;parent&nbsp;component.<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>component</B></td>
+<td width="120px" class="parameter-type"><B>Component</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.parentComponent&nbsp;=&nbsp;component;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_removeAllComponents">void<br/>removeAllComponents</td>
+<td valign="top" width="*" class="function-help">Removes&nbsp;all&nbsp;components&nbsp;from&nbsp;the&nbsp;layouter.<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.registeredComponents&nbsp;=&nbsp;[];
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_unregisterComponent">void<br/>unregisterComponent</td>
+<td valign="top" width="*" class="function-help">Unregister&nbsp;component&nbsp;which&nbsp;will&nbsp;be&nbsp;repositioned&nbsp;by&nbsp;this&nbsp;layouter.<br/>The&nbsp;components&nbsp;will&nbsp;be&nbsp;removed&nbsp;from&nbsp;the&nbsp;registration&nbsp;list.<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>component</B></td>
+<td width="120px" class="parameter-type"><B>Component</B></td>
+<td width="*" class="parameter-help"></td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+for(var&nbsp;i=0;i&lt;this.registeredComponents.length;i++){<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(registeredComponents[i]&nbsp;===&nbsp;component)&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.registeredComponents.splice(i,&nbsp;1);<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+
+	</TABLE>
+	<div style="height:20px!important"> THE END </div>
+	</div>
+	
+	<div style="height:60px!important"></div>
+	
+</div>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../../doc.css">
+<link rel="stylesheet" type="text/css" href="../../tables.css">
+<script id="sap-ui-bootstrap" type="text/javascript" 
+      /*src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"*/
+      src="https://sapui5.hana.ondemand.com/sdk/resources/sap-ui-core.js"
+      data-sap-ui-theme="sap_bluecrystal" data-sap-ui-libs="sap.m,sap.ui.commons,sap.suite.ui.commons,sap.ui.ux3"></script>
+<script type="text/javascript" src="../js/ComponentMain.js"></script>
+
+<title>2D Crosstab - SCN Design Studio Community</title>
+</head>
+<body class="comp-body">
+<div class="comp-main">
+
+ 	<div class="component-name">
+	Table2D [ScnCommunityVisualizations]
+	</div>
+	<div class="component-title">
+	2D Crosstab
+	</div>
+
+<div id="componentnav"></div>
+
+<!-- 	<div class="component-back">
+		<a href="../index.html" target="_top">show list of all components</a>
+	</div>
+ -->
+
+	<div id="intro">Work in progress ... Area of improvement.<br><br></div>
+	<div id="blogs"hidden="true">Work In Progress .. here we get some Blogs with this component, start blogging on SCN already <br>and <br>
+	open an issue in the <a href="https://github.com/org-scn-design-studio-community/sdkhelp/issues">sdkhelp</a> repository with label <b>blog</b></div>
+	<div id="examples" hidden="true">Work In Progress .. here we get more Application examples with this component, do you have some?<br>and <br>
+	open an issue in the <a href="https://github.com/org-scn-design-studio-community/sdkhelp/issues">sdkhelp</a> repository with label <b>example</b></div>
+	<div id="about" hidden="true">this part will be later generated from component information</div>
+	<div id="technical" hidden="true">
+	<br/>
+	<div class="component-properties">VISIBLE PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>data<br/>[ResultSet]</B></td>
+<td width="*" class="property-title-tooltip"><B>Data Selection</B><br/>&nbsp;
+
+</td>
+<td width="60px" class="property-group">DataBinding</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">VISIBLE EVENTS</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>onSelect<br/>[ScriptText]</B></td>
+<td width="*" class="property-title-tooltip"><B>On Select</B><br/>&nbsp;
+
+</td>
+<td width="60px" class="property-group">Events</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS LIST</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Parameters</th><th>Return</th></tr>
+	<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getStringData [<a href="#FUNCTION_getStringData">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">HIDDEN (TECHNICAL) PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>ignoreTotals<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Ignore Totals</B><br/>&nbsp;
+
+</td>
+<td width="60px" class="property-group">DataBinding</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>ignoreExpandedNodes<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Ignore Expanded Nodes</B><br/>&nbsp;
+
+</td>
+<td width="60px" class="property-group">DataBinding</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>swapAxes<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Swap Axes</B><br/>&nbsp;
+
+</td>
+<td width="60px" class="property-group">DataBinding</td>
+<td width="100px" class="property-default">false</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>useMockData<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Use Mock Data</B><br/>&nbsp;
+
+</td>
+<td width="60px" class="property-group">DataBinding</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS IN DETAIL</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="">
+	<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getStringData">String<br/>getStringData</td>
+<td valign="top" width="*" class="function-help">returns&nbsp;the&nbsp;data<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.stringData;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+
+	</TABLE>
+	<div style="height:20px!important"> THE END </div>
+	</div>
+	
+	<div style="height:60px!important"></div>
+	
+</div>
+</body>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  function tOL(url, label) {
+	  if(ga) {ga('send', 'event', 'area', 'select', label, {'hitCallback':function () {
+		 // todo
+	     }});} else {
+	     // todo
+	     }};
+
+  ga('create', 'UA-61231710-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</html>

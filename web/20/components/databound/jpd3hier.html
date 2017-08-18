@@ -1,0 +1,788 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../../doc.css">
+<link rel="stylesheet" type="text/css" href="../../tables.css">
+<script id="sap-ui-bootstrap" type="text/javascript" 
+      /*src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"*/
+      src="https://sapui5.hana.ondemand.com/sdk/resources/sap-ui-core.js"
+      data-sap-ui-theme="sap_bluecrystal" data-sap-ui-libs="sap.m,sap.ui.commons,sap.suite.ui.commons,sap.ui.ux3"></script>
+
+<script type="text/javascript" src="../js/ComponentMain.js"></script>
+<script type="text/javascript" src="../js/PostResponseParser/PostResponseParser.js"></script>
+<script type="text/javascript" src="../js/TimeLine.js"></script>
+<script type="text/javascript" src="../js/ga.js"></script>
+
+<script> 
+	requestChangeLog("../../../../sdkhelp/web/components/databound/jpd3hier/changes/changelog.json");
+	requestContent("Blog", "../../../../sdkhelp/web/components/databound/jpd3hier/blogs.json");
+	requestContent("Example", "../../../../sdkhelp/web/components/databound/jpd3hier/examples.json");
+</script>
+
+<title>D3 Hierarchy - SCN Design Studio Community</title>
+</head>
+<body class="comp-body" style="height:100%">
+<div class="comp-main" style="height:100%">
+
+ 	<div class="component-name">
+	jpd3hier [ScnCommunityDataBound]
+	</div>
+	<div class="component-title">
+	D3 Hierarchy
+	</div>
+
+<div id="componentnav"></div>
+	<div id="intro">This page is giving short introduction to the component with summary of the change status (green/yellow/red)<div id="introStatus" height="120px"></div><br><p>
+Component to visualize Purpose is to visualize the size of the single hierarchy elements
+</p>
+<p>
+Link to blog: <a target="_blank" href="http://scn.sap.com/docs/DOC-61427">Design Studio SDK: D3 Hierarchy component</a>
+</p>
+</div>
+	<div id="blogs" hidden="true" height="100%">This page is listing community blogs on this component, follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/08/introducing-blog-list-for-community-components" target="_blank">this link</a> to learn more.<div id="BlogsList" height="100%"></div></div>
+	<div id="changelog" hidden="true" height="100%">This page is listing all changes which have been done on this component with corresponding test status (green: ok, red: not ok, yellow: untested), follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/07/introducing-change-log-for-community-components" target="_blank">this link</a> to learn more.<div id="changelogList" height="100%"></div></div>
+	<div id="examples" hidden="true" height="100%">This page is listing all example applications with this component, follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/08/introducing-blog-list-for-community-components" target="_blank">this link</a> to learn more.<div id="ExamplesList" height="100%"></div></div>
+	<div id="about" hidden="true">This page will bring more "about" details (generated)</div>
+	<div id="technical" hidden="true">
+	<br/>
+	<div class="component-properties">VISIBLE PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>AlerterColorGreenVal<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>AlerterColorGreenVal - What percentage or real value should good values have - value has to be higher than Yellow</B><br/>AlerterColorGreenVal - What percentage or real value should good values have - value has to be higher than Yellow
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">30</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>AlerterColorYellowVal<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>AlerterColorYellowVal - What percentage or real value should medium values have - all lower values are red</B><br/>AlerterColorYellowVal - What percentage or real value should medium values have - all lower values are red
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">10</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>BubbleRootXTranslation<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>BubbleRootXTranslation - What translation should the root have from the default position. positive means right, negative means left translation</B><br/>BubbleRootXTranslation - What translation should the root have from the default position. positive means right, negative means left translation
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">0</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>BubbleSizeBoderSize<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>BubbleSizeBoderSize - What size should the border of a bubble have. Possible values are 1 to 15</B><br/>BubbleSizeBoderSize - What size should the border of a bubble have. Possible values are 1 to 15
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">3</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>BubbleSizeMaxSize<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>BubbleSizeMaxSize - What size in pixels should the startpoint have</B><br/>BubbleSizeMaxSize - What size in pixels should the startpoint have
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">12</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>alertColorGreen<br/>[Color]</B></td>
+<td width="*" class="property-title-tooltip"><B>alertColorGreen - Alert Green Color</B><br/>alertColorGreen - Alert Green Color
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">green</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>alertColorRed<br/>[Color]</B></td>
+<td width="*" class="property-title-tooltip"><B>alertColorRed - Alert Red Color</B><br/>alertColorRed - Alert Red Color
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">red</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>alertColorYellow<br/>[Color]</B></td>
+<td width="*" class="property-title-tooltip"><B>alertColorYellow - Alert Yellow Color</B><br/>alertColorYellow - Alert Yellow Color
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">yellow</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>alerterHighValuesAreGood<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>alerterHighValuesAreGood - High values use color green and low values red if set to true</B><br/>alerterHighValuesAreGood - High values use color green and low values red if set to true
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>alerterUsePercentage<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>alerterUsePercentage - Should percentages be used or real values</B><br/>alerterUsePercentage - Should percentages be used or real values
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>showRootBubble<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>showRootBubble - Defines if the default first bubble should get shown</B><br/>showRootBubble - Defines if the default first bubble should get shown
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>showText<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>showText - Should the text of the single bubbles be shown.</B><br/>showText - Should the text of the single bubbles be shown.
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>showWarnings<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>showWarnings - Should warnings get shown</B><br/>showWarnings - Should warnings get shown
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>whichTextShown<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>whichTextShown - possible values are value, value_text, text_value, text</B><br/>whichTextShown - possible values are value, value_text, text_value, text
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">text_value</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">VISIBLE EVENTS</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>onHCollapse<br/>[ScriptText]</B></td>
+<td width="*" class="property-title-tooltip"><B>On Hierarchy collapse</B><br/>On Hierarchy collapse
+
+</td>
+<td width="60px" class="property-group">Events</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>onHExpand<br/>[ScriptText]</B></td>
+<td width="*" class="property-title-tooltip"><B>On Hierarchy expand</B><br/>On Hierarchy expand
+
+</td>
+<td width="60px" class="property-group">Events</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>onclick<br/>[ScriptText]</B></td>
+<td width="*" class="property-title-tooltip"><B>On Click</B><br/>On Click
+
+</td>
+<td width="60px" class="property-group">Events</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS LIST</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Parameters</th><th>Return</th></tr>
+	<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">collapseHierarchyNode [<a href="#FUNCTION_collapseHierarchyNode">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">collapseHierarchyNodes [<a href="#FUNCTION_collapseHierarchyNodes">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">expandHierarchyNode [<a href="#FUNCTION_expandHierarchyNode">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">expandHierarchyNodes [<a href="#FUNCTION_expandHierarchyNodes">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getBubbleRootXTranslation [<a href="#FUNCTION_getBubbleRootXTranslation">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getBubbleSizeMaxSize [<a href="#FUNCTION_getBubbleSizeMaxSize">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getHierarchyDimensionKey [<a href="#FUNCTION_getHierarchyDimensionKey">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getSelectedNodeKey [<a href="#FUNCTION_getSelectedNodeKey">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getkfBubbleAlerter [<a href="#FUNCTION_getkfBubbleAlerter">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getkfBubbleSize [<a href="#FUNCTION_getkfBubbleSize">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setAlerterColorGreenVal [<a href="#FUNCTION_setAlerterColorGreenVal">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">newAlerterColorGreenVal</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setAlerterColorYellowVal [<a href="#FUNCTION_setAlerterColorYellowVal">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">newAlerterColorYellowVal</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setBubbleRootXTranslation [<a href="#FUNCTION_setBubbleRootXTranslation">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">newXTranslation</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setBubbleSizeMaxSize [<a href="#FUNCTION_setBubbleSizeMaxSize">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">newBubbleSize</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setkfBubbleAlerter [<a href="#FUNCTION_setkfBubbleAlerter">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">newkfBubbleAlerterId</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setkfBubbleSize [<a href="#FUNCTION_setkfBubbleSize">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">newkfBubbleSizeId</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">HIDDEN (TECHNICAL) PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>dimHierarchy<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>dimHierarchy - Which dimension contains the hierarchy</B><br/>dimHierarchy - Which dimension contains the hierarchy
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>kfBubbleSize<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>kfBubbleSize - Which keyfigure should get used for size of bubbles</B><br/>kfBubbleSize - Which keyfigure should get used for size of bubbles
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>kfColBub<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>kfColBub - Which keyfigure should get used for the alerter of bubbles</B><br/>kfColBub - Which keyfigure should get used for the alerter of bubbles
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>onHCollapseInv<br/>[ScriptText]</B></td>
+<td width="*" class="property-title-tooltip"><B>onHCollapseInv</B><br/>onHCollapseInv
+
+</td>
+<td width="60px" class="property-group">Events</td>
+<td width="100px" class="property-default">this.collapseHierarchyNodes();</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>onHExpandInv<br/>[ScriptText]</B></td>
+<td width="*" class="property-title-tooltip"><B>onHExpandInv</B><br/>onHExpandInv
+
+</td>
+<td width="60px" class="property-group">Events</td>
+<td width="100px" class="property-default">this.expandHierarchyNodes();</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>rsltSet<br/>[ResultSet]</B></td>
+<td width="*" class="property-title-tooltip"><B>JSON Object that contains the metadata that is assigned with the Datasource</B><br/>JSON Object that contains the metadata that is assigned with the Datasource
+
+</td>
+<td width="60px" class="property-group">DataBinding</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>selectedNode<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>selectedNode - Returns an JSON Object of the selected node</B><br/>selectedNode - Returns an JSON Object of the selected node
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">InitialNode</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>useDummyData<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>useDummyData - Use Dummy Data when no DataSource</B><br/>useDummyData - Use Dummy Data when no DataSource
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">false</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS IN DETAIL</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="">
+	<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_collapseHierarchyNode">void<br/>collapseHierarchyNode</td>
+<td valign="top" width="*" class="function-help">/Collapse&nbsp;the&nbsp;hierarchy&nbsp;(used&nbsp;for&nbsp;DS&nbsp;1.4&nbsp;private&nbsp;functionality)&nbsp;-&nbsp;it&nbsp;seems&nbsp;that&nbsp;the&nbsp;private&nbsp;call&nbsp;does&nbsp;not&nbsp;work<br/>@Visibility(private)<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.getDataSource().collapseNode(this.getHierarchyDimensionKey(),&nbsp;this.getSelectedNodeKey());
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_collapseHierarchyNodes">void<br/>collapseHierarchyNodes</td>
+<td valign="top" width="*" class="function-help">/Collapse&nbsp;the&nbsp;hierarchy<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.getDataSource().collapseNode(this.getHierarchyDimensionKey(),&nbsp;this.getSelectedNodeKey());
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_expandHierarchyNode">void<br/>expandHierarchyNode</td>
+<td valign="top" width="*" class="function-help">/Expand&nbsp;the&nbsp;hierarchy&nbsp;(used&nbsp;for&nbsp;DS&nbsp;1.4&nbsp;private&nbsp;functionality)&nbsp;-&nbsp;it&nbsp;seems&nbsp;that&nbsp;the&nbsp;private&nbsp;call&nbsp;does&nbsp;not&nbsp;work<br/>@Visibility(private)<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.getDataSource().expandNode(this.getHierarchyDimensionKey(),&nbsp;this.getSelectedNodeKey());
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_expandHierarchyNodes">void<br/>expandHierarchyNodes</td>
+<td valign="top" width="*" class="function-help">/Expand&nbsp;the&nbsp;hierarchy<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.getDataSource().expandNode(this.getHierarchyDimensionKey(),&nbsp;this.getSelectedNodeKey());
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getBubbleRootXTranslation">String<br/>getBubbleRootXTranslation</td>
+<td valign="top" width="*" class="function-help">/Returns&nbsp;the&nbsp;x-translation&nbsp;of&nbsp;the&nbsp;whole&nbsp;tree&nbsp;in&nbsp;Pixel<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.BubbleRootXTranslation;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getBubbleSizeMaxSize">String<br/>getBubbleSizeMaxSize</td>
+<td valign="top" width="*" class="function-help">/Returns&nbsp;the&nbsp;maximum&nbsp;Size&nbsp;of&nbsp;the&nbsp;Bubbles&nbsp;in&nbsp;Pixel<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.BubbleSizeMaxSize;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getHierarchyDimensionKey">String<br/>getHierarchyDimensionKey</td>
+<td valign="top" width="*" class="function-help">/Returns&nbsp;the&nbsp;Dimension&nbsp;Key&nbsp;containing&nbsp;the&nbsp;hierarchy&nbsp;of&nbsp;the&nbsp;datasource.<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.dimHierarchy;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getSelectedNodeKey">String<br/>getSelectedNodeKey</td>
+<td valign="top" width="*" class="function-help">/Returns&nbsp;the&nbsp;Key&nbsp;of&nbsp;the&nbsp;currently&nbsp;selected&nbsp;Tree&nbsp;Element.<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.selectedNode;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getkfBubbleAlerter">void<br/>getkfBubbleAlerter</td>
+<td valign="top" width="*" class="function-help">/Gets&nbsp;the&nbsp;Bubble&nbsp;Alerter&nbsp;Keyfigure&nbsp;id&nbsp;during&nbsp;runtime<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.kfColBub;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getkfBubbleSize">void<br/>getkfBubbleSize</td>
+<td valign="top" width="*" class="function-help">/Gets&nbsp;the&nbsp;Bubble&nbsp;Size&nbsp;Keyfigure&nbsp;id&nbsp;during&nbsp;runtime<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.kfBubbleSize;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setAlerterColorGreenVal">void<br/>setAlerterColorGreenVal</td>
+<td valign="top" width="*" class="function-help">/Sets&nbsp;the&nbsp;Bubble&nbsp;Alerter&nbsp;Color&nbsp;Value&nbsp;for&nbsp;Green&nbsp;during&nbsp;runtime<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>newAlerterColorGreenVal</B></td>
+<td width="120px" class="parameter-type"><B>int</B></td>
+<td width="*" class="parameter-help"> New value for the Bubble color Green</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.AlerterColorGreenVal&nbsp;=&nbsp;newAlerterColorGreenVal;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setAlerterColorYellowVal">void<br/>setAlerterColorYellowVal</td>
+<td valign="top" width="*" class="function-help">/Sets&nbsp;the&nbsp;Bubble&nbsp;Alerter&nbsp;Color&nbsp;Value&nbsp;for&nbsp;Yellow&nbsp;during&nbsp;runtime<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>newAlerterColorYellowVal</B></td>
+<td width="120px" class="parameter-type"><B>int</B></td>
+<td width="*" class="parameter-help"> New value for the Bubble color Yellow</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.AlerterColorYellowVal&nbsp;=&nbsp;newAlerterColorYellowVal;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setBubbleRootXTranslation">void<br/>setBubbleRootXTranslation</td>
+<td valign="top" width="*" class="function-help">/Sets&nbsp;the&nbsp;x-translation&nbsp;of&nbsp;the&nbsp;whole&nbsp;tree&nbsp;in&nbsp;Pixel<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>newXTranslation</B></td>
+<td width="120px" class="parameter-type"><B>int</B></td>
+<td width="*" class="parameter-help"> New x translation in Pixel -> positive = right negative = left</td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.BubbleRootXTranslation&nbsp;=&nbsp;newXTranslation;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setBubbleSizeMaxSize">void<br/>setBubbleSizeMaxSize</td>
+<td valign="top" width="*" class="function-help">/Sets&nbsp;the&nbsp;maximum&nbsp;Size&nbsp;of&nbsp;the&nbsp;Bubbles&nbsp;in&nbsp;Pixel<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>newBubbleSize</B></td>
+<td width="120px" class="parameter-type"><B>int</B></td>
+<td width="*" class="parameter-help"> New maximum Bubble size in Pixel </td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.BubbleSizeMaxSize&nbsp;=&nbsp;newBubbleSize;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setkfBubbleAlerter">void<br/>setkfBubbleAlerter</td>
+<td valign="top" width="*" class="function-help">/Sets&nbsp;the&nbsp;Bubble&nbsp;Alerter&nbsp;Keyfigure&nbsp;id&nbsp;during&nbsp;runtime<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>newkfBubbleAlerterId</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"> New id of a keyfigure column </td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.kfColBub&nbsp;=&nbsp;newkfBubbleAlerterId;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setkfBubbleSize">void<br/>setkfBubbleSize</td>
+<td valign="top" width="*" class="function-help">/Sets&nbsp;the&nbsp;Bubble&nbsp;Size&nbsp;Keyfigure&nbsp;id&nbsp;during&nbsp;runtime<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>newkfBubbleSizeId</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"> New id of a keyfigure column </td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.kfBubbleSize&nbsp;=&nbsp;newkfBubbleSizeId;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+
+	</TABLE>
+	<div style="height:20px!important"> THE END </div>
+	</div>
+	
+	<div style="height:60px!important"></div>
+	
+</div>
+</body>
+</html>

@@ -1,0 +1,516 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../../doc.css">
+<link rel="stylesheet" type="text/css" href="../../tables.css">
+<script id="sap-ui-bootstrap" type="text/javascript" 
+      /*src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"*/
+      src="https://sapui5.hana.ondemand.com/sdk/resources/sap-ui-core.js"
+      data-sap-ui-theme="sap_bluecrystal" data-sap-ui-libs="sap.m,sap.ui.commons,sap.suite.ui.commons,sap.ui.ux3"></script>
+
+<script type="text/javascript" src="../js/ComponentMain.js"></script>
+<script type="text/javascript" src="../js/PostResponseParser/PostResponseParser.js"></script>
+<script type="text/javascript" src="../js/TimeLine.js"></script>
+<script type="text/javascript" src="../js/ga.js"></script>
+
+<script> 
+	requestChangeLog("../../../../sdkhelp/web/components/basics/rapidprototype/changes/changelog.json");
+	requestContent("Blog", "../../../../sdkhelp/web/components/basics/rapidprototype/blogs.json");
+	requestContent("Example", "../../../../sdkhelp/web/components/basics/rapidprototype/examples.json");
+</script>
+
+<title>Rapid HTML/JS Prototyping (for non productive use!) - SCN Design Studio Community</title>
+</head>
+<body class="comp-body" style="height:100%">
+<div class="comp-main" style="height:100%">
+
+ 	<div class="component-name">
+	RapidPrototype [ScnCommunityBasics]
+	</div>
+	<div class="component-title">
+	Rapid HTML/JS Prototyping (for non productive use!)
+	</div>
+
+<div id="componentnav"></div>
+	<div id="intro">This page is giving short introduction to the component with summary of the change status (green/yellow/red)<div id="introStatus" height="120px"></div><br></div>
+	<div id="blogs" hidden="true" height="100%">This page is listing community blogs on this component, follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/08/introducing-blog-list-for-community-components" target="_blank">this link</a> to learn more.<div id="BlogsList" height="100%"></div></div>
+	<div id="changelog" hidden="true" height="100%">This page is listing all changes which have been done on this component with corresponding test status (green: ok, red: not ok, yellow: untested), follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/07/introducing-change-log-for-community-components" target="_blank">this link</a> to learn more.<div id="changelogList" height="100%"></div></div>
+	<div id="examples" hidden="true" height="100%">This page is listing all example applications with this component, follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/08/introducing-blog-list-for-community-components" target="_blank">this link</a> to learn more.<div id="ExamplesList" height="100%"></div></div>
+	<div id="about" hidden="true">This page will bring more "about" details (generated)</div>
+	<div id="technical" hidden="true">
+	<br/>
+	<div class="component-properties">VISIBLE PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>HTML<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>HTML</B><br/>HTML
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">Type HTML Here.  <br/><b>Use place holders to replace, e.g. Sales:</b> {kpi1} $</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>KPIreplacement1<br/>[ResultCell]</B></td>
+<td width="*" class="property-title-tooltip"><B>Databound Replacement 1</B><br/>Databound Replacement 1
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>KPIreplacement10<br/>[ResultCell]</B></td>
+<td width="*" class="property-title-tooltip"><B>Databound Replacement 10</B><br/>Databound Replacement 10
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>KPIreplacement2<br/>[ResultCell]</B></td>
+<td width="*" class="property-title-tooltip"><B>Databound Replacement 2</B><br/>Databound Replacement 2
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>KPIreplacement3<br/>[ResultCell]</B></td>
+<td width="*" class="property-title-tooltip"><B>Databound Replacement 3</B><br/>Databound Replacement 3
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>KPIreplacement4<br/>[ResultCell]</B></td>
+<td width="*" class="property-title-tooltip"><B>Databound Replacement 4</B><br/>Databound Replacement 4
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>KPIreplacement5<br/>[ResultCell]</B></td>
+<td width="*" class="property-title-tooltip"><B>Databound Replacement 5</B><br/>Databound Replacement 5
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>KPIreplacement6<br/>[ResultCell]</B></td>
+<td width="*" class="property-title-tooltip"><B>Databound Replacement 6</B><br/>Databound Replacement 6
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>KPIreplacement7<br/>[ResultCell]</B></td>
+<td width="*" class="property-title-tooltip"><B>Databound Replacement 7</B><br/>Databound Replacement 7
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>KPIreplacement8<br/>[ResultCell]</B></td>
+<td width="*" class="property-title-tooltip"><B>Databound Replacement 8</B><br/>Databound Replacement 8
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>KPIreplacement9<br/>[ResultCell]</B></td>
+<td width="*" class="property-title-tooltip"><B>Databound Replacement 9</B><br/>Databound Replacement 9
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>afterInit<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>JavaScript</B><br/>JavaScript
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>replacement1<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Manual Replacement 1</B><br/>Manual Replacement 1
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>replacement10<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Manual Replacement 10</B><br/>Manual Replacement 10
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>replacement2<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Manual Replacement 2</B><br/>Manual Replacement 2
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>replacement3<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Manual Replacement 3</B><br/>Manual Replacement 3
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>replacement4<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Manual Replacement 4</B><br/>Manual Replacement 4
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>replacement5<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Manual Replacement 5</B><br/>Manual Replacement 5
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>replacement6<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Manual Replacement 6</B><br/>Manual Replacement 6
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>replacement7<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Manual Replacement 7</B><br/>Manual Replacement 7
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>replacement8<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Manual Replacement 8</B><br/>Manual Replacement 8
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>replacement9<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Manual Replacement 9</B><br/>Manual Replacement 9
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>term1<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Placeholder 1</B><br/>Placeholder 1
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">{kpi1}</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>term10<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Placeholder 10</B><br/>Placeholder 10
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">{kpi10}</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>term2<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Placeholder 2</B><br/>Placeholder 2
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">{kpi2}</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>term3<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Placeholder 3</B><br/>Placeholder 3
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">{kpi3}</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>term4<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Placeholder 4</B><br/>Placeholder 4
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">{kpi4}</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>term5<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Placeholder 5</B><br/>Placeholder 5
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">{kpi5}</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>term6<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Placeholder 6</B><br/>Placeholder 6
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">{kpi6}</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>term7<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Placeholder 7</B><br/>Placeholder 7
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">{kpi7}</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>term8<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Placeholder 8</B><br/>Placeholder 8
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">{kpi8}</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>term9<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Placeholder 9</B><br/>Placeholder 9
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">{kpi9}</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">VISIBLE EVENTS</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS LIST</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Parameters</th><th>Return</th></tr>
+	<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">getHTML [<a href="#FUNCTION_getHTML">details</a>]</td>
+<td valign="top" width="*" class="function-short-name"></td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setHTML [<a href="#FUNCTION_setHTML">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">html</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setReplacement [<a href="#FUNCTION_setReplacement">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">replacement, index</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setTerm [<a href="#FUNCTION_setTerm">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">term, index</td>
+<td valign="top" width="160px" class="function-short-return">void</td>
+</tr>
+
+
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">HIDDEN (TECHNICAL) PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS IN DETAIL</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="">
+	<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_getHTML">String<br/>getHTML</td>
+<td valign="top" width="*" class="function-help">/Returns&nbsp;the&nbsp;current&nbsp;value<br/><br/>
+
+<TABLE width="100%" class="table1">
+
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;this.HTML;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setHTML">void<br/>setHTML</td>
+<td valign="top" width="*" class="function-help">/Sets&nbsp;the&nbsp;value<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>html</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"> HTML </td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this.HTML&nbsp;=&nbsp;html;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setReplacement">void<br/>setReplacement</td>
+<td valign="top" width="*" class="function-help"><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>replacement</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"> Placeholder Text </td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>index</B></td>
+<td width="120px" class="parameter-type"><B>int</B></td>
+<td width="*" class="parameter-help"> Index </td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this[&quot;replacement&quot;+index]&nbsp;=&nbsp;replacement;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setTerm">void<br/>setTerm</td>
+<td valign="top" width="*" class="function-help"><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>term</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"> Placeholder Text </td>
+</tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>index</B></td>
+<td width="120px" class="parameter-type"><B>int</B></td>
+<td width="*" class="parameter-help"> Index </td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+this[&quot;term&quot;+index]&nbsp;=&nbsp;term;
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+
+	</TABLE>
+	<div style="height:20px!important"> THE END </div>
+	</div>
+	
+	<div style="height:60px!important"></div>
+	
+</div>
+</body>
+</html>

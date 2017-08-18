@@ -1,0 +1,10 @@
+.utilPackBrowserPopup.invisible {
+	display : none;
+}
+.utilPackBrowserPopup.designTimeInvisible {
+	opacity : .4;
+}
+
+.org-scn-Popup {
+	top: 60px !important;
+}

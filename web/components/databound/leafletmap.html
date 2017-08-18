@@ -1,0 +1,333 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../../doc.css">
+<link rel="stylesheet" type="text/css" href="../../tables.css">
+<script id="sap-ui-bootstrap" type="text/javascript" 
+      /*src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"*/
+      src="https://sapui5.hana.ondemand.com/sdk/resources/sap-ui-core.js"
+      data-sap-ui-theme="sap_bluecrystal" data-sap-ui-libs="sap.m,sap.ui.commons,sap.suite.ui.commons,sap.ui.ux3"></script>
+
+<script type="text/javascript" src="../js/ComponentMain.js"></script>
+<script type="text/javascript" src="../js/PostResponseParser/PostResponseParser.js"></script>
+<script type="text/javascript" src="../js/TimeLine.js"></script>
+<script type="text/javascript" src="../js/ga.js"></script>
+
+<script> 
+	requestChangeLog("../../../../sdkhelp/web/components/databound/leafletmap/changes/changelog.json");
+	requestContent("Blog", "../../../../sdkhelp/web/components/databound/leafletmap/blogs.json");
+	requestContent("Example", "../../../../sdkhelp/web/components/databound/leafletmap/examples.json");
+</script>
+
+<title>Leaflet Map - SCN Design Studio Community</title>
+</head>
+<body class="comp-body" style="height:100%">
+<div class="comp-main" style="height:100%">
+
+ 	<div class="component-name">
+	LeafletMap [ScnCommunityVisualizations]
+	</div>
+	<div class="component-title">
+	Leaflet Map
+	</div>
+
+<div id="componentnav"></div>
+	<div id="intro">This page is giving short introduction to the component with summary of the change status (green/yellow/red)<div id="introStatus" height="120px"></div><br></div>
+	<div id="blogs" hidden="true" height="100%">This page is listing community blogs on this component, follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/08/introducing-blog-list-for-community-components" target="_blank">this link</a> to learn more.<div id="BlogsList" height="100%"></div></div>
+	<div id="changelog" hidden="true" height="100%">This page is listing all changes which have been done on this component with corresponding test status (green: ok, red: not ok, yellow: untested), follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/07/introducing-change-log-for-community-components" target="_blank">this link</a> to learn more.<div id="changelogList" height="100%"></div></div>
+	<div id="examples" hidden="true" height="100%">This page is listing all example applications with this component, follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/08/introducing-blog-list-for-community-components" target="_blank">this link</a> to learn more.<div id="ExamplesList" height="100%"></div></div>
+	<div id="about" hidden="true">This page will bring more "about" details (generated)</div>
+	<div id="technical" hidden="true">
+	<br/>
+	<div class="component-properties">VISIBLE PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>data<br/>[ResultSet]</B></td>
+<td width="*" class="property-title-tooltip"><B>Data Selection</B><br/>Data Selection
+
+</td>
+<td width="60px" class="property-group">DataBinding</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">VISIBLE EVENTS</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS LIST</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Parameters</th><th>Return</th></tr>
+	<tr class="function-table-tr">
+<td valign="top" width="240px" class="function-short-name">setBIAL [<a href="#FUNCTION_setBIAL">details</a>]</td>
+<td valign="top" width="*" class="function-short-name">bial</td>
+<td valign="top" width="160px" class="function-short-return">String</td>
+</tr>
+
+
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">HIDDEN (TECHNICAL) PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>TGeoJSONUrl<br/>[Url]</B></td>
+<td width="*" class="property-title-tooltip"><B>Temporary property for Resource</B><br/>Temporary property for Resource
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>TResourceUrl<br/>[Url]</B></td>
+<td width="*" class="property-title-tooltip"><B>Temporary property for Resource</B><br/>Temporary property for Resource
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>crs<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>CRS</B><br/>CRS
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">EPSG3857</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>currentBaseLayer<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Active Base Layer</B><br/>Active Base Layer
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">Standard</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>data2<br/>[ResultSet]</B></td>
+<td width="*" class="property-title-tooltip"><B>Data Selection 2 (Not working yet in 1.6 SP0)</B><br/>Data Selection 2 (Not working yet in 1.6 SP0)
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>data2config<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Dataset 2 Config</B><br/>Dataset 2 Config
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">{"ignoreResults":true,"ignoreExpandedNodes":true,"useMockData":true}</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>data3<br/>[ResultSet]</B></td>
+<td width="*" class="property-title-tooltip"><B>Data Selection 3 (Not working yet in 1.6 SP0)</B><br/>Data Selection 3 (Not working yet in 1.6 SP0)
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>data3config<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Dataset 3 Config</B><br/>Dataset 3 Config
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">{"ignoreResults":true,"ignoreExpandedNodes":true,"useMockData":true}</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>data4<br/>[ResultSet]</B></td>
+<td width="*" class="property-title-tooltip"><B>Data Selection 4 (Not working yet in 1.6 SP0)</B><br/>Data Selection 4 (Not working yet in 1.6 SP0)
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>data4config<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Dataset 4 Config</B><br/>Dataset 4 Config
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">{"ignoreResults":true,"ignoreExpandedNodes":true,"useMockData":true}</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>data5<br/>[ResultSet]</B></td>
+<td width="*" class="property-title-tooltip"><B>Data Selection 3 (Not working yet in 1.6 SP0)</B><br/>Data Selection 3 (Not working yet in 1.6 SP0)
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">&nbsp;</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>data5config<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Dataset 5 Config</B><br/>Dataset 5 Config
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">{"ignoreResults":true,"ignoreExpandedNodes":true,"useMockData":true}</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>ignoreExpandedNodes<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Ignore Expanded Nodes</B><br/>Ignore Expanded Nodes
+
+</td>
+<td width="60px" class="property-group">DataBinding</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>ignoreTotals<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Ignore Totals</B><br/>Ignore Totals
+
+</td>
+<td width="60px" class="property-group">DataBinding</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>mapCenter<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Map Center</B><br/>Map Center
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">[51.505, -0.09]</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>overlays<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Overlays</B><br/>Overlays
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">
+		
+		[{
+			"key" : "Sample Layer - World Countries",
+			"visible" : true,
+			"layer" : {
+				"layer ... truncated</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>repositoryPath<br/>[Url]</B></td>
+<td width="*" class="property-title-tooltip"><B>Path to BIAPP Repository</B><br/>Property for auto calculation of the root folder
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">
+			REPOSITORY_ROOT.GIF
+		</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>swapAxes<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Swap Axes</B><br/>Swap Axes
+
+</td>
+<td width="60px" class="property-group">DataBinding</td>
+<td width="100px" class="property-default">false</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>tileOptions<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Tile Options</B><br/>Tile Options
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">[{"key":"Standard","tileConfig":{"baseUrl":"http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png","attr ... truncated</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>useMockData<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Use Mock Data</B><br/>Use Mock Data
+
+</td>
+<td width="60px" class="property-group">DataBinding</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>zoom<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>Zoom</B><br/>Zoom
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">1</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS IN DETAIL</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="">
+	<tr class="function-table-tr">
+<td valign="top" width="220px" class="function-return-name"><a name="FUNCTION_setBIAL">String<br/>setBIAL</td>
+<td valign="top" width="*" class="function-help">Debug<br/><br/>
+
+<TABLE width="100%" class="table1">
+<tr class="function-table-th"><th>Name</th><th>Type</th><th>Help</th></tr>
+<tr class="function-table-tr-content">
+<td width="120px" class="parameter-name"><B>bial</B></td>
+<td width="120px" class="parameter-type"><B>String</B></td>
+<td width="*" class="parameter-help"> Debug </td>
+</tr>
+
+</TABLE>
+
+</td>
+</tr>
+<tr class="function-table-tr-content">
+<td class="function-table-tr-content-desc">Source Code</td>
+<td class="function-table-tr-content-code">
+return&nbsp;JSON.stringify(eval(bial));
+</td>
+</tr>
+<tr class="function-table-tr-empty"><td colspan="2">
+&nbsp;
+</td></tr>
+
+
+	</TABLE>
+	<div style="height:20px!important"> THE END </div>
+	</div>
+	
+	<div style="height:60px!important"></div>
+	
+</div>
+</body>
+</html>

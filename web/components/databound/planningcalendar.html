@@ -1,0 +1,347 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../../doc.css">
+<link rel="stylesheet" type="text/css" href="../../tables.css">
+<script id="sap-ui-bootstrap" type="text/javascript" 
+      /*src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"*/
+      src="https://sapui5.hana.ondemand.com/sdk/resources/sap-ui-core.js"
+      data-sap-ui-theme="sap_bluecrystal" data-sap-ui-libs="sap.m,sap.ui.commons,sap.suite.ui.commons,sap.ui.ux3"></script>
+
+<script type="text/javascript" src="../js/ComponentMain.js"></script>
+<script type="text/javascript" src="../js/PostResponseParser/PostResponseParser.js"></script>
+<script type="text/javascript" src="../js/TimeLine.js"></script>
+<script type="text/javascript" src="../js/ga.js"></script>
+
+<script> 
+	requestChangeLog("../../../../sdkhelp/web/components/databound/planningcalendar/changes/changelog.json");
+	requestContent("Blog", "../../../../sdkhelp/web/components/databound/planningcalendar/blogs.json");
+	requestContent("Example", "../../../../sdkhelp/web/components/databound/planningcalendar/examples.json");
+</script>
+
+<title>Planning Calendar - SCN Design Studio Community</title>
+</head>
+<body class="comp-body" style="height:100%">
+<div class="comp-main" style="height:100%">
+
+ 	<div class="component-name">
+	PlanningCalendar [ScnCommunityBasics]
+	</div>
+	<div class="component-title">
+	Planning Calendar
+	</div>
+
+<div id="componentnav"></div>
+	<div id="intro">This page is giving short introduction to the component with summary of the change status (green/yellow/red)<div id="introStatus" height="120px"></div><br></div>
+	<div id="blogs" hidden="true" height="100%">This page is listing community blogs on this component, follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/08/introducing-blog-list-for-community-components" target="_blank">this link</a> to learn more.<div id="BlogsList" height="100%"></div></div>
+	<div id="changelog" hidden="true" height="100%">This page is listing all changes which have been done on this component with corresponding test status (green: ok, red: not ok, yellow: untested), follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/07/introducing-change-log-for-community-components" target="_blank">this link</a> to learn more.<div id="changelogList" height="100%"></div></div>
+	<div id="examples" hidden="true" height="100%">This page is listing all example applications with this component, follow <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2015/04/08/introducing-blog-list-for-community-components" target="_blank">this link</a> to learn more.<div id="ExamplesList" height="100%"></div></div>
+	<div id="about" hidden="true">This page will bring more "about" details (generated)</div>
+	<div id="technical" hidden="true">
+	<br/>
+	<div class="component-properties">VISIBLE PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>appointments<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Appointments</B><br/>Appointments
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">[{"parentKey":"ROOT","key":"ELEMENT","leaf":false,"text":"Short Event","rowKey":"PLANNING_EVENTS","s ... truncated</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>intervalHeaders<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Interval Headers</B><br/>Interval Headers
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">[{"parentKey":"ROOT","key":"PAST_EVENTS","leaf":false,"rowKey":"PAST_EVENTS","text":"Interval Header ... truncated</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>noDataText<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>No Data Text</B><br/>No Data Text
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">No Data</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>rows<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Rows</B><br/>Rows
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">[{"parentKey":"ROOT","key":"PLANNING_EVENTS","leaf":false,"text":"Events Example in Planning","title ... truncated</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>showIntervalHeaders<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Show Interval Headers</B><br/>Show Interval Headers
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>showRowHeaders<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Show Row Headers</B><br/>Show Row Headers
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>startDate<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Start Date</B><br/>Start Date
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>viewKey<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>View Type</B><br/>View Type
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">Day</td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">VISIBLE EVENTS</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>onAppointmentSelected<br/>[ScriptText]</B></td>
+<td width="*" class="property-title-tooltip"><B>On Appointment Selected</B><br/>On Appointment Selected
+
+</td>
+<td width="60px" class="property-group">Events</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>onRowSelectionChanged<br/>[ScriptText]</B></td>
+<td width="*" class="property-title-tooltip"><B>On Row Selection Changed</B><br/>On Row Selection Changed
+
+</td>
+<td width="60px" class="property-group">Events</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>onViewChanged<br/>[ScriptText]</B></td>
+<td width="*" class="property-title-tooltip"><B>On View Changeed</B><br/>On View Changeed
+
+</td>
+<td width="60px" class="property-group">Events</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">true</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS LIST</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Parameters</th><th>Return</th></tr>
+	
+	</TABLE>
+
+	<br/>
+	<div class="component-properties">HIDDEN (TECHNICAL) PROPERTIES</div>
+
+	<br/>
+		
+	<TABLE width="100%" class="table1">
+	<tr class="component-table-th"><th>Name</th><th>Description</th><th>Group</th><th>Default</th><th>Visible</th></tr>
+	<tr>
+<td width="120px" class="property-name-type"><B>appointmentSelectedKey<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Appointment Selected Key</B><br/>Appointment Selected Key
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>cleanAllAppointments<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Clean All Appointments</B><br/>Clean All Appointments
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">false</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>cleanAllIntervalHeaders<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Clean All Interval Headers</B><br/>Clean All Interval Headers
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">false</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>cleanAllRows<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Clean All Rows</B><br/>Clean All Rows
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">false</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>contentHeight<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>Content Height</B><br/>Content Height
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">0</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>contentWidth<br/>[int]</B></td>
+<td width="*" class="property-title-tooltip"><B>Content Width</B><br/>Content Width
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">0</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>intervalSelectedKey<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Interval Selected Key</B><br/>Interval Selected Key
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>onIntervalSelected<br/>[ScriptText]</B></td>
+<td width="*" class="property-title-tooltip"><B>On Interval Selected</B><br/>On Interval Selected
+
+</td>
+<td width="60px" class="property-group">Events</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>onStartDateChanged<br/>[ScriptText]</B></td>
+<td width="*" class="property-title-tooltip"><B>On Start Date Changed</B><br/>On Start Date Changed
+
+</td>
+<td width="60px" class="property-group">Events</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>rowSelectionChangedKey<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Row Selection Changed Key</B><br/>Row Selection Changed Key
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>startDateChangedKey<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>Start Date Changed Key</B><br/>Start Date Changed Key
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>useAppointments<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Use Manual 'Appointments'</B><br/>Use Manual 'Appointments'
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>useContentHeight<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Use Manual 'Content Height'</B><br/>Use Manual 'Content Height'
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>useContentWidth<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Use Manual 'Content Width'</B><br/>Use Manual 'Content Width'
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>useIntervalHeaders<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Use Manual 'Interval Headers'</B><br/>Use Manual 'Interval Headers'
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>useRows<br/>[boolean]</B></td>
+<td width="*" class="property-title-tooltip"><B>Use Manual 'Rows'</B><br/>Use Manual 'Rows'
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default">true</td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+<tr>
+<td width="120px" class="property-name-type"><B>viewChangedKey<br/>[String]</B></td>
+<td width="*" class="property-title-tooltip"><B>View Changed Key</B><br/>View Changed Key
+
+</td>
+<td width="60px" class="property-group">Display</td>
+<td width="100px" class="property-default"></td>
+<td width="60px" class="property-visible">false</td>
+</tr>
+
+	</TABLE>
+
+	<br/>
+	<div class="component-functions">FUNCTIONS IN DETAIL</div>
+
+	<br/>
+	
+	<TABLE width="100%" class="">
+	
+	</TABLE>
+	<div style="height:20px!important"> THE END </div>
+	</div>
+	
+	<div style="height:60px!important"></div>
+	
+</div>
+</body>
+</html>

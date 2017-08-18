@@ -1,0 +1,296 @@
+body {
+	color: #575757;
+	font-family: arial, helvetica, sans-serif;
+}
+
+table {
+	background: #FFFFFF !important;
+}
+
+.noscroll {
+	overflow: hidden;
+}
+
+.border-bottom {
+	border-bottom: solid 2px #3C3535;
+	text-align:center;
+	vertical-align: middle;
+}
+
+.download-content {
+	padding-left: 15px;
+	font-size: 16px;
+}
+	
+.download-options {
+	height:160px;
+	width:160px;
+	background: #B6BDEF;
+	padding: 15px;
+	color: #000000;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.groupLabel {
+	font-size: 18px!important;
+}
+
+.download-options:hover {
+	background: #475AE2;
+	color: #FFFFFF;
+}
+.main-body {
+	background: #E58739 !important;
+}
+
+.comp-body {
+	background: #FFF !important;
+	height: 100%;
+}
+
+.comp-main {
+	height: 100%;
+}
+
+.component-name {
+	height: 22px;
+	background: #48B51B/*#E58739*/;
+	color: #FFF;
+	font-size: 18px;
+	font-weight: bold;
+	padding: 5px;
+}
+
+.component-title {
+	height: 22px;
+	background-color: #DEF3CA/*#F7CD4B*/;
+	color: #000;
+	text-align:center;
+	font-size: 22px;
+	font-weight: bold;
+	padding: 15px;
+}
+
+.component-properties {
+	height: 22px;
+	background: #48B51B;	
+	color: #FFF;
+	font-size: 18px;
+	font-weight: bold;
+	padding: 5px;
+}
+.component-functions {
+	height: 22px;
+	background: #48B51B;	
+	color: #FFF;
+	font-size: 18px;
+	font-weight: bold;
+	padding: 5px;
+}
+.parameter-type {
+	width: 120px !important;
+}
+
+.property-name-type {
+	width: 220px !important;
+	vertical-align: top;
+	border: 1px solid #000000 !important;
+}
+
+.property-title-tooltip {
+	width: * !important;
+	border-top: 1px solid #000000 !important;
+	text-align:left !important;
+	background: #fff !important;
+	border: none !important;
+	border-top: 1px solid #000 !important;
+}
+.property-visible {
+	width: 60px !important;
+	border-top: 1px solid #000000 !important;
+	background: #fff !important;
+	border: none !important;
+	border-top: 1px solid #000 !important;
+	border-left: 1px solid #DEF3CA !important;
+	border-right: 1px solid #DEF3CA !important;
+}
+
+.property-group, .property-default {
+	width: 60px !important;
+	border-top: 1px solid #000000 !important;
+	background: #fff !important;
+	border: none !important;
+	border-top: 1px solid #000 !important;
+	border-left: 1px solid #DEF3CA !important;
+}
+
+.function-return-name {
+	border-top: 6px solid #48B51B !important;
+	border-left: 1px solid #000000 !important;
+	border-right: 1px solid #000000 !important;
+}
+
+.function-help {
+	border-top: 6px solid #48B51B !important;
+	background: #fff !important;
+}
+
+.html-example {
+	border-top: solid 1px #000;
+	background: #FDFDFD;
+	padding: 2px;
+	padding-left: 5px;
+	padding-top: 6px;
+}
+
+.html-code {
+	background: #F0F0F0;
+	padding-top: 6px;
+	padding-left: 20px;
+}
+
+.function-return-name, .function-table-tr-content-desc{
+	padding-top: 6px;
+	padding-left: 20px;
+	font-weight: bold;
+}
+
+.function-table-tr-content-desc {
+	vertical-align: top;
+	border-top: 1px solid #000000 !important;
+	border-left: 1px solid #000000 !important;
+	border-right: 1px solid #000000 !important;
+	text-align:right;
+	font-weight: normal;
+	padding-right: 10px;
+}
+
+.function-table-tr-content-code {
+	border-top: 1px solid #000000 !important;
+	padding-top: 6px;
+	padding-left: 10px;
+	background: #fff !important;
+	text-align:left;
+}
+
+.function-help {
+	padding: 6px !important;
+}
+
+.list-td {
+	padding: 2px !important;
+	height: 16px !important;
+}
+
+.list-td:hover {
+	background: #9DD929;
+}
+
+.list-a {
+	text-decoration: none;
+	color: #000;
+}
+
+.list-a:hover {
+	background: #9DD929;
+}
+
+.value-td {
+	width: 220px !important;
+	vertical-align: top;
+	border: 1px solid #000000 !important;
+}
+
+.function-short-name, .function-short-return {
+	background: #fff !important;
+	text-align:left !important;
+}
+
+.resizeTimelineItem {
+	height:160px!important;
+}
+.resizeTimelineItemSmall {
+	height:100px!important;
+}
+.resizeTimelineItemMed {
+	height:130px!important;
+}
+
+.greenTimelineItem .sapSuiteUiCommonsTimelineItemBox {
+	background-color: lightgreen;
+	border-color: green;
+}
+
+.tileGreen {
+	background-color: lightgreen !important;
+	border-color: green !important;
+}
+.tileYellow {
+	background-color: lightyellow !important;
+	border-color: yellow !important;
+}
+.tileRed {
+	background-color: red !important;
+	border-color: red !important;
+}
+
+div#componentTile .sapMTileContent .yellow,
+.yellowTimelineItem .sapSuiteUiCommonsTimelineItemBox {
+	background-color: lightyellow;
+	border-color: yellow;
+}
+div#componentTile .sapMTileContent .red,
+.redTimelineItem .sapSuiteUiCommonsTimelineItemBox {
+	background-color: lightred;
+	border-color: red;
+}
+
+div#componentTile .sapMTileContent .blue,
+.blueTimelineItem .sapSuiteUiCommonsTimelineItemBox {
+	background-color: lightblue;
+	border-color: blue;
+}
+
+div#blogs table>tbody>tr>td>div,
+div#blogs table>tbody>tr>td>div>div,
+div#blogs table>tbody>tr>td>div>div>div,
+div#examples table>tbody>tr>td>div,
+div#examples table>tbody>tr>td>div>div,
+div#examples table>tbody>tr>td>div>div>div,
+div#changelog table>tbody>tr>td>div,
+div#changelog table>tbody>tr>td>div>div,
+div#changelog table>tbody>tr>td>div>div>div,
+div#changelogcontent table>tbody>tr>td>div,
+div#changelogcontent table>tbody>tr>td>div>div,
+div#changelogcontent table>tbody>tr>td>div>div>div
+{
+	vertical-align:top!important;
+	height:100%!important;
+}
+
+div#blogs .sapSuiteUiCommonsTimelineContents,
+div#examples .sapSuiteUiCommonsTimelineContents,
+div#changelog .sapSuiteUiCommonsTimelineContents,
+div#globalchangelog .sapSuiteUiCommonsTimelineContents
+{
+	vertical-align:top!important;
+	height:100%!important;
+}
+
+div#introStatus
+{
+	vertical-align:top!important;
+	height:200px!important;
+}
+
+div#globalstatus
+{
+	vertical-align:top!important;
+	height:105px!important;
+}
+
+.news {
+	color: #000000;
+	background: #99CCFF;
+}

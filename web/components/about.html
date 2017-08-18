@@ -1,0 +1,84 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="../doc.css">
+    <title>SCN Design Studio Community - About</title>
+</head>
+
+<body>
+
+    <table width="100%">
+        <tr>
+            <td>
+	    <h3>Why are we doing this?</h3><p style="min-height: 8pt; height: 8pt; padding: 0px;">&nbsp;</p><ul><li>We see potential in sharing development techniques and common code together.</li><li>We want to have a set of components and source code that are not competing or overlapping with one another.</li><li>Provide more consistency to our (at times brave) community of designers who are using our SDK components.</li></ul><p style="min-height: 8pt; height: 8pt; padding: 0px;">&nbsp;</p><h3>Our Main Goals</h3><p style="min-height: 8pt; height: 8pt; padding: 0px;">&nbsp;</p><ul><li>Continue to share SDK Source Code examples (and their ready-to-install versions) with the SCN Community.</li><li>Engage additional SDK developers (new and "old") to contribute.</li><li>Engage people who may not be SDK developers, but have great ideas and use case requirements.</li><li>Improve and standardize delivery and communication of new components and a way to track issues and new ideas.</li></ul><p style="min-height: 8pt; height: 8pt; padding: 0px;">&nbsp;</p>
+	    Read more about the repository in <a href="http://scn.sap.com/community/businessobjects-design-studio/blog/2014/12/10/scn-design-studio-sdk-development-community" target="_blank">SCN Blog</a></td>
+        </tr>
+        <tr height="25px">
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+        <table>
+
+</body>
+<script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    function showOnline() {
+        changeDisplay("on", "off");
+    }
+
+    function showOffline() {
+        changeDisplay("off", "on");
+    }
+
+    function changeDisplay(versionOn, versionOff) {
+        var el = document.getElementById(versionOn + "line");
+        el.hidden = false;
+        var el = document.getElementById(versionOff + "line");
+        el.hidden = true;
+        var el = document.getElementById(versionOn + "line-instr");
+        el.hidden = false;
+        var el = document.getElementById(versionOff + "line-instr");
+        el.hidden = true;
+    }
+
+    function tC(text, label) {
+        if (ga) {
+            ga('send', 'event', 'outbound', 'click', label, {
+                'hitCallback': function() {
+                    window.prompt("Online Download Link - Copy to clipboard: Ctrl+C, Enter", text);
+                }
+            });
+        } else {
+            window.prompt("Online Download Link - Copy to clipboard: Ctrl+C, Enter", text);
+        }
+    };
+
+    function tOL(url, label) {
+        if (ga) {
+            ga('send', 'event', 'outbound', 'click', label, {
+                'hitCallback': function() {
+                    document.location = url;
+                }
+            });
+        } else {
+            document.location = url;
+        }
+    };
+    if (ga) {
+        ga('create', 'UA-61456338-1', 'auto');
+        ga('send', 'pageview');
+    }
+</script>
+
+</html>

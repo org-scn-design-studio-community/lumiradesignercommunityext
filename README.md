@@ -6,3 +6,6 @@ Lumira Designer SCN Community Extensions
 | **Design Studio 1.4 & 1.5** | [Download](https://github.com/org-scn-design-studio-community/sdkinstall/blob/master/releases/20/stable/org.scn.community.sdk.package_stable.zip?raw=true)|
 | **Design Studio 1.6**       | [Download](https://github.com/org-scn-design-studio-community/sdkinstall/blob/master/releases/stable/org.scn.community.sdk.package_stable.zip?raw=true)|
 | **Lumira Designer 2.0**     | [Download](https://github.com/org-scn-design-studio-community/lumiradesignercommunityext/blob/master/releases/org.scn.community.sdk.extensions.zip?raw=true)|
+
+# Additional Information
+- [SCN Blog Post](https://blogs.sap.com/2017/08/18/scn-lumira-designer-2.0-sdk-components/)

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/org.scn.community.lumiradesigner.sdk.feature.vega_3.0.0.201710121048.jar" id="org.scn.community.lumiradesigner.sdk.feature.vega" version="3.0.0.201710121048">
+   <feature url="features/org.scn.community.lumiradesigner.sdk.feature.vega_3.0.0.201710131110.jar" id="org.scn.community.lumiradesigner.sdk.feature.vega" version="3.0.0.201710131110">
       <category name="com.sap.ip.bi.zen.sdk"/>
    </feature>
-   <feature url="features/org.scn.community.sdk.feature.geovis_3.0.0.201710121048.jar" id="org.scn.community.sdk.feature.geovis" version="3.0.0.201710121048">
+   <feature url="features/org.scn.community.sdk.feature.geovis_3.0.0.201710131110.jar" id="org.scn.community.sdk.feature.geovis" version="3.0.0.201710131110">
       <category name="com.sap.ip.bi.zen.sdk"/>
    </feature>
-   <feature url="features/org.scn.community.sdk.feature.main_3.0.0.201710121048.jar" id="org.scn.community.sdk.feature.main" version="3.0.0.201710121048">
+   <feature url="features/org.scn.community.sdk.feature.main_3.0.0.201710131110.jar" id="org.scn.community.sdk.feature.main" version="3.0.0.201710131110">
       <category name="com.sap.ip.bi.zen.sdk"/>
    </feature>
-   <feature url="features/org.scn.community.sdk.feature.prototypes_3.0.0.201710121048.jar" id="org.scn.community.sdk.feature.prototypes" version="3.0.0.201710121048">
+   <feature url="features/org.scn.community.sdk.feature.prototypes_3.0.0.201710131110.jar" id="org.scn.community.sdk.feature.prototypes" version="3.0.0.201710131110">
       <category name="com.sap.ip.bi.zen.sdk"/>
    </feature>
    <category-def name="com.sap.ip.bi.zen.sdk" label="com.sap.ip.bi.zen.sdk"/>

@@ -1,31 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-<<<<<<< HEAD
-   <feature url="features/org.scn.community.lumiradesigner.sdk.feature.vega_3.0.0.201710241029.jar" id="org.scn.community.lumiradesigner.sdk.feature.vega" version="3.0.0.201710241029">
-=======
-   <feature url="features/org.scn.community.lumiradesigner.sdk.feature.vega_3.0.0.201710181921.jar" id="org.scn.community.lumiradesigner.sdk.feature.vega" version="3.0.0.201710181921">
->>>>>>> branch 'master' of https://github.com/org-scn-design-studio-community/lumiradesignercommunityext.git
+   <feature url="features/org.scn.community.lumiradesigner.sdk.feature.vega_3.0.0.201710250930.jar" id="org.scn.community.lumiradesigner.sdk.feature.vega" version="3.0.0.201710250930">
       <category name="com.sap.ip.bi.zen.sdk"/>
    </feature>
-<<<<<<< HEAD
-   <feature url="features/org.scn.community.sdk.feature.geovis_3.0.0.201710241029.jar" id="org.scn.community.sdk.feature.geovis" version="3.0.0.201710241029">
-=======
-   <feature url="features/org.scn.community.sdk.feature.geovis_3.0.0.201710181921.jar" id="org.scn.community.sdk.feature.geovis" version="3.0.0.201710181921">
->>>>>>> branch 'master' of https://github.com/org-scn-design-studio-community/lumiradesignercommunityext.git
+   <feature url="features/org.scn.community.sdk.feature.main_3.0.0.201710250930.jar" id="org.scn.community.sdk.feature.main" version="3.0.0.201710250930">
       <category name="com.sap.ip.bi.zen.sdk"/>
    </feature>
-<<<<<<< HEAD
-   <feature url="features/org.scn.community.sdk.feature.main_3.0.0.201710241029.jar" id="org.scn.community.sdk.feature.main" version="3.0.0.201710241029">
-=======
-   <feature url="features/org.scn.community.sdk.feature.main_3.0.0.201710181921.jar" id="org.scn.community.sdk.feature.main" version="3.0.0.201710181921">
->>>>>>> branch 'master' of https://github.com/org-scn-design-studio-community/lumiradesignercommunityext.git
-      <category name="com.sap.ip.bi.zen.sdk"/>
-   </feature>
-<<<<<<< HEAD
-   <feature url="features/org.scn.community.sdk.feature.prototypes_3.0.0.201710241029.jar" id="org.scn.community.sdk.feature.prototypes" version="3.0.0.201710241029">
-=======
-   <feature url="features/org.scn.community.sdk.feature.prototypes_3.0.0.201710181921.jar" id="org.scn.community.sdk.feature.prototypes" version="3.0.0.201710181921">
->>>>>>> branch 'master' of https://github.com/org-scn-design-studio-community/lumiradesignercommunityext.git
+   <feature url="features/org.scn.community.sdk.feature.prototypes_3.0.0.201710250930.jar" id="org.scn.community.sdk.feature.prototypes" version="3.0.0.201710250930">
       <category name="com.sap.ip.bi.zen.sdk"/>
    </feature>
    <category-def name="com.sap.ip.bi.zen.sdk" label="com.sap.ip.bi.zen.sdk"/>

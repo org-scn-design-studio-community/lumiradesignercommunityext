@@ -3,16 +3,16 @@
    <description name="SCN SDK Lumira Designer release" url="https://github.com/org-scn-design-studio-community/lumiradesignercommunityext/tree/master/releases">
       Release branch
    </description>
-   <feature url="features/org.scn.community.lumiradesigner.sdk.feature.vega_3.0.0.201805222123.jar" id="org.scn.community.lumiradesigner.sdk.feature.vega" version="3.0.0.201805222123">
+   <feature url="features/org.scn.community.lumiradesigner.sdk.feature.vega_3.0.0.201806121411.jar" id="org.scn.community.lumiradesigner.sdk.feature.vega" version="3.0.0.201806121411">
       <category name="com.sap.ip.bi.zen.sdk"/>
    </feature>
-   <feature url="features/org.scn.community.sdk.feature.geovis_3.0.0.201805222123.jar" id="org.scn.community.sdk.feature.geovis" version="3.0.0.201805222123">
+   <feature url="features/org.scn.community.sdk.feature.geovis_3.0.0.201806121411.jar" id="org.scn.community.sdk.feature.geovis" version="3.0.0.201806121411">
       <category name="com.sap.ip.bi.zen.sdk"/>
    </feature>
-   <feature url="features/org.scn.community.sdk.feature.main_3.0.0.201805222123.jar" id="org.scn.community.sdk.feature.main" version="3.0.0.201805222123">
+   <feature url="features/org.scn.community.sdk.feature.main_3.0.0.201806121411.jar" id="org.scn.community.sdk.feature.main" version="3.0.0.201806121411">
       <category name="com.sap.ip.bi.zen.sdk"/>
    </feature>
-   <feature url="features/org.scn.community.sdk.feature.prototypes_3.0.0.201805222123.jar" id="org.scn.community.sdk.feature.prototypes" version="3.0.0.201805222123">
+   <feature url="features/org.scn.community.sdk.feature.prototypes_3.0.0.201806121411.jar" id="org.scn.community.sdk.feature.prototypes" version="3.0.0.201806121411">
       <category name="com.sap.ip.bi.zen.sdk"/>
    </feature>
    <category-def name="com.sap.ip.bi.zen.sdk" label="com.sap.ip.bi.zen.sdk"/>
